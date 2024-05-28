@@ -1,0 +1,244 @@
+(function() {var domains=['stubhub.co.kr','www.backcountry.com','way.com','spanish.sling.com','www.ftd.ca','www.mountainhardwear.com','www.ebooks.com','www.audiobooks.com','www.interserver.net','usa.kaspersky.com','www.gamesdeal.com','www.withings.com','www.stubhub.co.kr','www.skyscanner.com','stubhub.co.nz','fr.homeaway.ca','cn.gamesdeal.com','photo.walgreens.com','no.tripadvisor.com','www.cn.tripadvisor.com','best.aliexpress.com','cyberlink.com','www.factoryoutletstore.com','www.berries.com','mediatemple.net','geckosadventures.com','autodesk.com','m.aliexpress.com','www.eharmony.com','www.proflowers.com','usbkill.com','www.vrbo.com','www.terapeak.com','www.clickmeeting.com','www.livingsocial.com','www.nestlearning.com','taskrabbit.ca','www.musiciansfriend.com','www.focuscamera.com','www.terapeak.fr','lifestyle.focuscamera.com','www.nuance.com','www.terapeak.cn','www.terapeak.ca','www.jabra.com','www.terapeak.de','mojomarketplace.com','thehungryjpeg.com','www.terapeak.jp','fr.gamesdeal.com','www.wondershare.fr','logitech.com','www.wondershare.it','buy.garmin.com','urbanears.com','www.wondershare.de','www.wondershare.es','ticketbis.cl','www.flir.it','netfirms.com','luxury.homeaway.com','htc.com','www.avg.com','www.flir.de','quill.com','www.flir.es','99designs.com','www.homeaway.ca','www.flir.fr','www.kaspersky.com','www.otterbox.com','autodesk.fr','autodesk.es','www.worldwidestereo.com','autodesk.eu','imyfone.com','www.priceline.com','www.sonos.com','eng.bigbustours.com','whistle.com','verizonwireless.com','shop.usa.canon.com','zizowireless.com','www.abacus24-7.com','ebooks.com','olloclip.com','support.code42.com','www.dellrefurbished.com','ecampus.com','www.thinkgeek.com','autodesk.it','flir.com','www.officedepot.com','ja.aliexpress.com','razerzone.com','ticketbis.com','health.nokia.com','touchofmodern.com','www.tripadvisor.com','www.dell.com','brookstone.com','www.choicehotels.com','www.acronis.com','www.autodesk.de','www.no.tripadvisor.com','www.4wd.com','www.monoprice.com','tickets.fandango.com','fiverr.com','www.ticketnetwork.com','magix.com','expedia.ca','www.abbyy.com','turnkeyinternet.net','www.stubhub.com.cn','pl.tripadvisor.com','pl.gamesdeal.com','www.intrepidtravel.com','www.cellularoutfitter.com','truckmonkey.sportsmansguide.com','www.verizonwireless.com','tigerdirect.com','kaspersky.co.uk','support.terapeak.com','www.sierratradingpost.com','www.living.ca','razer.com','www.autodesk.co.uk','www.razer.com','www.flir.co.uk','www.personalabs.com','www.hosting.co.uk','www.netfirms.com','store.trxtraining.com','biz.yelp.com','m.tours4fun.com','www.crashplan.com','www.razerzone.com','www.eukhost.com','ticketbis.co.kr','otterbox.com','tripadvisor.ru','tripadvisor.rs','ipage.com','plantronics.com','www.homeaway.com','tripadvisor.nl','www.justgettested.com','www.fandangofanshop.com','taskrabbit.co.uk','tripadvisor.se','tripadvisor.sk','www.psprint.com','stubhub.in','stubhub.id','stubhub.hk','www.eharmony.ca','www.trxtraining.com','stubhub.ec','magix-audio.com','stubhub.cl','stubhub.co','intl.stubhub.ca','tripadvisor.jp','tripadvisor.in','tripadvisor.it','stubhub.ph','stubhub.pe','www.skyscanner.ca','www.samsung.com','stubhub.my','stubhub.jp','inkhead.com','stubhub.uy','365outdoorwear.sportsmansguide.com','stubhub.tw','stubhub.sg','outdoortechnology.com','skyscanner.com','www.sportsmansguide.com','www.99designs.com','taskrabbit.com','www.ticketliquidator.com','roxio.com','www.23andme.com','www.pinnaclesys.com','www.aliexpress.com','eharmony.com','www.emclient.com','www.tomtom.com','mobile.fandango.com','www.tripadvisor.com.br','www.tripadvisor.com.au','www.tripadvisor.com.ar','affiliates.van.fedex.com','www.brickhousesecurity.com','buy.norton.com','www.tripadvisor.com.gr','www.tripadvisor.com.hk','turtlebeach.com','www.tripadvisor.com.eg','www.tripadvisor.pt','www.tripadvisor.com.tw','www.all-battery.com','www.tripadvisor.com.tr','www.fedex.com','www.tripadvisor.com.sg','www.tripadvisor.nl','peregrineadventures.com','www.tripadvisor.com.ph','www.tripadvisor.com.pe','www.flipkey.com','samsung.com','hu.gamesdeal.com','www.tripadvisor.jp','www.tripadvisor.com.my','www.tmart.com','www.tripadvisor.com.mx','zizocases.myshopify.com','www.tripadvisor.in','www.tripadvisor.ie','www.tripadvisor.it','www.quill.com','novadevelopment.com','www.motorola.com','www.tripadvisor.fi','flash.newegg.com','www.tripadvisor.fr','extech.com','www.tripadvisor.es','www.tripadvisor.de','www.hostpapa.eu','www.tripadvisor.cz','www.tripadvisor.dk','www.tripadvisor.ca','www.tripadvisor.cl','www.tripadvisor.cn','www.tripadvisor.co','www.tripadvisor.com.vn','www.tripadvisor.be','www.tripadvisor.com.ve','www.hostpapa.ca','www.tripadvisor.at','www.stubhub.au','www.stubhub.ar','www.stubhub.co','www.stubhub.cl','www.stubhub.br','hostpapa.no.nz','studentuniverse.com','techrabbit.com','www.stubhub.jp','www.spokeo.com','www.stubhub.id','expedia.com','www.stubhub.in','www.monoprice.uk','www.stubhub.kr','scdkey.com','www.stubhub.ec','eyeconic.com','www.cheapair.com','www.stubhub.hk','ar.tripadvisor.com','spokeo.com','www.verseo.com','www.staples.com','www.123ink.ca','www.brookstone.com','www.ftd.com','musiciansfriend.com','m.cellularoutfitter.com','store.personalabs.com','www.totalpetsupply.com','sierratradingpost.com','stubhub.com.au','stubhub.com.br','stubhub.com.cn','razerzone.com','www.workshare.com','www.zipcar.ca','worldwidestereo.com','www.logitechg.com','mackeeper.kromtech.net','stubhub.com.mx','www.stubhub.th','www.stubhub.tw','www.bitdefender.de','www.stubhub.sg','www.stubhub.mx','www.stubhub.my','vive.com','www.stubhub.ph','www.stubhub.pe','www.primecables.ca','depositphotos.com','www.stubhub.za','jacvapour.com','www.monoprice.de','stubhub.com.ar','www.stubhub.ve','www.stubhub.uy','www.bose.com','www.th.tripadvisor.com','budgetpetcare.com','mattressfirm.com','www.pl.tripadvisor.com','www.domain.com','www.tripadvisor.vn','promo.shopperplus.com','www.betterworldbooks.com','www.tripadvisor.sk','www.tripadvisor.rs','www.tripadvisor.ru','www.carrental8.com','atmosrx.com','freedompop.com','gameladen','www.walgreens.com','tripadvisor.com','www.case-mate.com','www.ecampus.com','www.wondershare.com','www.flash.newegg.com','eharmony.ca','www.bigbustours.com','www.roxio.com','seatgeek.com','roadrunnersports.com','www.superbiiz.com','hallmarksoftware.com','www.tigerdirect.com','www.getolympus.com','thesslstore.com','th.tripadvisor.com','www.tripadvisor.co.za','www.techrabbit.com','www.tripadvisor.co.nz','choicehotels.com','www.suppliesoutlet.com','www.tours4fun.es','www.tripadvisor.co.uk','es.gamesdeal.com','it.tripadvisor.ch','www.terapeak.co.uk','www.tripadvisor.co.hu','www.lensdirect.com','www.tripadvisor.co.id','www.tripadvisor.co.il','www.cellularoutfitter.ca','fr.tripadvisor.ca','fr.tripadvisor.ch','www.tripadvisor.co.kr','cn.tripadvisor.com','www.greenmangaming.com','homechef.com','intl.stubhub.com','www.parallels.com','www.terapeak.com.hk','printonline.fedex.com','www.newegg.com','verseo.com','www.heartinternet.co.uk','www.code42.com','www.360training.com','www.fitbit.com','www.autodesk.com','comodosslstore.com','it.gamesdeal.com','www.homeaway.com.mx','stubhub.com.ve','www.expedia.com','case-mate.com','www.razer.com','www.kaspersky.co.uk','smarthome.com','shop.wwe.com','apress.com','www.zipcar.com','www.bose.ca','www.vegascreativesoftware.com','shop.personalabs.com','de.gamesdeal.com','www.vacationrentals.com','www.shopperplus.com','avg.com','www.ipage.com','www.urbanears.com','www.hostpapa.com','cheaptickets.com','www.sierra.com','avantquest.com','webhosting.uk.com','www.touchofmodern.com','www.hostpapa.sg','www.kaspersky.co.uk','autodesk.co.uk','www.concordsupplies.com','www.edmunds.com','www.dfsdirectsales.com','stubhub.co.za','raymarine.com','www.avanquest.com','www.nolo.com','stubhub.co.th','tripadvisor.co.uk','www.wd.com','www.fandango.com','www.4wheelparts.com','www.sling.com','www.tours4fun.com','www.plated.com'];var websiteId=7251228;var trackingServerDomain='www.anrdoezrs.net';var generateLinkOnLoad=false;var publisherId=4112715;var sid=undefined;var debug=false;(function() {
+    var getPageBasedImpressionUrl = function() {
+        return '//' + trackingServerDomain + '/pageImpression';
+    },
+    collectDomains = function (content) {
+        var collectedDomains =  [];
+        var anchors = content.getElementsByTagName("a");
+        for (var i = 0; i < anchors.length; i++) {
+            var url = anchors[i].href;
+            collectedDomains.push(url.toLowerCase());
+        }
+        return collectedDomains;
+    },
+    collectImpressions = function(doc) {
+        var imgs = doc.getElementsByTagName("img");
+        var srcs = [];
+        for (var i=0; i < imgs.length; i++) {
+            var matches = imgs[i].src.match(/image-(\d+-\d+)/);
+            if (matches) {
+                srcs.push(imgs[i].src);
+            }
+        }
+        return srcs;
+    },
+    appendThirdPartyImpressions = function(thirdPartyImpressions) {
+        var impressionSources = JSON.parse(thirdPartyImpressions);
+        for(var i=0; i<impressionSources.length; i++) {
+            var hiddenDiv = document.createElement("div");
+            var url = impressionSources[i] + '&cachebuster=' + i;
+            hiddenDiv.innerHTML = "<img style=\"display:none\" src=\"" + url + "\" />";
+            document.body.appendChild(hiddenDiv.firstChild);
+        }
+    },
+    trackImpressions = function (doc) {
+        var xhr = createCORSRequest('POST', getPageBasedImpressionUrl());
+        if (xhr) {
+            xhr.send(JSON.stringify({
+                publisherId: publisherId,
+                websiteId: websiteId,
+                urls: collectDomains(doc),
+                impressions: collectImpressions(doc)
+            }));
+
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4 && xhr.status == 200) {
+                    var thirdPartyImpressions = xhr.responseText;
+                    if(thirdPartyImpressions !== undefined && thirdPartyImpressions.length > 0) {
+                        appendThirdPartyImpressions(thirdPartyImpressions);
+                    }
+                }
+            };
+        }
+    },
+    createCORSRequest = function(method, url) {
+        var xhr = new XMLHttpRequest();
+
+        if ("withCredentials" in xhr) {
+            xhr.open(method, url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.withCredentials = true;
+        } else if (typeof XDomainRequest != "undefined") {
+            // IE <9 way of making CORS requests
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+        } else {
+            xhr = null;
+        }
+        return xhr;
+    };
+
+    return trackImpressions(document);
+})();
+(function() {
+    function log(consoleStr){
+        if (debug && window.console){
+            console.log(consoleStr);
+        }
+    }
+
+//IE 8 doesn't have indexOf
+    if(!Array.prototype.indexOf) {
+        log("shimming Array.indexOf ...");
+        Array.prototype.indexOf = function (obj, start) {
+            for (var i = (start || 0), j = this.length; i < j; i++) {
+                if (this[i] === obj) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    }
+
+//dom ready with support for older browsers (IE8)
+//  if support no longer needed, just use
+//      document.addEventListener("DOMContentLoaded", handler, false)
+    function bindReady(handler) {
+
+        var called = false;
+
+        function ready() {
+            if (called) return;
+            called = true;
+            handler()
+        }
+
+        if (document.addEventListener) { // native event
+            log("using native addEventListener");
+            document.addEventListener("DOMContentLoaded", ready, false)
+        } else if (document.attachEvent) {  // IE
+
+            try {
+                var isFrame = window.frameElement != null
+            } catch (e) {
+            }
+
+            // IE, the document is not inside a frame
+            if (document.documentElement.doScroll && !isFrame) {
+                function tryScroll() {
+                    if (called) return;
+                    try {
+                        document.documentElement.doScroll("left");
+                        log("using doScroll hack");
+                        ready()
+                    } catch (e) {
+                        setTimeout(tryScroll, 10)
+                    }
+                }
+
+                tryScroll()
+            }
+
+            // IE, the document is inside a frame
+            document.attachEvent("onreadystatechange", function () {
+                if (document.readyState === "complete") {
+                    log("using onreadystatechange");
+                    ready()
+                }
+            })
+        }
+
+        // Old browsers
+        if (window.addEventListener) {
+            log("using window addEventListener");
+            window.addEventListener('load', ready, false)
+        }
+        else if (window.attachEvent) {
+            log("using attachEvent onload");
+            window.attachEvent('onload', ready)
+        }
+        else {
+            var fn = window.onload; // very old browser, copy old onload
+            window.onload = function () { // replace by new onload and call the old one
+                log("using window.onload");
+                fn && fn();
+                ready()
+            }
+        }
+    }
+
+//IE 8 doesn't have addEventListener
+    function addEvent(element, event, func) {
+        if(element.addEventListener) {
+            element.addEventListener(event, func);
+        }
+        else if(element.attachEvent) { // IE DOM
+            element.attachEvent("on" + event, func);
+        }
+    }
+
+    function getDomainAndProtocol(url) {
+        var matches = url.match(/^(https?)\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+        var protocol = matches && matches[1];
+        var domain = matches && matches[2];
+        return {domain: domain, protocol: protocol };
+    }
+
+    function matchesParentDomain(domain) {
+        for (var i=0; i < domains.length; i++){
+            var suffix = domains[i];
+            if (domain.indexOf(suffix, domain.length - suffix.length) !== -1)
+                return true;
+        }
+        return false
+    }
+
+    function autoMonetizeLink(element){
+        var start = new Date().getTime();
+        var url = element.href;
+        var domainAndProtocol = getDomainAndProtocol(url);
+        if(!domainAndProtocol.domain) return;
+
+        var domainInLowerCase = domainAndProtocol.domain.toLowerCase();
+        var hashIndex = url.indexOf('#');
+        var frag = "";
+        if (hashIndex > -1) {
+            frag = url.substring(hashIndex + 1);
+            url = url.substring(0, hashIndex);
+        }
+        if (domains.indexOf(domainInLowerCase) >= 0 || matchesParentDomain(domainInLowerCase)) {
+            log("Domain found in list. Automonetizing...");
+            var extraParams = "";
+            if (sid) {
+                extraParams = "/sid/" + sid;
+            }
+            if(frag) {
+                extraParams = extraParams + "/fragment/" + encodeURIComponent(frag);
+            }
+            element.href = "//" + trackingServerDomain + "/links/" + websiteId + "/type/am" + extraParams + "/" + url;
+        } else {
+            log("Domain not found in list. ");
+        }
+
+        log("total time: " + (new Date().getTime() - start));
+    }
+
+    function createClickHandlerFor(element) {
+        return function () {
+            autoMonetizeLink(element)
+        };
+    }
+
+    function autoMonetizeLinks() {
+        log("auto monetizing links");
+
+        var anchors = document.getElementsByTagName("a");
+        log("found " + anchors.length + " a tags.");
+        for (var i = 0; i < anchors.length; i++) {
+            var anchor = anchors[i];
+            if(generateLinkOnLoad)
+                autoMonetizeLink(anchor);
+            else
+                addEvent(anchor, "click", createClickHandlerFor(anchor));
+        }
+    }
+
+    if(document.readyState === "complete") {
+        log("readState is complete");
+        autoMonetizeLinks();
+    } else {
+        log("DOMContentLoaded is registered");
+        bindReady(autoMonetizeLinks)
+    }
+})();
+})()

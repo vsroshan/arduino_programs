@@ -1,0 +1,27 @@
+function piResponse() {
+piSetCookie('visitor_id114242', '1161097742', 3650);
+piSetCookie('visitor_id114242-hash', 'd5d657d37aa8e78d683903a4d256a7dd0ef9f41966be7e4a97cbe0d0648e92c5e3109db3783c1cd7a4af6af75db2d0c55599ede6', 3650);
+
+if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+var analytics_link = document.location.protocol + "//" + "go.aspencore.com/analytics?";
+pi.tracker.visitor_id='1161097742';
+
+pi.tracker.visitor_id_sign='d5d657d37aa8e78d683903a4d256a7dd0ef9f41966be7e4a97cbe0d0648e92c5e3109db3783c1cd7a4af6af75db2d0c55599ede6';
+
+var variables = 'conly=true';
+for (property in pi.tracker) {
+	variables += "&"+property+"="+pi.tracker[property];
+}
+var headID = document.getElementsByTagName("head")[0];
+piScriptObj[piScriptNum] = document.createElement('script');
+piScriptObj[piScriptNum].type = 'text/javascript';
+piScriptObj[piScriptNum].src = analytics_link + variables;
+headID.appendChild(piScriptObj[piScriptNum]);
+piScriptObj[piScriptNum].onload = function() { return; }
+}
+}
+piResponse();
+
+
+
+

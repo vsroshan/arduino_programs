@@ -1,0 +1,133 @@
+
+/* Default style, feel free to remove if not needed. */
+body, body * {
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+    font-size: 0;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
+}
+
+
+/* global */
+#container_dc {
+	position: absolute;
+	width: 300px;
+	height: 600px;
+	top: 0px;
+	left: 0px;
+	
+	margin: auto;
+	overflow:hidden;
+}
+#content_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: #9fcece;
+	overflow:hidden;
+}
+
+#bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: #9fcece;
+	overflow:hidden;
+}
+
+#bgFade {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9994;
+	background-color: white;
+}
+#border_div {
+	width: 298px;
+	height: 598px;
+	top: 0px;
+	left: 0px;
+	border:1px solid #000;
+}
+.full_div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+}
+
+.text1{
+	overflow:hidden;
+}
+#main_animation{
+
+
+}
+
+#bg2{
+	background: #163179;	
+}
+
+#scrub_base, #scrub_bar{
+	top:340px;
+}
+
+
+#anim_bg{
+	background: #3329cd;	
+}
+
+#img_mask{
+    overflow: hidden;
+    background: none;
+    width: 78px;
+    height: 388px;
+}
+
+#main_img_mask{
+    overflow: hidden;
+    width: 300px;
+    height: 600px;
+	top:0px;
+	left:58px;
+	background:none;
+}
+
+#main_img_holder{
+	left:-58px;
+	
+}
+
+
+
+/* Invisible button for background clickthrough. */
+#background_exit_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+	background-color:transparent;
+	z-index: 400;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+

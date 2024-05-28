@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/container(1).html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>SafeFrame Container</title>
+    <script>
+(function(){var aa="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},l;if("function"==typeof Object.setPrototypeOf)l=Object.setPrototypeOf;else{var n;a:{var ba={h:!0},q={};try{q.__proto__=ba;n=q.h;break a}catch(a){}n=!1}l=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var r=l,t=this;var v=String.prototype.trim?function(a){return a.trim()}:function(a){return/^[\s\xa0]*([\s\S]*?)[\s\xa0]*$/.exec(a)[1]},w=function(a,b){return a<b?-1:a>b?1:0};var x;a:{var y=t.navigator;if(y){var z=y.userAgent;if(z){x=z;break a}}x=""};var B=function(a){B[" "](a);return a};B[" "]=function(){};var da=function(a,b){var c=ca;return Object.prototype.hasOwnProperty.call(c,a)?c[a]:c[a]=b(a)};var ea=-1!=x.indexOf("Opera"),C=-1!=x.indexOf("Trident")||-1!=x.indexOf("MSIE"),D=-1!=x.indexOf("Edge"),E=-1!=x.indexOf("Gecko")&&!(-1!=x.toLowerCase().indexOf("webkit")&&-1==x.indexOf("Edge"))&&!(-1!=x.indexOf("Trident")||-1!=x.indexOf("MSIE"))&&-1==x.indexOf("Edge"),F=-1!=x.toLowerCase().indexOf("webkit")&&-1==x.indexOf("Edge"),G;a:{var H="",I=function(){var a=x;if(E)return/rv:([^\);]+)(\)|;)/.exec(a);if(D)return/Edge\/([\d\.]+)/.exec(a);if(C)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(F)return/WebKit\/(\S+)/.exec(a);if(ea)return/(?:Version)[ \/]?(\S+)/.exec(a)}();I&&(H=I?I[1]:"");if(C){var K,M=t.document;K=M?M.documentMode:void 0;if(null!=K&&K>parseFloat(H)){G=String(K);break a}}G=H}var fa=G,ca={},N=function(a){return da(a,function(){for(var b=0,c=v(String(fa)).split("."),e=v(String(a)).split("."),d=Math.max(c.length,e.length),f=0;0==b&&f<d;f++){var h=c[f]||"",g=e[f]||"";do{h=/(\d*)(\D*)(.*)/.exec(h)||["","","",""];g=/(\d*)(\D*)(.*)/.exec(g)||["","","",""];if(0==h[0].length&&0==g[0].length)break;b=w(0==h[1].length?0:parseInt(h[1],10),0==g[1].length?0:parseInt(g[1],10))||w(0==h[2].length,0==g[2].length)||w(h[2],g[2]);h=h[3];g=g[3]}while(0==b)}return 0<=b})};var O=null,P=null,ia=function(a){var b=a.length,c=0;"="===a[b-2]?c=2:"="===a[b-1]&&(c=1);var e=new Uint8Array(Math.ceil(3*b/4)-c),d=0;ha(a,function(a){e[d++]=a});return e.subarray(0,d)},ha=function(a,b){function c(b){for(;e<a.length;){var c=a.charAt(e++),f=P[c];if(null!=f)return f;if(!/^[\s\xa0]*$/.test(c))throw Error("Unknown base64 encoding at char: "+c);}return b}ja();for(var e=0;;){var d=c(-1),f=c(0),h=c(64),g=c(64);if(64===g&&-1===d)break;b(d<<2|f>>4);64!=h&&(b(f<<4&240|h>>2),64!=g&&b(h<<6&192|g))}},ja=function(){if(!O){O={};P={};for(var a=0;65>a;a++)O[a]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(a),P[O[a]]=a,62<=a&&(P["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.".charAt(a)]=a)}};var Q=function(a,b){if(a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var R=function(a,b,c){c=void 0===c?{}:c;this.error=a;this.context=b.context;this.line=b.line||-1;this.msg=b.message||"";this.file=b.file||"";this.id=b.id||"jserror";this.meta=c};var ka=/^https?:\/\/(\w|-)+\.cdn\.ampproject\.(net|org)(\?|\/|$)/,la=function(a,b){this.a=a;this.b=b},S=function(a,b){this.url=a;this.g=!!b;this.depth=null};var ma=function(a){t.google_image_requests||(t.google_image_requests=[]);var b=t.document.createElement("img");b.src=a;t.google_image_requests.push(b)};var T=function(){this.c="&";this.f=!1;this.b={};this.j=0;this.a=[]},U=function(a,b){var c={};c[a]=b;return[c]},W=function(a,b,c,e,d){var f=[];Q(a,function(a,g){(a=V(a,b,c,e,d))&&f.push(g+"="+a)});return f.join(b)},V=function(a,b,c,e,d){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(e=e||0,e<c.length){for(var f=[],h=0;h<a.length;h++)f.push(V(a[h],b,c,e+1,d));return f.join(c[e])}}else if("object"==typeof a)return d=d||0,2>d?encodeURIComponent(W(a,b,c,e,d+1)):"...";return encodeURIComponent(String(a))},X=function(a,b,c,e){a.a.push(b);a.b[b]=U(c,e)},oa=function(a){var b="https://pagead2.googlesyndication.com/pagead/gen_204?id=jserror&",c=na(a)-27;if(0>c)return"";a.a.sort(function(a,b){return a-b});for(var e=null,d="",f=0;f<a.a.length;f++)for(var h=a.a[f],g=a.b[h],m=0;m<g.length;m++){if(!c){e=null==e?h:e;break}var k=W(g[m],a.c,",$");if(k){k=d+k;if(c>=k.length){c-=k.length;b+=k;d=a.c;break}else a.f&&(d=c,k[d-1]==a.c&&--d,b+=k.substr(0,d),d=a.c,c=0);e=null==e?h:e}}a="";null!=e&&(a=d+"trn="+e);return b+a+""},na=function(a){var b=1,c;for(c in a.b)b=c.length>b?c.length:b;return 3997-b-a.c.length-1};var pa=function(a){if(.01>Math.random())try{if(a instanceof T)var b=a;else b=new T,Q(a,function(a,c){var f=b,e=f.j++;a=U(c,a);f.a.push(e);f.b[e]=a});var c=oa(b);c&&ma(c)}catch(e){}};var sa=function(a){try{var b=new T;b.f=!0;X(b,1,"context",507);if(!(a.error&&a.meta&&a.id)){var c=a;a=new qa(ra(c),c.fileName,c.lineNumber)}a.msg&&X(b,2,"msg",a.msg.substring(0,512));a.file&&X(b,3,"file",a.file);0<a.line&&X(b,4,"line",a.line);var e=[a.meta||{}];b.a.push(5);b.b[5]=e;c=t;a=[];e=null;do{var d=c;try{var f;if(f=!!d&&null!=d.location.href)b:{try{B(d.foo);f=!0;break b}catch(A){}f=!1}var h=f}catch(A){h=!1}if(h){var g=d.location.href;e=d.document&&d.document.referrer||null}else g=e,e=null;a.push(new S(g||""));try{c=d.parent}catch(A){c=null}}while(c&&d!=c);g=0;for(var m=a.length-1;g<=m;++g)a[g].depth=m-g;d=t;if(d.location&&d.location.ancestorOrigins&&d.location.ancestorOrigins.length==a.length-1)for(m=1;m<a.length;++m){var k=a[m];k.url||(k.url=d.location.ancestorOrigins[m-1]||"",k.g=!0)}var J=new S(t.location.href,!1);d=null;var L=a.length-1;for(k=L;0<=k;--k){var p=a[k];!d&&ka.test(p.url)&&(d=p);if(p.url&&!p.g){J=p;break}}p=null;var va=a.length&&a[L].url;0!=J.depth&&va&&(p=a[L]);var u=new la(J,p);u.b&&X(b,6,"top",u.b.url||"");X(b,7,"url",u.a.url||"");pa(b)}catch(A){try{pa({context:"ecmserr",rctx:507,msg:ra(A),url:u&&u.a.url})}catch(za){}}},ra=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var e;a!=e;)e=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(d){b=c}}return b},qa=function(a,b,c){R.call(this,Error(a),{message:a,file:void 0===b?"":b,line:void 0===c?-1:c})},Y=qa;Y.prototype=aa(R.prototype);Y.prototype.constructor=Y;if(r)r(Y,R);else for(var Z in R)if("prototype"!=Z)if(Object.defineProperties){var ta=Object.getOwnPropertyDescriptor(R,Z);ta&&Object.defineProperty(Y,Z,ta)}else Y[Z]=R[Z];Y.m=R.prototype;var ua=E||F||C&&N(11)||D;var wa=/^([^;]+);(\d+);([\s\S]*)$/,xa=function(){var a=wa.exec(window.name);if(null===a)throw Error("Cannot parse serialized data");var b=+a[2],c=a[3];if(b>c.length)throw Error("Cannot parse serialized data");return{l:a[1],content:c.substr(0,b),i:c.substr(b)}};var ya=function(){var a=window.location.hash;return a?(a=a.match(/[&#]eid=([\d,]+)/))?a[1].split(","):[]:[]};(function(a){try{var b=xa(),c=ya(),e=JSON.parse(b.i),d=e.encryptionMode;a(b.content,void 0===d?null:d,function(a){ua&&(window.name="");e.goog_safeframe_hlt&&(t.goog_safeframe_hlt=e.goog_safeframe_hlt);e._context&&(t.AMP_CONTEXT_DATA=e._context);t.sf_={v:b.l,exp:c,cfg:e};var d=window;if(ua)d=d.document,d.open("text/html","replace"),d.write(a),d.close();else{var g;if(g=C&&N(7)&&!N(10))g=navigator.userAgent.match(/Trident\/([0-9]+.[0-9]+)/),g=6>(g?parseFloat(g[1]):0);if(g)a:{for(g=0;g<a.length;++g)if(127<a.charCodeAt(g)){g=!0;break a}g=!1}if(g){a=unescape(encodeURIComponent(a));g=Math.floor(a.length/2);for(var f=[],k=0;k<g;++k)f[k]=String.fromCharCode(256*a.charCodeAt(2*k+1)+a.charCodeAt(2*k));1==a.length%2&&(f[g]=a.charAt(a.length-1));a=f.join("")}d.goog_content=a;d.location.replace("javascript:window.goog_content")}},function(a){sa(a)})}catch(f){sa(f)}})(function(a,b,c){if(2===b){a=ia(a);b=[];for(var e=0,d=0;e<a.length;){var f=a[e++];if(128>f)b[d++]=String.fromCharCode(f);else if(191<f&&224>f){var h=a[e++];b[d++]=String.fromCharCode((f&31)<<6|h&63)}else if(239<f&&365>f){h=a[e++];var g=a[e++],m=a[e++];f=((f&7)<<18|(h&63)<<12|(g&63)<<6|m&63)-65536;b[d++]=String.fromCharCode(55296+(f>>10));b[d++]=String.fromCharCode(56320+(f&1023))}else h=a[e++],g=a[e++],b[d++]=String.fromCharCode((f&15)<<12|(h&63)<<6|g&63)}a=b.join("");a&&(b=a.toLowerCase(),a=-1<b.indexOf("<!doctype")||-1<b.indexOf("<html")?a:"<html><head></head><body>"+a+"</body></html>")}c(a)});}).call(this);
+    </script><script>var google_casm=[];</script></head><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><script>window.dicnf = {};(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pagead/adview?ai\u003dCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw\u0026sigh\u003dIt9CuVoKDrI\u0026tpd\u003dAGWhJmvJ2NNXpKVnByXt9fPpeixGv95e1Syot1JGlkn4_Kki2FdPdz3Go61YhvhhnyJ7p-GyjV54C-w5IjwOoG_MUr3W9IEYIvSuEt4HMyapl-5v66jLj8xBoWpaOLmFtcdFxc76fKUS-xXh5bVLM3W1juQB4UTipATstN7G04xrHeq1StYeNRtQtez8fQYKnBHUIRgo36rOv5NlSS2rF9ACsuxNDpHKAY-wiwyM0-svZh0jPLm1fmYpthXCm6x-UvdlSgiocd_NXIZOqBTqQOlyhwcB3UEq693Rn7PwtQGFe8HfkLCRvzp6uUSN6m5iIl8IrbUkCAACt7ZqpffZYrNM9Mx9cEKsRS13tbrda_O5EblXehQCFlB2qGY9S-AyxY3UTkyw80XdWCP26r52si8dOYGdYM2kVsDzOQEXR1yNisi0m4gW54EVCyX7YEorPPVRE9nRrRyg5ZDOJEkOJOCTrf-EznOkck8PgPoGtAgcN2Aw3yNB946g3XWg-8_R_E90oVftFqr3Wqq5z31UEjrTtM0ILj3CxuIKDm95_zLbFCwdLRxP4gQlMFzzr07Sc6JBqwXR6azKt05TbfPjbcvZ6IfvBXKddMrj-Ocjwms8rhTd-nhlfLvDiSVHupADjZ8GdFZ0JJeg-k0V0N0LgNgarDEOfSkf-3eDkvjnS5Sa-ShuVhTYM_gsHSWWKbFCpT-DZG_W7n5Xam3RMsjYHhqWFojoeWUY58eH65smrcu686Y2f96fDG1oDoToHO5Y0wufxvfzI_-CHPrGsf6xcEWgtjaT7u0WLapn_46cUxyHX4G_U3OaKL58OWf_ldY6PH-ezWzWmD90qsmZWjdN60Qh2FxjbbWMGji_CJfQoh6B6ew1Bfc3iW8HIHQOIs6mzer_sgVUqeUdQWsyTe7qY-3swxm31WDVScbC9zRjAI211-B0plS8FNRRY7sJXdzOAYUuiNF4w0B32ShZLC0kiyquqIJwOqB2oVKep4jOYk5t7O4Yf_kNrAGULTsL_EufbJN16lUFdxbWfd60aVM6qZN8cLA-B9YRJZ2T5h0FEk-INwe7jVQLoejzd1UBKl9HVoXYBtboJYUzTVnlUOSMjk1F2E18ktqgx31TNXxAtVyp2Me5OMnEPvwyOIoInpPnniQdz2QZgLqHvldz9aMmBHKEbSwwU5HH9dful5dJPNU3orv9AXo2eLB3_IppE4XDPUU_d9h5K7-HmrFDVE3Sz4y0BUEh-LUEsAbUYsjupLUXuE4l6hUSVtQU5iduJW5Ml0sYkgS2BWz39DTS1D7eOUTLwGZCzsoUL2BMcwyKU-_tYzuo2I5XwFr27HilKcdc2444CyswDgxWJNu3RIicoSlpZQWmfiQ3xk-VthIiPJQ9hXT-jALuhD0Fh6u5FuTBIgASoHySl4Z6Kp42VSOhEe75krAqtZn8zB6WLSZhMfQWUry9RrrFOwXqd4GLm69p0w3zZLe83TkzVSGgDARWnJrfK7qZBg8SVm83mhawbAviNTNHShCguJr_yCRKNQzwEc2M8UomWMJfv600wQJF4-v1w9Iq3_xJYpXyLAlLoUirkS7eW8yyNsy2-ioo88KDOZfS-pYo3kqPVY2CQbiYx5InmJFXdrtjUBY-oEGII86XSh4egoYm_qSl60oFNQdPEP9jXU1E6X-GxEt-hdgELYFAMRycO1k6KzeGg1ZXggPx2xhUUQXnK4sOTxYeiumS6OdiK71k0juKOndvhBV986pbMe2AUQvucMtFsyw5_ZDdGpSTOscZxR_5rURYKrXdrLFulepw6pJcs8HsS-UvZM8u5beKBLjA5o6t4hV5rusCPxOrt3y4pzENn1G0jXNeEk-dXRUuWRoKvg")</script><script language="JavaScript" src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/js"></script><script type="text/javascript">
+  function trackEvent(eType, msg) {
+    var pixelImg = new Image();
+    var pixelImgSrc = "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x69\x78\x65\x6C\x2E\x6D\x61\x74\x68\x74\x61\x67\x2E\x63\x6F\x6D\x2F\x65\x76\x65\x6E\x74\x2F\x69\x6D\x67\x3F\x6D\x74\x5F\x69\x64\x3D\x31\x33\x37\x30\x34\x34\x38\x26\x6D\x74\x5F\x61\x64\x69\x64\x3D\x32\x31\x36\x37\x36\x34\x26\x6D\x74\x5F\x6E\x73\x79\x6E\x63\x3D\x31";
+    var sumoImg = new Image();
+    var sumoImgSrc = "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x65\x6E\x64\x70\x6F\x69\x6E\x74\x31\x2E\x63\x6F\x6C\x6C\x65\x63\x74\x69\x6F\x6E\x2E\x75\x73\x32\x2E\x73\x75\x6D\x6F\x6C\x6F\x67\x69\x63\x2E\x63\x6F\x6D\x2F\x72\x65\x63\x65\x69\x76\x65\x72\x2F\x76\x31\x2F\x68\x74\x74\x70\x2F\x5A\x61\x56\x6E\x43\x34\x64\x68\x61\x56\x33\x77\x66\x39\x45\x41\x6D\x6C\x45\x70\x63\x6A\x36\x43\x43\x6B\x4E\x45\x32\x50\x76\x72\x41\x36\x44\x2D\x73\x5A\x69\x43\x77\x4A\x55\x6A\x70\x51\x79\x35\x53\x68\x67\x42\x67\x55\x43\x78\x39\x32\x65\x6B\x78\x62\x6B\x64\x6E\x7A\x49\x45\x4D\x6A\x64\x4C\x69\x33\x61\x51\x2D\x70\x71\x62\x4C\x35\x6C\x34\x66\x64\x62\x57\x37\x68\x39\x49\x39\x37\x4E\x51\x57\x2D\x77\x72\x44\x64\x6C\x34\x4B\x4D\x59\x7A\x46\x68\x31\x77\x32\x64\x53\x39\x44\x67\x3D\x3D\x3F";
+    var encodedMsg = encodeURIComponent(eType + (msg ? ': ' + msg || '' : ''));
+    var imgPath = 'https://creative.mathads.com/0001/31/12/e0/be/bf728e98c28d101c512197fa8332eba6.jpg';
+    var imgSize = '300' + 'x' + '250';
+    var expImgPath = null;
+    var expImgSize = null;
+    var referrer = encodeURIComponent(document.referrer) || 'REFERRER_NOT_AVAILABLE';
+    var client = window.navigator;
+
+    var vStr = '?s1=5315023626818618846&v1=4&v2=3414652438&v3=www.makeuseof.com&v4=633681&v5=4370141&v6=6602704&v7=' + imgPath + '&v8=' + imgSize + '&v9=' + expImgPath + '&v10=' + expImgSize + '&v11=' + referrer + '&v12=' + client.vendor + '&v13=' + client.appVersion + '&v14=' + client.language + '&v15=' + client.platform + '&v16=display_1.2&v17=' + encodedMsg;
+    pixelImg.src = pixelImgSrc + vStr;
+    sumoImg.src = sumoImgSrc + vStr;
+  };
+
+  try {
+    var http = "https://";
+    var swf_file = "";
+    var img_file = "0001/31/12/e0/be/bf728e98c28d101c512197fa8332eba6.jpg";
+    var dom = "creative.mathads.com";
+    var base = http + dom;
+    var swf = base + '/' + swf_file;
+    var img = base + '/' + img_file;
+
+    var as_clk = "";
+    var sa_clk = "https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19";
+    var ia_clk = "https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19";
+    if (ia_clk == "")
+      ia_clk = sa_clk;
+    var swf_clk = escape("http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&mt_id=6602704&mt_adid=221457&mt_sid=4370141&mt_exid=4&mt_inapp=0&mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&redirect=" + sa_clk);
+    var img_clk = "'http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&mt_id=6602704&mt_adid=221457&mt_sid=4370141&mt_exid=4&mt_inapp=0&mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&redirect=" + ia_clk + "'";
+    var fv = "clickTag=" + swf_clk + "&clickTAG=" + swf_clk + "&clickTag1=" + swf_clk + "&clicktag=" + swf_clk;
+    var cr_id = 'MM_c' + '6602704';
+    var sz = 'WIDTH="300" HEIGHT="250"';
+    var swf_tag =
+      '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ' +
+      'codebase="HTTP://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" ' +
+      'id="' + cr_id + '"' + sz + '>' +
+      '<param name="movie" value="' + swf + '">' +
+      '<param name="base" value="' + base + '">' +
+      '<param name="flashvars" value=' + fv + '>' +
+      '<param name="salign" value="lt">' +
+      '<param name="quality" value="high">' +
+      '<param name="wmode" value="opaque">' +
+      '<param name="allowScriptAccess" value="always">' +
+      '<embed SRC="' + swf + '" FLASHVARS="' + fv + '" ' + sz +
+      ' TYPE="application/x-shockwave-flash" QUALITY="high" ' +
+      'swliveconnect="true" WMODE="opaque" NAME="' + cr_id +
+      '" BASE="' + base + '" AllowScriptAccess="always"></embed>' +
+      '</object>';
+    var target = "'_blank'";
+    var img_tag =
+      '<img border="0" onload="trackEvent(\'CREATIVE_IMAGE_LOAD_SUCCESSFUL\');" onclick="window.open(' + img_clk + ', ' + target + ')" style="cursor: pointer;" src="' + img + '" ' + sz + '/>';
+
+    var flash = window.navigator.plugins['Shockwave Flash'];
+    var isChromium = window.chrome;
+    var vendorName = window.navigator.vendor;
+    var isOpera = window.navigator.userAgent.indexOf("OPR") > -1;
+    var isFF = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    var isOpera = window.navigator.userAgent.indexOf("OPR") > -1;
+    var ffPluginV = ["13.0.0.269", "13.0.0.277", "13.0.0.281", "13.0.0.289", "13.0.0.292", "13.0.0.296",
+      "13.0.0.302", "16.0.0.305", "17.0.0.134", "17.0.0.169", "17.0.0.188", "17.0.0.190",
+      "17.0.0.191", "18.0.0.160", "18.0.0.194", "18.0.0.203"
+    ];
+    var blockFireFox = false;
+    var blockChrome = false;
+    var chromeVersion;
+    if (isFF == true) {
+      for (var i = 0; i < ffPluginV.length; i++) {
+        if (flash && flash.version === ffPluginV[i]) {
+          blockFireFox = true;
+        }
+      }
+    } else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false) {
+      chromeVersion = getChromeVersion();
+      if (chromeVersion >= 44) {
+        blockChrome = true;
+      }
+    }
+
+    function getChromeVersion() {
+      var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+      return raw ? parseInt(raw[2], 10) : false;
+    }
+
+    var req_fver = parseFloat(0 + "") || 10;
+    var fver = 0;
+
+    function getFlashVer() {
+      var ver = "0";
+      try {
+        try {
+          var axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");
+          try {
+            axo.AllowScriptAccess = "always";
+          } catch (e) {
+            return 6;
+          }
+        } catch (e) { }
+        ver = new ActiveXObject("ShockwaveFlash.ShockwaveFlash").GetVariable("$version");
+      } catch (e) {
+        try {
+          if (navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin) {
+            ver = navigator.plugins["Shockwave Flash"].description;
+          }
+        } catch (e) { }
+      }
+      var matches = ver.match(/\d+\.?\d*/) || ["0"];
+      return parseFloat(matches[0]);
+    }
+
+    try {
+      fver = getFlashVer()
+    } catch (e) {
+      fver = 1
+    }
+
+    if (swf_file != "" && fver >= req_fver && !blockChrome && !blockFireFox) {
+      document.write(swf_tag);
+    } else {
+      document.write(img_tag);
+    }
+  } catch (error) {
+    trackEvent('Error', error.message);
+  }
+</script><img border="0" onload="trackEvent(&#39;CREATIVE_IMAGE_LOAD_SUCCESSFUL&#39;);" onclick="window.open(&#39;http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&amp;mt_id=6602704&amp;mt_adid=221457&amp;mt_sid=4370141&amp;mt_exid=4&amp;mt_inapp=0&amp;mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&amp;mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&amp;redirect=https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19&#39;, &#39;_blank&#39;)" style="cursor: pointer;" src="./bf728e98c28d101c512197fa8332eba6.jpg" width="300" height="250">
+<noscript>
+  <a href="http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&mt_id=6602704&mt_adid=221457&mt_sid=4370141&mt_exid=4&mt_inapp=0&mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&redirect=https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19" target="_blank"><img src="https://creative.mathads.com/0001/31/12/e0/be/bf728e98c28d101c512197fa8332eba6.jpg"
+         width="300" height="250" style="border:0;" /></a>
+</noscript>
+<div width="1" height="1" style="display:none; overflow:hidden"><img style="left:-10px;top:-10px; position:absolute" src="./img" width="1" height="1"><img style="left:-9px;top:-9px; position:absolute" src="./img(1)" width="1" height="1"></div><script type="text/javascript">
+  function trackEvent(eType, msg) {
+    var pixelImg = new Image();
+    var pixelImgSrc = "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x70\x69\x78\x65\x6C\x2E\x6D\x61\x74\x68\x74\x61\x67\x2E\x63\x6F\x6D\x2F\x65\x76\x65\x6E\x74\x2F\x69\x6D\x67\x3F\x6D\x74\x5F\x69\x64\x3D\x31\x33\x37\x30\x34\x34\x38\x26\x6D\x74\x5F\x61\x64\x69\x64\x3D\x32\x31\x36\x37\x36\x34\x26\x6D\x74\x5F\x6E\x73\x79\x6E\x63\x3D\x31";
+    var sumoImg = new Image();
+    var sumoImgSrc = "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x65\x6E\x64\x70\x6F\x69\x6E\x74\x31\x2E\x63\x6F\x6C\x6C\x65\x63\x74\x69\x6F\x6E\x2E\x75\x73\x32\x2E\x73\x75\x6D\x6F\x6C\x6F\x67\x69\x63\x2E\x63\x6F\x6D\x2F\x72\x65\x63\x65\x69\x76\x65\x72\x2F\x76\x31\x2F\x68\x74\x74\x70\x2F\x5A\x61\x56\x6E\x43\x34\x64\x68\x61\x56\x33\x77\x66\x39\x45\x41\x6D\x6C\x45\x70\x63\x6A\x36\x43\x43\x6B\x4E\x45\x32\x50\x76\x72\x41\x36\x44\x2D\x73\x5A\x69\x43\x77\x4A\x55\x6A\x70\x51\x79\x35\x53\x68\x67\x42\x67\x55\x43\x78\x39\x32\x65\x6B\x78\x62\x6B\x64\x6E\x7A\x49\x45\x4D\x6A\x64\x4C\x69\x33\x61\x51\x2D\x70\x71\x62\x4C\x35\x6C\x34\x66\x64\x62\x57\x37\x68\x39\x49\x39\x37\x4E\x51\x57\x2D\x77\x72\x44\x64\x6C\x34\x4B\x4D\x59\x7A\x46\x68\x31\x77\x32\x64\x53\x39\x44\x67\x3D\x3D\x3F";
+    var encodedMsg = encodeURIComponent(eType + (msg ? ': ' + msg || '' : ''));
+    var imgPath = 'https://creative.mathads.com/0001/31/12/e0/be/bf728e98c28d101c512197fa8332eba6.jpg';
+    var imgSize = '300' + 'x' + '250';
+    var expImgPath = null;
+    var expImgSize = null;
+    var referrer = encodeURIComponent(document.referrer) || 'REFERRER_NOT_AVAILABLE';
+    var client = window.navigator;
+
+    var vStr = '?s1=5315023626818618846&v1=4&v2=3414652438&v3=www.makeuseof.com&v4=633681&v5=4370141&v6=6602704&v7=' + imgPath + '&v8=' + imgSize + '&v9=' + expImgPath + '&v10=' + expImgSize + '&v11=' + referrer + '&v12=' + client.vendor + '&v13=' + client.appVersion + '&v14=' + client.language + '&v15=' + client.platform + '&v16=display_1.2&v17=' + encodedMsg;
+    pixelImg.src = pixelImgSrc + vStr;
+    sumoImg.src = sumoImgSrc + vStr;
+  };
+
+  try {
+    var http = "https://";
+    var swf_file = "";
+    var img_file = "0001/31/12/e0/be/bf728e98c28d101c512197fa8332eba6.jpg";
+    var dom = "creative.mathads.com";
+    var base = http + dom;
+    var swf = base + '/' + swf_file;
+    var img = base + '/' + img_file;
+
+    var as_clk = "";
+    var sa_clk = "https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19";
+    var ia_clk = "https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19";
+    if (ia_clk == "")
+      ia_clk = sa_clk;
+    var swf_clk = escape("http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&mt_id=6602704&mt_adid=221457&mt_sid=4370141&mt_exid=4&mt_inapp=0&mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&redirect=" + sa_clk);
+    var img_clk = "'http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&mt_id=6602704&mt_adid=221457&mt_sid=4370141&mt_exid=4&mt_inapp=0&mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&redirect=" + ia_clk + "'";
+    var fv = "clickTag=" + swf_clk + "&clickTAG=" + swf_clk + "&clickTag1=" + swf_clk + "&clicktag=" + swf_clk;
+    var cr_id = 'MM_c' + '6602704';
+    var sz = 'WIDTH="300" HEIGHT="250"';
+    var swf_tag =
+      '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ' +
+      'codebase="HTTP://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" ' +
+      'id="' + cr_id + '"' + sz + '>' +
+      '<param name="movie" value="' + swf + '">' +
+      '<param name="base" value="' + base + '">' +
+      '<param name="flashvars" value=' + fv + '>' +
+      '<param name="salign" value="lt">' +
+      '<param name="quality" value="high">' +
+      '<param name="wmode" value="opaque">' +
+      '<param name="allowScriptAccess" value="always">' +
+      '<embed SRC="' + swf + '" FLASHVARS="' + fv + '" ' + sz +
+      ' TYPE="application/x-shockwave-flash" QUALITY="high" ' +
+      'swliveconnect="true" WMODE="opaque" NAME="' + cr_id +
+      '" BASE="' + base + '" AllowScriptAccess="always"></embed>' +
+      '</object>';
+    var target = "'_blank'";
+    var img_tag =
+      '<img border="0" onload="trackEvent(\'CREATIVE_IMAGE_LOAD_SUCCESSFUL\');" onclick="window.open(' + img_clk + ', ' + target + ')" style="cursor: pointer;" src="' + img + '" ' + sz + '/>';
+
+    var flash = window.navigator.plugins['Shockwave Flash'];
+    var isChromium = window.chrome;
+    var vendorName = window.navigator.vendor;
+    var isOpera = window.navigator.userAgent.indexOf("OPR") > -1;
+    var isFF = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    var isOpera = window.navigator.userAgent.indexOf("OPR") > -1;
+    var ffPluginV = ["13.0.0.269", "13.0.0.277", "13.0.0.281", "13.0.0.289", "13.0.0.292", "13.0.0.296",
+      "13.0.0.302", "16.0.0.305", "17.0.0.134", "17.0.0.169", "17.0.0.188", "17.0.0.190",
+      "17.0.0.191", "18.0.0.160", "18.0.0.194", "18.0.0.203"
+    ];
+    var blockFireFox = false;
+    var blockChrome = false;
+    var chromeVersion;
+    if (isFF == true) {
+      for (var i = 0; i < ffPluginV.length; i++) {
+        if (flash && flash.version === ffPluginV[i]) {
+          blockFireFox = true;
+        }
+      }
+    } else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false) {
+      chromeVersion = getChromeVersion();
+      if (chromeVersion >= 44) {
+        blockChrome = true;
+      }
+    }
+
+    function getChromeVersion() {
+      var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+      return raw ? parseInt(raw[2], 10) : false;
+    }
+
+    var req_fver = parseFloat(0 + "") || 10;
+    var fver = 0;
+
+    function getFlashVer() {
+      var ver = "0";
+      try {
+        try {
+          var axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");
+          try {
+            axo.AllowScriptAccess = "always";
+          } catch (e) {
+            return 6;
+          }
+        } catch (e) { }
+        ver = new ActiveXObject("ShockwaveFlash.ShockwaveFlash").GetVariable("$version");
+      } catch (e) {
+        try {
+          if (navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin) {
+            ver = navigator.plugins["Shockwave Flash"].description;
+          }
+        } catch (e) { }
+      }
+      var matches = ver.match(/\d+\.?\d*/) || ["0"];
+      return parseFloat(matches[0]);
+    }
+
+    try {
+      fver = getFlashVer()
+    } catch (e) {
+      fver = 1
+    }
+
+    if (swf_file != "" && fver >= req_fver && !blockChrome && !blockFireFox) {
+      document.write(swf_tag);
+    } else {
+      document.write(img_tag);
+    }
+  } catch (error) {
+    trackEvent('Error', error.message);
+  }
+</script><img border="0" onload="trackEvent(&#39;CREATIVE_IMAGE_LOAD_SUCCESSFUL&#39;);" onclick="window.open(&#39;http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&amp;mt_id=6602704&amp;mt_adid=221457&amp;mt_sid=4370141&amp;mt_exid=4&amp;mt_inapp=0&amp;mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&amp;mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&amp;redirect=https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19&#39;, &#39;_blank&#39;)" style="cursor: pointer;" src="./bf728e98c28d101c512197fa8332eba6.jpg" width="300" height="250"><img border="0" onload="trackEvent(&#39;CREATIVE_IMAGE_LOAD_SUCCESSFUL&#39;);" onclick="window.open(&#39;http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&amp;mt_id=6602704&amp;mt_adid=221457&amp;mt_sid=4370141&amp;mt_exid=4&amp;mt_inapp=0&amp;mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&amp;mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&amp;redirect=https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19&#39;, &#39;_blank&#39;)" style="cursor: pointer;" src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/bf728e98c28d101c512197fa8332eba6.jpg" width="300" height="250">
+<noscript>
+  <a href="http://pixel.mathtag.com/click/img?mt_aid=5315023626818618846&mt_id=6602704&mt_adid=221457&mt_sid=4370141&mt_exid=4&mt_inapp=0&mt_uuid=876d5c92-3c9c-4800-85d6-4dbfccf24b3a&mt_3pck=https%3A//adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw%26num%3D1%26sig%3DAOD64_1a91YJ0ia0TTAGMOZpj7kv-2zEBw%26client%3Dca-pub-4276969157128104%26adurl%3D&redirect=https%3A%2F%2Fwww.forestessentialsindia.com%2F%3Futm_source%3Dzirca%26utm_medium%3Dcpm%26utm_campaign%3Dfeb19" target="_blank"><img src="https://creative.mathads.com/0001/31/12/e0/be/bf728e98c28d101c512197fa8332eba6.jpg"
+         width="300" height="250" style="border:0;" /></a>
+</noscript>
+<div width="1" height="1" style="display:none; overflow:hidden"><img style="left:-10px;top:-10px; position:absolute" src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/img" width="1" height="1"><img style="left:-9px;top:-9px; position:absolute" src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/img(1)" width="1" height="1"></div><script src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/f(1).txt" async=""></script><script>function initWindowFocus() {window['window_focus_for_click'] =wfocusnhinit("https://googleads.g.doubleclick.net/pagead/conversion/?ai\u003dCPBvD3kCSXMvcCtqKrQGm06WAB-2j97xNl8ueuIQBwI23ARABIABg5ZLog9gOggEXY2EtcHViLTQyNzY5NjkxNTcxMjgxMDTIAQngAgCoAwGqBO8BT9DTDEmSM5bV4wsLzVNtlYU6KC304AaNoMFRnjDGoD4jUmd5xoWMJNFKJOPz3uLDBfI4ByIWndDUDpIkI60lO36yuT_eFwT6Iz15GMlMJ2ZXecuQLsmCF1R7KDiLfBhNsLwB8u72fF4M2f_UcSx6jIn9DLf_Zp6XcEKuYUfST2Jmkf3LCzQmvfH8qlm_oYmCIFIsOk6W5nUOE87imQIGZg0qawiU81mwtOH-0QksNsTtK3PeWrt4NrP3fubedpc3rQkXqAj_drc7i92A56PxfxZFFGwZbmfNj5oMBcGjWBb2JNf6NaEPUr0i8kgRXa3gBAGABsew2bjg5Lar2gGgBiGoB6a-G6gH2csbqAfPzBvYBwDSCAUIgGEQAfIIG2FkeC1zdWJzeW4tNDkxNDE4NDM3OTkxNTY4Mw\u0026sigh\u003doRGKitIywrQ\u0026cid\u003dCAQSPADwy9IZUFTybRfSB7xqssdI1lzRQtw9sTRGuXcG4IdBvaJTJdOS3k6sDJ9g_3d3mZ6X30W1hDm731QuAA","","CMvDuLLqkOECFVpFKwodpmkJcA");}if (window.wfocusnhinit) {initWindowFocus();} else {window['google_wf_async'] = initWindowFocus;}</script><iframe title="Blank" scrolling="no" frameborder="0" height="0" width="0" src="./cookie_push(2).html" style="position:absolute" aria-hidden="true"></iframe><script src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/osd_listener.js.download"></script><script type="text/javascript">osdlfm(-1,'','BDZfe3kCSXMvcCtqKrQGm06WABwCXy564hAEAABABOAHIAQngAgDgBAGgBiHSCAUIgGEQAQ','',2770333390,true,'ud\u003d1\u0026la\u003d0\u0026alp\u003dai\u0026alh\u003d427695538\u0026xdi\u003d0\u0026',3,'CAASFeRolE2oFzi4HlqoqpTWyZvMqQHPBg','https://pagead2.googlesyndication.com/pcs/activeview?xai\u003dAKAOjsuGl4VNQoVKjYkaiyITHTMGCMDrVx2xTaKkfGrQZeLxaQyBIQ-8lzSocQY-g2Rr9HivCs03rgh4sF3_oyUYbKqCYg\u0026sig\u003dCg0ArKJSzBMW3juMB8MSEAE\u0026cid\u003dCAASFeRolE2oFzi4HlqoqpTWyZvMqQHPBg','');</script><script src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/f(2).txt"></script><script>googqscp.init([[[[null,500,99,2,9,null,null,null,1]]],null,null,null,null,null,null,null,0]);</script><div style="display: none; position: absolute; z-index: 2147483647; width: 100%; height: 100%; top: 0px; left: 0px;"></div><div style="display: none; position: absolute; z-index: 2147483647; width: 100%; height: 100%; top: 0px; left: 0px;"></div><img src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/l(1)" style="display:none;" alt=""><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script><script src="file:///F:/course%20curriculam/arduino_programs/The%20Traffic%20Light%20Controller_files/ext.js.download"></script><div style="bottom:0;right:0;width:300px;height:250px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:pixelated !important;z-index:2147483647;background-image:url(&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB/SURBVBjTbVEBEoAwCMIf8P/XdhNw1mXtLhsiIvAfpTgfOwP7lqBeZ3UQWE9nwjXKaGWDFvdCh5u8WXoPs5Uk+NENi9YpBCxWSHmkV0pU5j+eztzsSlJXJVxNj62EM+j1LNo97swVO9TquhAd8Zt88b4cRJZk4Ws7KV3bsw5TP6k8Bi1XYjtkAAAAAElFTkSuQmCC&#39;) !important;"></div>
+  
+  
+  
+
+</body></html>

@@ -1,0 +1,141 @@
+var tt = TweenMax.to, tf = TweenMax.from, tft = TweenMax.fromTo,td = TweenMax.delayedCall, ts = TweenMax.set, tweenDelay = .5;
+
+
+
+init = function(){
+	build_timeline_main();
+	addListeners();	
+}
+function random(min, max) {
+  if (max == null) { max = min; min = 0; }
+  return Math.random() * (max - min) + min;
+}
+function build_timeline_main() {	
+	
+	function bg2In() {
+		var bg2TL = new TimelineMax();
+			bg2TL.fromTo(scrub_bar, 10, {scaleX:.2}, {scaleX:.8, transformOrigin:"28px 100%", ease:Power0.easeNone},"start")		
+		return bg2TL;		
+	}	
+	
+	function bg1In() {
+		var bg1TL = new TimelineMax();
+			bg1TL.timeScale(.65)
+				.add("start1")
+				.to(img_table, .2, {scaleY:.1, transformOrigin:"80px 213px", ease:"Power3.easeIn", force3D:true},"start1")
+				.to(img_table, .1, {scaleX:.5, x:-10, rotation:10, transformOrigin:"80px 213px"},"start1+=.15")
+				.to(img_table, .2, {scaleX:.25, x:-60, y:-50, rotation:40, transformOrigin:"80px 213px"},"start1+=.25")
+				.to(img_vacum, .2, {rotation:2, scale:1.01, transformOrigin:"58px 133px", ease:"Power3.easeIn"},"start1")
+				
+				.add("start2", "-=.2")
+				.to(img_man, .2, {scaleY:.1, y:20, transformOrigin:"88px 187px", ease:"Power3.easeIn"},"start2")
+				.to(img_man, .1, {scaleX:.5, x:-20, rotation:10, transformOrigin:"88px 187px"},"start2+=.15")
+				.to(img_man, .2, {scaleX:.25, x:-100, y:-50, rotation:40, transformOrigin:"88px 187px"},"start2+=.25")
+				.to(img_vacum, .2, {rotation:0, scale:1, transformOrigin:"58px 133px", ease:"Power3.easeIn"},"start2")
+			
+			
+				.add("start2", "-=.2")
+				.to(img_woman, .2, {scaleY:.1, y:20, x:-10, transformOrigin:"150px 187px", ease:"Power3.easeIn"},"start2")
+				.to(img_woman, .1, {scaleX:.5, x:-50, rotation:10, transformOrigin:"150px 187px"},"start2+=.15")
+				.to(img_woman, .2, {scaleX:.25, x:-250, y:-50, rotation:40, transformOrigin:"150px 187px"},"start2+=.25")
+		
+		
+				.add("start3", "-=.3")
+				.to(img_vacum, .2, {rotation:-2, scale:1.01, transformOrigin:"58px 133px", ease:"Power3.easeIn"},"start3")
+				
+				.staggerTo(".brick", .2, {scaleY:.5, y:35, x:-30, transformOrigin:"150px 187px", ease:"Power3.easeIn"},.02, "start3")
+				.staggerTo(".brick", .2, {scaleX:.75, x:-70, rotation:10, transformOrigin:"150px 187px"},.02, "start3+=.15")
+				.staggerTo(".brick", .2, { x:-290, y:-80, transformOrigin:"150px 187px"},.02, "start3+=.25")
+		
+				.add("start4", "-=.4")
+				.to(img_brick10, .2, {scaleY:.1, y:30, x:-10, transformOrigin:"150px 187px", ease:"Power3.easeIn"},"start4")
+				.to(img_brick10, .1, {scaleX:.5, x:-50, rotation:10, transformOrigin:"150px 187px"},"start4+=.15")
+				.to(img_brick10, .2, {scaleX:.25, x:-220, y:-50, rotation:60, transformOrigin:"150px 187px"},"start4+=.25")
+		
+				/*
+				.to(img_table, .4, {skewX:"85deg", rotation:80, 
+					bezier: {type: "soft", values:[{x:-10, y:50},{x:-55, y:-150}],autoRotate: false}, transformOrigin:"80px 213px", ease:"Power3.easeIn"},"start1")
+			*/
+		
+		/*
+				.to(img_man, .4, {skewX:"85deg", scale:.05, rotation:50, 
+					bezier: {type: "soft", values:[{x:-10, y:130},{x:-35, y:-50}],autoRotate: false}, transformOrigin:"88px 187px", ease:"Power3.easeIn"},"start1+=.1")
+				.to(img_vacum, .2, {rotation:-2, scale:1.01, transformOrigin:"58px 133px", ease:"Power3.easeIn"},"start1+=.2")
+			
+				.to(img_woman, .4, {skewX:"85deg", scale:.05, rotation:50, 
+					bezier: {type: "soft", values:[{x:-50, y:120},{x:-115, y:-50}],autoRotate: false}, transformOrigin:"150px 187px", ease:"Power3.easeIn"},"start1+=.2")
+				.to(img_vacum, .2, {rotation:-4, scale:1.02, transformOrigin:"58px 133px", ease:"Power3.easeIn"},"start1+=.3")
+			*/
+		
+		return bg1TL;		
+	}	
+	
+	//Show Ad
+	ts("#container_dc", {display:"block"});
+	var mainTL = new TimelineMax();
+		mainTL.to(bgFade, .25, {autoAlpha:0, ease:Power1.easeInOut, overwrite:"none", onComplete:hideBGFade})
+		.set(["#main_img","#main_img2"], {scale:1.5, x:40, y:250},"fr0" )
+		.add("fr1", "+=0")
+		.staggerFromTo("#copy1 .text1", .01, {autoAlpha:0},{autoAlpha:1, ease:"Power3.easeOut"},1.2,"fr1+=.2")	
+		
+		.add("fr1_out", "+=1.5")
+		//
+		.add(bg1In,"fr1_out+=0")
+		.add(bg2In,"fr1_out-=.1")
+		.from("#anim_container", .01, {autoAlpha:0, ease:"Power3.easeOut"},"fr1_out" )
+		.to("#copy1", .01, {autoAlpha:0, ease:"Power3.easeOut"},"fr1_out+=.25" )
+			
+			
+		//.addPause()		
+		.add("fr2", "+=2")
+		.to("#anim_container", .01, {autoAlpha:0, ease:"Power3.easeInOut"},"fr2" )
+		.staggerFromTo("#copy2 .text1", .01, {autoAlpha:0},{autoAlpha:1, ease:"Power3.easeOut"},1.25,"fr2+=.3")
+
+		.add("fr3", "+=2")
+		
+		.to("#copy2", .01, {autoAlpha:0,ease:"Power3.easeOut"},"fr3" )
+		.staggerFromTo("#copy3 .text1", .5, {autoAlpha:0, x:-20},{autoAlpha:1, x:0,  ease:"Power3.easeOut"},.07,"fr3+=.3" )
+		.staggerFromTo("#copy3 .text2", .5, {autoAlpha:0, x:-20},{autoAlpha:1, x:0, ease:"Power3.easeOut"},.07,"+=.25" )
+		.add("ef")
+		.call(function(){console.log(mainTL.duration());});
+		//mainTL.seek("fr1_out")		
+}
+
+
+
+hideBGFade = function(){
+	bgFade.style.display = "none";
+}
+
+
+//Add Event Listeners
+setRoll = function(){
+	var x = document.getElementById("background_exit_dc");
+	if (x.addEventListener) {                    
+		// For all major browsers, except IE 8 and earlier
+	    x.addEventListener('mouseover', bgOverHandler, false);
+	    x.addEventListener('mouseout', bgOutHandler, false);
+	} else {                  
+		// For IE 8 and earlier versions hide rollover effect
+	}
+}
+addListeners = function() {
+	setRoll();
+}
+
+
+bgOverHandler = function(e) {
+	ts(cta, {autoAlpha:.7, overwrite:"true"});			
+}
+
+bgOutHandler = function(e) {
+	ts(cta, {autoAlpha:1, overwrite:"true"});			
+}
+
+
+
+function bgExitHandler() {
+
+}
+
+

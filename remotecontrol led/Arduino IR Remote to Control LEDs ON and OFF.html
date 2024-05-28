@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:admins" content="100000360226458">
+
+		<title>Arduino IR Remote to Control LEDs ON and OFF</title>
+		<link rel="stylesheet" href="./Arduino IR Remote to Control LEDs ON and OFF_files/magnific-popup.css">
+		<link rel="stylesheet" href="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery.mCustomScrollbar.css">
+		<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/pd.js.download"></script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/get"></script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/optout_check"></script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/326370694411850" async=""></script><script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/55649c11dabbd5919e00015f.js.download"></script><script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/analytics.js.download"></script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/eef4e751-7bcd-435e-8a7a-a39ab785c404"></script><script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/controltag.js.09ebc571a022d419934530eaf14c8a78"></script><script type="text/javascript" async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/electroschematics.js.download"></script><script type="text/javascript" async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/UFYwWwmt.js.download"></script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/sdk.js.download" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/UFYwWwmt.js.download"></script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/osd.js.download"></script><script id="twitter-wjs" src="./Arduino IR Remote to Control LEDs ON and OFF_files/widgets.js.download"></script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/amp4ads-host-v0.js.download"></script><script id="facebook-jssdk" src="./Arduino IR Remote to Control LEDs ON and OFF_files/sdk.js(1).download"></script><script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/analytics.js.download"></script><script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/gtm.js.download"></script><script type="text/javascript" async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/sbnf4txm4.js.download"></script><script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery-2.2.4.min.js.download" type="text/javascript"></script>
+		
+
+
+	  
+<!-- This site is optimized with the Yoast SEO plugin v9.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="I made this Arduino project that allows to turn ON and OFF LEDs using a cheap IR remote control as a preparation for the next big step: disassemble my">
+<link rel="canonical" href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arduino IR Remote to Control LEDs ON and OFF">
+<meta property="og:description" content="I made this Arduino project that allows to turn ON and OFF LEDs using a cheap IR remote control as a preparation for the next big step: disassemble my">
+<meta property="og:url" content="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/">
+<meta property="og:site_name" content="ElectroSchematics.com">
+<meta property="article:tag" content="infrared receivers">
+<meta property="article:section" content="Arduino">
+<meta property="article:published_time" content="2014-01-11T10:51:47+00:00">
+<meta property="article:modified_time" content="2014-01-11T13:27:07+00:00">
+<meta property="og:updated_time" content="2014-01-11T13:27:07+00:00">
+<meta property="og:image" content="https://www.electroschematics.com/wp-content/uploads/2014/01/arduino-led-ir-remote-schematic.jpg">
+<meta property="og:image:secure_url" content="https://www.electroschematics.com/wp-content/uploads/2014/01/arduino-led-ir-remote-schematic.jpg">
+<meta property="og:image:width" content="1035">
+<meta property="og:image:height" content="1296">
+<meta property="og:image:alt" content="arduino led ir remote schematic">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="I made this Arduino project that allows to turn ON and OFF LEDs using a cheap IR remote control as a preparation for the next big step: disassemble my">
+<meta name="twitter:title" content="Arduino IR Remote to Control LEDs ON and OFF">
+<meta name="twitter:image" content="https://www.electroschematics.com/wp-content/uploads/2014/01/arduino-led-ir-remote-schematic.jpg">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="ElectroSchematics.com » Control LEDs ON/OFF with IR Remote and Arduino Comments Feed" href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.electroschematics.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="yarppWidgetCss-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="etuts-style-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="arconix-shortcodes-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/arconix-shortcodes.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="cookie-law-info-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/cookie-law-info-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="cookie-law-info-gdpr-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/cookie-law-info-gdpr.css" type="text/css" media="all">
+<link rel="stylesheet" id="stcr-font-awesome-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/font-awesome.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="wpProQuiz_front_style-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/wpProQuiz_front.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-q2a-style-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/style-q2a.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-lightbox-2.min.css-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/lightbox.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wppb_stylesheet-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/style-front-end.css" type="text/css" media="all">
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery.matchHeight.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/comments.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/singlepage.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery.mCustomScrollbar.concat.min.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/main.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/jquery.magnific-popup.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[]};
+var log_object = {"ajax_url":"https:\/\/www.electroschematics.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/cookie-law-info-public.js.download"></script>
+<link rel="https://api.w.org/" href="https://www.electroschematics.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.electroschematics.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.electroschematics.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="shortlink" href="https://www.electroschematics.com/?p=9522">
+<link rel="alternate" type="application/json+oembed" href="https://www.electroschematics.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.electroschematics.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F&amp;format=xml">
+<link rel="stylesheet" type="text/css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/desert.css" media="screen">
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+		<link rel="icon" href="https://www.electroschematics.com/wp-content/uploads/2016/05/cropped-favicon-1-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://www.electroschematics.com/wp-content/uploads/2016/05/cropped-favicon-1-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.electroschematics.com/wp-content/uploads/2016/05/cropped-favicon-1-180x180.jpg">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2016/05/cropped-favicon-1-270x270.jpg">
+
+		<!-- BEGIN Krux ControlTag for "AspenCore Generic" -->
+		<script class="kxct" data-id="sbnf4txm4" data-timing="async" data-version="3.0" type="text/javascript">
+		    window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+		    (function(){
+		        var k=document.createElement('script');k.type='text/javascript';k.async=true;
+		        k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/sbnf4txm4.js';
+		        var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+		    }());
+		</script>
+		<!-- END Krux ControlTag -->
+
+		<script class="kxint" data-namespace="aspencore" type="text/javascript">
+		    window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+		    (function(){
+		        function retrieve(n){
+		            var k= 'kx'+'aspencore_'+n, ls=(function(){
+		                try {
+		                    return window.localStorage;
+		                } catch(e) {
+		                    return null;
+		                }
+		            })();
+		            if (ls) {
+		                return ls[k] || '';
+		            } else if (navigator.cookieEnabled) {
+		                var m = document.cookie.match(k+'=([^;]*)');
+		                return (m && unescape(m[1])) || '';
+		            } else {
+		                return '';
+		            }
+		        }
+		        Krux.user = retrieve('user');
+		        Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
+		    })();
+		</script>
+
+		<link rel="pingback" href="https://www.electroschematics.com/xmlrpc.php">
+
+		<script async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/platform.js.download" gapi_processed="true"></script>
+		<script type="text/javascript">
+			(function() {
+				var useSSL = 'https:' == document.location.protocol;
+				var src = (useSSL ? 'https:' : 'http:') +
+					'//www.googletagservices.com/tag/js/gpt.js';
+				document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+			})();
+		</script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/gpt.js.download"></script><script id="gpt-impl-0.09957461821134972" src="./Arduino IR Remote to Control LEDs ON and OFF_files/pubads_impl_2019032501.js.download"></script><link rel="preload" href="./Arduino IR Remote to Control LEDs ON and OFF_files/f.txt" as="script"><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/f.txt"></script><script>processGoogleTokenSync({"newToken":"FBS"},5);</script>
+		
+		
+		<script type="text/javascript">
+			var google_ads = [];
+			googletag.cmd.push(function() {
+
+				// modify the [800, 600] to set the max screen size to display the mobile ad size
+				var billboardMapping = googletag.sizeMapping().
+				addSize([800,375], [970, 250]).
+				addSize([0, 0], [320, 50]).
+				build();
+
+				var leaderMapping = googletag.sizeMapping().
+				addSize([800,300], [728, 90]).
+				addSize([0, 0], [320, 60]).
+				build();
+
+				var filmstripMapping = googletag.sizeMapping().
+				addSize([800,600], [300,  600]).
+				addSize([0, 0], [300, 300]).
+				build();
+
+				google_ads.push(googletag.defineSlot('/74317539/ElectroSchematics', [[970, 250], [320, 50]], 'div-gpt-ad-billboard-smartphonebanner').setTargeting('sec', ['arduino']).defineSizeMapping(billboardMapping).addService(googletag.pubads()));
+				googletag.defineSlot('/74317539/ElectroSchematics', [300, 250], 'div-gpt-ad-medium-rectangle').setTargeting('sec', ['arduino']).addService(googletag.pubads());
+				google_ads.push(googletag.defineSlot('/74317539/ElectroSchematics', [[300, 600], [300, 300]], 'div-gpt-ad-filmstrip').setTargeting('sec', ['arduino']).defineSizeMapping(filmstripMapping).addService(googletag.pubads()));
+				google_ads.push(googletag.defineSlot('/74317539/ElectroSchematics', [[728,  90], [320, 60]], 'div-gpt-ad-leader-smartphonebanner').setTargeting('sec', ['arduino']).defineSizeMapping(leaderMapping).addService(googletag.pubads()));
+				googletag.defineSlot('/74317539/ElectroSchematics', [[300, 450]], 'div-gpt-ad-ti-featured-design').setTargeting('sec', ['tidesigns']).addService(googletag.pubads());
+                                googletag.defineSlot('/74317539/ElectroSchematics',[4, 4],'div-gpt-ad-inread').addService(googletag.pubads());
+                /* Add fluid tags */
+					googletag.defineSlot('/74317539/ElectroSchematics', ['fluid'], 'div-gpt-ad-fluid').addService(googletag.pubads());
+				/* End of fluid tags */
+                                // googletag.pubads().enableSingleRequest();
+				// googletag.pubads().enableSyncRendering();
+				// googletag.enableServices();
+
+				googletag.pubads().enableSingleRequest();
+
+									googletag.pubads().setTargeting('kw',["infrared_receivers","arduino","tested"]);
+				
+	            	            googletag.pubads().setTargeting('aid', '9522');
+	            
+	            googletag.pubads().setTargeting("ksg", Krux.segments);
+	            googletag.pubads().setTargeting("kuid", Krux.user);
+
+				googletag.pubads().enableSyncRendering();
+				googletag.enableServices();
+			});
+		</script>
+	<script>bazadebezolkohpepadr="332525717"</script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/13d1f191" defer=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html"><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/teads-format.min.js.download" async=""></script><link rel="stylesheet" href="./Arduino IR Remote to Control LEDs ON and OFF_files/widget(1).css"><script type="text/javascript" async="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/tagjs"></script><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(1)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(2)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(3)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(4)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(5)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(6)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(7)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(1)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(1)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(2)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(2)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(3)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(3)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(4)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(4)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(5)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(5)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(6)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(6)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tr(7)" width="1" height="1" border="0"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/seg(7)" width="1" height="1" border="0"><style type="text/css" id="teads-format-css">.teads-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0;cursor:pointer}.teads-inboard,.teads-inread{overflow:hidden;height:0;-webkit-transition:height .5s;-moz-transition:height .5s;-o-transition:height .5s;-ms-transition:height .5s;transition:height .5s;box-sizing:content-box}.teads-inboard.no-transition,.teads-inread.no-transition{-webkit-transition:none;-moz-transition:none;-o-transition:none;-ms-transition:none;transition:none}.teads-inboard div,.teads-inread div{margin-bottom:0!important}div.teads-inboard div:after,div.teads-inboard div:before,div.teads-inread div:after,div.teads-inread div:before{display:none!important}div.teads-inread.teads-display{margin-bottom:10px!important}div.teads-inread.teads-third-party-display{height:auto!important}</style><style id="teads-inline-74903" class="teads-inline-style">div.teads-expand div.teads-ui-components-label,div.teads-inboard div.teads-ui-components-label,div.teads-inread div.teads-ui-components-label{font-family:Helvetica,Arial,sans-serif!important;font-size:11.5px!important;color:#aaa;text-align:center!important;text-transform:uppercase!important;height:21px!important;line-height:21px!important;letter-spacing:.3px!important;font-weight:300!important}div.teads-inboard div.teads-ui-components-label:after,div.teads-inboard div.teads-ui-components-label:before,div.teads-inread div.teads-ui-components-label:after,div.teads-inread div.teads-ui-components-label:before{display:none!important}div.teads-inboard.sm-screen div.teads-ui-components-label,div.teads-inboard.xs-screen div.teads-ui-components-label,div.teads-inread.sm-screen div.teads-ui-components-label,div.teads-inread.xs-screen div.teads-ui-components-label{font-size:10px!important}</style><style id="teads-inline-40593" class="teads-inline-style">div.teads-expand div.teads-ui-components-credits,div.teads-inboard div.teads-ui-components-credits,div.teads-inread div.teads-ui-components-credits{font-family:Helvetica,Arial,sans-serif!important;font-size:11.5px!important;color:#aaa!important;text-align:right!important;padding:1px 0!important;height:26px!important;line-height:26px!important;padding-right:4px!important;letter-spacing:.3px!important}div.teads-expand div.teads-ui-components-credits a span,div.teads-inboard div.teads-ui-components-credits a span,div.teads-inread div.teads-ui-components-credits a span{display:inline!important}div.teads-expand div.teads-ui-components-credits a,div.teads-expand div.teads-ui-components-credits a span,div.teads-inboard div.teads-ui-components-credits a,div.teads-inboard div.teads-ui-components-credits a span,div.teads-inread div.teads-ui-components-credits a,div.teads-inread div.teads-ui-components-credits a span{font-family:Helvetica,Arial,sans-serif!important;font-size:11.5px!important;box-shadow:none!important;letter-spacing:.3px!important}div.teads-expand.sm-screen div.teads-ui-components-credits a,div.teads-expand.sm-screen div.teads-ui-components-credits a span,div.teads-expand.xs-screen div.teads-ui-components-credits a,div.teads-expand.xs-screen div.teads-ui-components-credits a span,div.teads-inboard.sm-screen div.teads-ui-components-credits a,div.teads-inboard.sm-screen div.teads-ui-components-credits a span,div.teads-inboard.xs-screen div.teads-ui-components-credits a,div.teads-inboard.xs-screen div.teads-ui-components-credits a span,div.teads-inread.sm-screen div.teads-ui-components-credits a,div.teads-inread.sm-screen div.teads-ui-components-credits a span,div.teads-inread.xs-screen div.teads-ui-components-credits a,div.teads-inread.xs-screen div.teads-ui-components-credits a span{font-family:Helvetica,Arial,sans-serif!important;font-size:9px!important;box-shadow:none!important;letter-spacing:.3px!important}div.teads-inboard.xs-screen div.teads-ui-components-credits,div.teads-inread.sm-screen div.teads-ui-components-credits{font-size:9px!important;letter-spacing:.3px!important}div.teads-expand .teads-ui-components-credits a,div.teads-inboard .teads-ui-components-credits a,div.teads-inread .teads-ui-components-credits a{color:#aaa!important;text-decoration:none!important;font-weight:300!important;border:none!important;letter-spacing:.3px!important;background:none!important;padding:0!important}div.teads-expand.sm-screen .teads-ui-components-credits a,div.teads-expand.xs-screen .teads-ui-components-credits a,div.teads-inboard.sm-screen .teads-ui-components-credits a,div.teads-inboard.xs-screen .teads-ui-components-credits a,div.teads-inread.sm-screen .teads-ui-components-credits a,div.teads-inread.xs-screen .teads-ui-components-credits a{font-size:9px!important;letter-spacing:.3px!important}div.teads-expand div.teads-ui-components-credits span.teads-ui-components-credits-colored,div.teads-inboard div.teads-ui-components-credits span.teads-ui-components-credits-colored,div.teads-inread div.teads-ui-components-credits span.teads-ui-components-credits-colored{color:#79bbe9!important}div.teads-inboard div.teads-ui-components-credits a:after,div.teads-inboard div.teads-ui-components-credits a:before,div.teads-inboard div.teads-ui-components-credits span:after,div.teads-inboard div.teads-ui-components-credits span:before,div.teads-inread div.teads-ui-components-credits a:after,div.teads-inread div.teads-ui-components-credits a:before,div.teads-inread div.teads-ui-components-credits span:after,div.teads-inread div.teads-ui-components-credits span:before{display:none!important}</style><style id="teads-inline-99796" class="teads-inline-style">.teads-expand .teads-ui-components-adchoices,.teads-inread .teads-ui-components-adchoices{color:#000;font-family:arial;font-size:11px;cursor:pointer;position:absolute;top:3px;right:5px;width:15px;height:15px;line-height:15px;padding:1px;background:url("data:image/svg+xml;base64,PHN2Zw0KICB2ZXJzaW9uPSIxLjEiDQogIGJhc2VQcm9maWxlPSJmdWxsIg0KICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8c3R5bGU+DQogICAgLyogPCFbQ0RBVEFbICovDQogICAgLmFkY2hvaWNlcyB7DQogICAgICB0ZXh0LXJlbmRlcmluZzogZ2VvbWV0cmljUHJlY2lzaW9uOw0KICAgICAgZmlsbC1vcGFjaXR5OiAxLjA7DQogICAgICBmaWxsOiAjMDBhZWNkOw0KICAgICAgc3Ryb2tlOiBub25lOw0KICAgIH0NCiAgICAvKiBdXT4gKi8NCiAgPC9zdHlsZT4NCiAgPHN2ZyBjbGFzcz0iYWRjaG9pY2VzIiB4PSIwcHgiPg0KICAgIDxjaXJjbGUgY3g9IjYiIGN5PSI2IiByPSIwLjY3Ij48L2NpcmNsZT4NCiAgICA8cGF0aCBkPSJNNC4yLDExLjNRMy4zLDExLjgsMy4zLDEwLjc1TDMuMyw0LjFRMy4zLDMuMSw0LjMsMy41TDEwLjQsNy4wUTEyLjAsNy41LDEwLjQsOC4wTDYuNjUsMTAuMEw2LjY1LDcuNzVhMC42NSwwLjY1LDAsMSwwLC0xLjMsMEw1LjM1LDEwLjc1YTAuOSwwLjksMCwwLDAsMS4zLDAuOEwxMi43LDguMlExMy43LDcuNSwxMi43LDYuN0wzLjMsMS42UTIuMiwxLjMsMS44LDIuNUwxLjgsMTIuNVEyLjIsMTMuOSwzLjMsMTMuM0w0LjgsMTIuNUEwLjMsMC4zLDAsMSwwLDQuMiwxMS4zWiI+PC9wYXRoPg0KICA8L3N2Zz4NCjwvc3ZnPg0K");background-size:15px 15px;background-repeat:no-repeat;background-position:100%;z-index:1}.teads-expand .teads-ui-components-adchoices.expanded:first-child,.teads-inread .teads-ui-components-adchoices.expanded:first-child{border-bottom-left-radius:8px;padding:1px 17px 1px 4px;background-color:hsla(0,0%,100%,.8)}.teads-expand .teads-ui-components-adchoices.expanded,.teads-inread .teads-ui-components-adchoices.expanded{width:auto;padding-right:19px}.teads-inread .teads-ui-components-adchoices span{display:none}.teads-expand .teads-ui-components-adchoices.expanded span,.teads-inread .teads-ui-components-adchoices.expanded span{display:inline}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/analytics"></script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/analytics(1)"></script></head>
+	<body class="" style="padding-bottom: 0px;">
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KMPGTZ"
+					  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KMPGTZ');</script>
+	<!-- End Google Tag Manager -->
+
+			<!-- analytics -->
+		<script type="text/javascript">
+			window.google_analytics_uacct = "UA-4765780-3";
+		</script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-4765780-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<!-- analytics -->
+		
+				<script>
+		    dmpDataLayer = [{"title":"Control LEDs ON\/OFF with IR Remote and Arduino","section":["Arduino","Tested"],"pageType":"Projects","keywords":["infrared receivers","Arduino","Tested"]}];
+		</script>
+		
+	<!-- facebook -->
+	<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Arduino IR Remote to Control LEDs ON and OFF_files/d_vbiawPdxB.html" style="border: none;"></iframe></div><div></div></div></div>
+	<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&&appId=264778010376278&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- facebook -->
+
+	<!-- Overlay Search -->
+	<div class="overlay-menu hidden-xs">
+		<div class="overlay-head clearfix">
+			<a href="https://www.electroschematics.com/" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/logo-white.svg" alt=""></a>
+			<a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#" class="close">X</a>
+		</div>
+		<div class="overlay-cont">
+			
+<div class="search-wrap">	
+	<div class="search-input-wrap">
+		<form method="get" id="searchform" action="https://www.electroschematics.com/" class="clearfix">
+			<input type="text" name="s" id="s" class="search-input" value="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+</div>			<div class="single-page content-wrap container">
+				<div class="row-cnt row">
+										<div class="col-md-12">
+						<div class="row">
+							<div class="page-section-title col-md-12">
+								<h1>Top 10 Articles</h1>
+							</div>
+							<div class="clearboth clearfix">
+																	<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 556px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14383/rf-radio-frequency/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/03/1-Mini-LoRa-Module-1.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 261px;">
+												<h2><a href="https://www.electroschematics.com/14383/rf-radio-frequency/">A Review of the Mini SX1278 LoRa Transceiver Module</a></h2>
+												<h3 class="author">T.K. Hareendran -  03/26/19</h3>
+												<div class="content-desc">While designing an internet of things (IoT) project that also required a long radio-frequency link, it occurred to <a href="https://www.electroschematics.com/14383/rf-radio-frequency/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 556px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14372/build-your-own-smart-led-street-lamp/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/03/6-Street-light-Inside.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 261px;">
+												<h2><a href="https://www.electroschematics.com/14372/build-your-own-smart-led-street-lamp/">Build Your Own Smart LED Street Lamp</a></h2>
+												<h3 class="author">T.K. Hareendran -  03/17/19</h3>
+												<div class="content-desc">After deliberating for a while, I finally decided to install my own street light on the path leading <a href="https://www.electroschematics.com/14372/build-your-own-smart-led-street-lamp/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 556px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14354/handheld-digital-thermometer-using-arduino/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/03/5-Hardware-Setup.png&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 261px;">
+												<h2><a href="https://www.electroschematics.com/14354/handheld-digital-thermometer-using-arduino/">Handheld Digital Thermometer using Arduino</a></h2>
+												<h3 class="author">T.K. Hareendran -  03/11/19</h3>
+												<div class="content-desc">The Type K thermocouple is the most common type. It’s inexpensive, accurate and reliable and has a wide <a href="https://www.electroschematics.com/14354/handheld-digital-thermometer-using-arduino/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 556px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14336/review-of-the-hw-687-dc-motor-control-module/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/02/1-HW687-Module-Author-e1551404143733.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 261px;">
+												<h2><a href="https://www.electroschematics.com/14336/review-of-the-hw-687-dc-motor-control-module/">Review of the HW-687 DC Motor Control Module</a></h2>
+												<h3 class="author">T.K. Hareendran -  02/28/19</h3>
+												<div class="content-desc">&nbsp; “HW-687 is one easy module for adding speed regulation to your next DC motor-based project. It is <a href="https://www.electroschematics.com/14336/review-of-the-hw-687-dc-motor-control-module/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 556px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14331/mains-power-failure-alert-circuit/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/02/3-First-Test-A.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 261px;">
+												<h2><a href="https://www.electroschematics.com/14331/mains-power-failure-alert-circuit/">Mains Power Failure Alert Circuit</a></h2>
+												<h3 class="author">T.K. Hareendran -  02/20/19</h3>
+												<div class="content-desc">&nbsp; Let me introduce an improved version of a blackout alert beeper, which is, in fact, a low-cost <a href="https://www.electroschematics.com/14331/mains-power-failure-alert-circuit/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 556px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14314/serial-port-monitor-eltima-software-review/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/02/3-Start-Screen_vspd.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 261px;">
+												<h2><a href="https://www.electroschematics.com/14314/serial-port-monitor-eltima-software-review/">Serial Port Monitor – Eltima Software Review</a></h2>
+												<h3 class="author">T.K. Hareendran -  02/17/19</h3>
+												<div class="content-desc">If you are a software and hardware developer working with serial ports, you often need a reliable serial <a href="https://www.electroschematics.com/14314/serial-port-monitor-eltima-software-review/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 588px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14308/an-introduction-of-the-virtual-serial-port-driver-by-eltima-software/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/02/vspdpro-bundle.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 293px;">
+												<h2><a href="https://www.electroschematics.com/14308/an-introduction-of-the-virtual-serial-port-driver-by-eltima-software/">An Introduction of the Virtual Serial Port Driver by Eltima Software</a></h2>
+												<h3 class="author">Received by Email -  02/12/19</h3>
+												<div class="content-desc">This is an introduction to the Virtual Serial Port Driver by Eltima Software.&nbsp; They have offered an opportunity <a href="https://www.electroschematics.com/14308/an-introduction-of-the-virtual-serial-port-driver-by-eltima-software/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 588px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14298/volumecontrol/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/02/7-Chip-with-Adapter.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 293px;">
+												<h2><a href="https://www.electroschematics.com/14298/volumecontrol/">Electronic Stereo Volume Control M62429</a></h2>
+												<h3 class="author">T.K. Hareendran -  02/04/19</h3>
+												<div class="content-desc">One fun and cool thing for ardent audio folks to do is switch the volume of an audio <a href="https://www.electroschematics.com/14298/volumecontrol/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box" style="height: 588px;">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14283/usb-power-monitor-review-teardown/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/01/7-Teardown_Rear_Annotated.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="height: 293px;">
+												<h2><a href="https://www.electroschematics.com/14283/usb-power-monitor-review-teardown/">USB Power Monitor Review &amp; Teardown</a></h2>
+												<h3 class="author">T.K. Hareendran -  01/27/19</h3>
+												<div class="content-desc">&nbsp; Recently, I came across a review of Keweisi KWSV20 USB Tester in Gough’s Tech Zone and thought <a href="https://www.electroschematics.com/14283/usb-power-monitor-review-teardown/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																		<div class="post-wrap col-sm-6 col-md-4">
+										<div class="box">
+											<div class="thumb square-thumb">
+												<div class="square-box">
+																											<a class="the_thumb image-cont card-image" href="https://www.electroschematics.com/14266/supercapacitors/" style="background-image: url(&quot;https://www.electroschematics.com/wp-content/uploads/2019/01/1-1F-5v5-Super-Capacitor.jpg&quot;);"></a>
+																									</div>
+											</div>
+											<div class="desc" style="">
+												<h2><a href="https://www.electroschematics.com/14266/supercapacitors/">Learn to Use Supercapacitors</a></h2>
+												<h3 class="author">T.K. Hareendran -  01/21/19</h3>
+												<div class="content-desc">These days, supercapacitors are within everyone’s reach as prices have slashed and there are plenty of well-stocked stores <a href="https://www.electroschematics.com/14266/supercapacitors/">[...]</a></div>
+											</div>
+										</div>
+									</div>
+																</div>
+						</div>
+					</div>
+				</div>
+			</div>
+						<div class="footer-wrap" style="clear: both;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<h2>The Basics</h2>
+						<ul class="basics">
+							<li><a>About Us</a></li>
+							<li><a href="https://www.electroschematics.com/contact-us">Contact Us</a></li>
+							<li><a href="https://www.electroschematics.com/participate">Participate</a></li>
+							<li><a href="https://www.aspencore.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+							<li><a href="https://www.aspencore.com/terms-of-use" target="_blank">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<h2>For Advertisers</h2>
+						<ul class="advertisers">
+							<li><a href="http://go.aspencore.com/contactus" target="_blank">Contact Sales</a></li>
+							<li><a href="http://go.aspencore.com/mediakit" target="_blank">Media Guide Request</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4">
+						<h2>Aspencore Network</h2>
+						<ul class="network">
+							<li>ElectroSchematics</li>
+							<li><a href="https://www.electronics-tutorials.ws/" target="_blank">Electronics Tutorials</a></li>
+							<li><a href="https://www.electronicproducts.com/" target="_blank">Electronic Products</a></li>
+							<li><a href="http://www.21ic.com/" target="_blank">21IC</a></li>
+							<li><a href="http://embedded-control-europe.com/" target="_blank">Embedded Control Europe</a></li>
+							<li><a href="https://www.elektroda.pl/" target="_blank">Elektroda</a></li>
+							<li><a href="https://www.eeweb.com/" target="_blank">EEWeb</a></li>
+							<li><a href="http://www.engineersgarage.com/" target="_blank">Engineers Garage</a></li>
+							<li><a href="http://www.eem.com/" target="_blank">EEM</a></li>
+							<li><a href="http://www.embedded-know-how.com/" target="_blank">Embedded Know How</a></li>
+							<li><a href="https://iot.eetimes.com/" target="_blank">IoT Times</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4">
+						<h2>Connect With Us</h2>
+						<ul class="social">
+							<li><a href="https://www.facebook.com/groups/electroschematics/" rel="nofollow" target="_blank"><span class="symbol"></span><span class="desc">Facebook</span></a></li>
+							<li><a href="https://www.youtube.com/user/ElectroSchematics"><span class="symbol"></span><span class="desc">YouTube</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bttm-most">
+				<div class="container">
+					<div class="row">
+						<div class="col-a col-sm-6 col-md-6">
+							All contents are Copyright © 2019 by AspenCore, Inc. All Rights Reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		</div>
+	</div>
+	<!-- End -->
+
+	<!-- Overlay Mouser panel -->
+<div class="overlay-mouser">
+	<div class="overlay-mouser-cont">
+		<div class="container">
+			<div class="section-a">
+				 &nbsp;<a class="close-panel" href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#"><span>Close</span>&nbsp; <i class="fa fa-times-circle"></i></a>
+			</div>
+			<div class="section-b">
+				<a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http" target="_blank" class="mouser-site-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/ic-logo.svg" alt="" class="mouser-site-click"></a> <!--<span>Browse Products</span>-->
+			</div>
+			<div class="section-c">
+				<ul class="products-list">
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/amplifiersandlinears/amplifiersandlinears.page?HQS=hpa-null-null-elschemflyaway-bs-lp-amplifiers-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Amplifiers</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/interface/interface.page?HQS=hpa-null-null-elschemflyaway-bs-lp-interface-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Interface</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/non-isolated-dc-dc-switching-regulator-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-nonisolatedDCDC-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Non-Isolated DC/DC</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/voltage-reference-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-voltageref-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Voltage References</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/audio/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-audio-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Audio</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/linear-regulators-ldo-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-linearregulator-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Linear Regulator (LDO)</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/powermanagement/power_portal.page?HQS=hpa-null-null-elschemflyaway-bs-lp-pwrmgmt-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Power Management</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/webench/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-WEBENCH-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Webench</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/battery-management-products-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-battery-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Battery Management</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/logic/home_overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-logic-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Logic</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/power-management-multi-channel-ic-pmic-solutions-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-pmic-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Power Management IC (PMIC)</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/general/docs/refdesignsearchresults.tsp?HQS=hpa-null-null-elschemflyaway-bs-lp-TIDesigns-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">TI Designs</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/clockandtiming/clock_and_timing.page?HQS=hpa-null-null-elschemflyaway-bs-lp-clocks-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Clock and Timing</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/mosfet-and-igbt-gate-drivers-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-MOSFET-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">MOSFET and IGBT Gate Drivers</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/power-modules-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-powermodules-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Power Modules</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?https://store.ti.com?HQS=hpa-null-null-elschemflyaway-bs-store-store-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">TI Store</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/dataconverters/data_converter.page?HQS=hpa-null-null-elschemflyaway-bs-lp-dataconverters-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Data Converters</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/motordrivers/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-motordrivers-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Motor Drivers</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/sensors/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-sensors-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Sensors</a></li>
+					<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://my.ti.com?HQS=hpa-null-null-elschemflyaway-bs-myti-myti-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">MyTI Registration</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="visit-ti">
+			<a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com?HQS=hpa-null-null-elschemflyaway-bs-lp-homepage-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont">visit ti.com<img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow-white.png"></a>
+		</div>
+	</div>
+
+</div>
+<!-- End -->	<div id="topBar" class="top-bar-1-wrap mbile" style="position: fixed; top: 0px; width: 100%;">
+		<div class="container">
+			<div class="row">
+				<div class="menu col-xs-3 col-sm-4 col-md-4">
+					<div id="show" class="orb"></div>
+				</div>
+				<div class="main-logo col-xs-6 col-sm-4 col-md-4">
+					<a href="https://www.electroschematics.com/" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/main-logo.svg" alt=""></a>
+				</div>
+				<div class="col-xs-3 col-sm-4 col-md-4">
+					<div class="search mbile"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="top-bar-1-wrap dsktop">
+		<div class="topbar-most clearfix">
+			<div class="col-xs-3 col-sm-3 col-md-3">
+				<div class="user-login">
+											<a href="https://www.electroschematics.com/log-in"><i class="fa fa-user"></i> &nbsp;&nbsp;Login</a>
+									</div>
+			</div>
+			<div class="main-logo col-xs-6 col-sm-6 col-md-6 hover-active">
+				<a href="https://www.electroschematics.com/" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/main-logo.svg" alt=""></a>
+			</div>
+			<div class="for-overlay col-xs-3 col-sm-3 col-md-3" data-mode="search">
+				<div class="search"></div>
+			</div>
+		</div>
+		<div class="sub-top-bar hide-bar">
+			<div class="hidden-xs clearfix">
+
+				<div class="col-b">
+
+				</div>
+
+				<div class="col-a">
+					<ul id="main-menu" class="menu clearfix"><li id="menu-item-12664" class="menu-item-has-children"><a href="https://www.electroschematics.com/category/various/">Projects</a>
+<ul class="sub-menu">
+	<li><ul class="container"><li id="menu-item-12650" class="current-post-ancestor current-menu-parent current-post-parent"><a href="https://www.electroschematics.com/category/arduino/">Arduino</a></li><li id="menu-item-12656"><a href="https://www.electroschematics.com/category/lights/">Lights</a></li><li id="menu-item-12665"><a href="https://www.electroschematics.com/category/various/datasheet/">Datasheets</a></li><li id="menu-item-12648"><a href="https://www.electroschematics.com/category/555-circuits/">555</a></li><li id="menu-item-12658"><a href="https://www.electroschematics.com/category/power-supply/">Power supply</a></li><li id="menu-item-12654"><a href="https://www.electroschematics.com/category/ece-projects/">ECE projects</a></li><li id="menu-item-12649"><a href="https://www.electroschematics.com/category/alarm/">Alarms</a></li><li id="menu-item-12659"><a href="https://www.electroschematics.com/category/radio/">Radio</a></li><li id="menu-item-12657"><a href="https://www.electroschematics.com/category/measurement/">Measure</a></li><li id="menu-item-12651"><a href="https://www.electroschematics.com/category/audio/">Audio</a></li><li id="menu-item-12661"><a href="https://www.electroschematics.com/category/solar-projects/">Solar</a></li><li id="menu-item-12670"><a href="https://www.electroschematics.com/category/various/useful/">Useful</a></li><li id="menu-item-12653"><a href="https://www.electroschematics.com/category/diy/">DIY</a></li><li id="menu-item-12662" class="current-post-ancestor current-menu-parent current-post-parent"><a href="https://www.electroschematics.com/category/tested/">Tested</a></li><li id="menu-item-12663"><a href="https://www.electroschematics.com/category/theory/">Theory</a></li><li id="menu-item-12655"><a href="https://www.electroschematics.com/category/hobby/">Hobby</a></li><li id="menu-item-12652"><a href="https://www.electroschematics.com/category/basic-electronics/">Basic</a></li></ul></li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+</li>
+<li id="menu-item-12672"><a href="https://www.electroschematics.com/tools/">Tools</a></li>
+<li id="menu-item-12673" class="menu-item-has-children tutorials-cont"><a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#">Tutorials</a>
+<ul class="sub-menu">
+	<li><ul class="container"><li id="menu-item-12675"><a href="https://www.electroschematics.com/tag/arduino-tutorial/">Arduino Tutorial</a></li><li id="menu-item-12676"><a href="https://www.electroschematics.com/tag/avr-tutorial/">AVR Tutorial</a></li><li id="menu-item-12677"><a href="https://www.electroschematics.com/tag/pic-tutorial/">PIC Tutorial</a></li></ul></li>
+	
+	
+</ul>
+</li>
+<li id="menu-item-10563"><a title="electronics labs" href="https://www.electroschematics.com/labs/">Labs</a></li>
+<li id="menu-item-14011"><a href="https://www.electroschematics.com/further-education/">Further Education</a></li>
+<li id="menu-item-8571"><a title="electronics engineering Q&amp;A" href="https://www.electroschematics.com/qa/">Q&amp;A</a></li>
+<li id="menu-item-12679"><a href="https://www.electroschematics.com/electronics-quizzes/">Quizzes</a></li>
+<li id="menu-item-12846"><a href="https://ti-content-syndication.electroschematics.com/">Reference Designs</a></li>
+<li id="menu-item-8572"><a title="contact page" rel="nofollow" href="https://www.electroschematics.com/contact-us/">Contact</a></li>
+</ul>				</div>
+
+			</div>
+		</div>
+	</div>
+	<div id="main" style="margin: 100px auto 0px; top: 0px;">
+
+<div class="body-frame body-single">
+			<div class="side-menu mbile">
+			<div id="side-menu-head" class="side-menu-head clearfix">
+				<a href="https://www.electroschematics.com/" class="image-cont"><img class="logo" src="./Arduino IR Remote to Control LEDs ON and OFF_files/lg-white-mbl.svg" alt=""></a>
+				<a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#" class="close">X</a>
+			</div>
+			<div class="the-list">
+
+				
+<div class="search-wrap">	
+	<div class="search-input-wrap">
+		<form method="get" id="searchform" action="https://www.electroschematics.com/" class="clearfix">
+			<input type="text" name="s" id="s" class="search-input" value="">
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+</div>
+				  <ul id="sm-main-menu" class="sm-menu"><li class="menu-item-has-children"><a href="https://www.electroschematics.com/category/various/">Projects</a>
+<ul class="sub-menu">
+	<li class="current-post-ancestor current-menu-parent current-post-parent"><a href="https://www.electroschematics.com/category/arduino/">Arduino</a></li>
+	<li><a href="https://www.electroschematics.com/category/lights/">Lights</a></li>
+	<li><a href="https://www.electroschematics.com/category/various/datasheet/">Datasheets</a></li>
+	<li><a href="https://www.electroschematics.com/category/555-circuits/">555</a></li>
+	<li><a href="https://www.electroschematics.com/category/power-supply/">Power supply</a></li>
+	<li><a href="https://www.electroschematics.com/category/ece-projects/">ECE projects</a></li>
+	<li><a href="https://www.electroschematics.com/category/alarm/">Alarms</a></li>
+	<li><a href="https://www.electroschematics.com/category/radio/">Radio</a></li>
+	<li><a href="https://www.electroschematics.com/category/measurement/">Measure</a></li>
+	<li><a href="https://www.electroschematics.com/category/audio/">Audio</a></li>
+	<li><a href="https://www.electroschematics.com/category/solar-projects/">Solar</a></li>
+	<li><a href="https://www.electroschematics.com/category/various/useful/">Useful</a></li>
+	<li><a href="https://www.electroschematics.com/category/diy/">DIY</a></li>
+	<li class="current-post-ancestor current-menu-parent current-post-parent"><a href="https://www.electroschematics.com/category/tested/">Tested</a></li>
+	<li><a href="https://www.electroschematics.com/category/theory/">Theory</a></li>
+	<li><a href="https://www.electroschematics.com/category/hobby/">Hobby</a></li>
+	<li><a href="https://www.electroschematics.com/category/basic-electronics/">Basic</a></li>
+</ul>
+</li>
+<li><a href="https://www.electroschematics.com/tools/">Tools</a></li>
+<li class="menu-item-has-children tutorials-cont"><a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#">Tutorials</a>
+<ul class="sub-menu">
+	<li><a href="https://www.electroschematics.com/tag/arduino-tutorial/">Arduino Tutorial</a></li>
+	<li><a href="https://www.electroschematics.com/tag/avr-tutorial/">AVR Tutorial</a></li>
+	<li><a href="https://www.electroschematics.com/tag/pic-tutorial/">PIC Tutorial</a></li>
+</ul>
+</li>
+<li><a title="electronics labs" href="https://www.electroschematics.com/labs/">Labs</a></li>
+<li><a href="https://www.electroschematics.com/further-education/">Further Education</a></li>
+<li><a title="electronics engineering Q&amp;A" href="https://www.electroschematics.com/qa/">Q&amp;A</a></li>
+<li><a href="https://www.electroschematics.com/electronics-quizzes/">Quizzes</a></li>
+<li><a href="https://ti-content-syndication.electroschematics.com/">Reference Designs</a></li>
+<li><a title="contact page" rel="nofollow" href="https://www.electroschematics.com/contact-us/">Contact</a></li>
+</ul>				<div class="footer-wrap" style="clear: both;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<h2>The Basics</h2>
+						<ul class="basics">
+							<li><a>About Us</a></li>
+							<li><a href="https://www.electroschematics.com/contact-us">Contact Us</a></li>
+							<li><a href="https://www.electroschematics.com/participate">Participate</a></li>
+							<li><a href="https://www.aspencore.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+							<li><a href="https://www.aspencore.com/terms-of-use" target="_blank">Terms of Use</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<h2>For Advertisers</h2>
+						<ul class="advertisers">
+							<li><a href="http://go.aspencore.com/contactus" target="_blank">Contact Sales</a></li>
+							<li><a href="http://go.aspencore.com/mediakit" target="_blank">Media Guide Request</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4">
+						<h2>Aspencore Network</h2>
+						<ul class="network">
+							<li>ElectroSchematics</li>
+							<li><a href="https://www.electronics-tutorials.ws/" target="_blank">Electronics Tutorials</a></li>
+							<li><a href="https://www.electronicproducts.com/" target="_blank">Electronic Products</a></li>
+							<li><a href="http://www.21ic.com/" target="_blank">21IC</a></li>
+							<li><a href="http://embedded-control-europe.com/" target="_blank">Embedded Control Europe</a></li>
+							<li><a href="https://www.elektroda.pl/" target="_blank">Elektroda</a></li>
+							<li><a href="https://www.eeweb.com/" target="_blank">EEWeb</a></li>
+							<li><a href="http://www.engineersgarage.com/" target="_blank">Engineers Garage</a></li>
+							<li><a href="http://www.eem.com/" target="_blank">EEM</a></li>
+							<li><a href="http://www.embedded-know-how.com/" target="_blank">Embedded Know How</a></li>
+							<li><a href="https://iot.eetimes.com/" target="_blank">IoT Times</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4">
+						<h2>Connect With Us</h2>
+						<ul class="social">
+							<li><a href="https://www.facebook.com/groups/electroschematics/" rel="nofollow" target="_blank"><span class="symbol"></span><span class="desc">Facebook</span></a></li>
+							<li><a href="https://www.youtube.com/user/ElectroSchematics"><span class="symbol"></span><span class="desc">YouTube</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bttm-most">
+				<div class="container">
+					<div class="row">
+						<div class="col-a col-sm-6 col-md-6">
+							All contents are Copyright © 2019 by AspenCore, Inc. All Rights Reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>				
+			</div>
+		</div>	<div class="body-cont">
+		<div class="mask-cont clearfix">
+			<div class="single-page content-wrap container">
+				<div class="row-cnt row">
+
+											<div class="home-top-ads">
+							<div id="text-8" class="widgets widget_text">			<div class="textwidget"><div class="billboard-wrapper">
+<div id="div-gpt-ad-billboard-smartphonebanner" data-google-query-id="CO6wpfWhruECFYuFaAodqsgPgg"><script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-billboard-smartphonebanner'); });
+</script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/f(1).txt" id="sae-script-1"></script><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/pubads_impl_rendering_2019032501.js.download" id="rendering"></script><div id="div-gpt-ad-billboard-smartphonebanner_ad_container">
+<ins style="width: 970px; height: 250px; display: inline-table; position: relative; border: 0px; vertical-align: bottom;"><ins style="width: 970px; height: 250px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_/74317539/ElectroSchematics_0" title="3rd party ad content" name="google_ads_iframe_/74317539/ElectroSchematics_0" width="970" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;" data-google-container-id="1" data-load-complete="true" src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource.html"></iframe></ins></ins></div>
+<script>googletag.impl.pubads.createDomIframe("div-gpt-ad-billboard-smartphonebanner_ad_container" ,"/74317539/ElectroSchematics_0",false,false);</script>
+</div>
+<div class="ads_title_home">
+Advertisement
+</div>
+</div>
+</div>
+		</div>						</div>
+					
+					<div class="col-sm-12 col-md-12">
+						<div class="breadcrumb">
+							<!-- Breadcrumb NavXT 6.2.1 -->
+<a title="Back Home" href="https://www.electroschematics.com/" class="home">Home</a><span class="separator">&nbsp;/&nbsp;</span><span property="itemListElement" typeof="ListItem"><span property="name">Control LEDs ON/OFF with IR Remote and Arduino</span><meta property="position" content="2"></span>						</div>
+					</div>
+					<div class="col-md-8 clearboth">
+											<div class="section row">
+							<div class="single-wrap col-md-12">
+								<div class="content-cont">
+
+									<div class="col-sm-6 col-md-6 no-padd">
+										<div class="thumb-feat">
+																																	   <a class="the_thumb image-cont" data-card="false" href="./Arduino IR Remote to Control LEDs ON and OFF_files/arduino-led-ir-remote-schematic.jpg" rel="lightbox"><img width="1035" height="1296" src="./Arduino IR Remote to Control LEDs ON and OFF_files/arduino-led-ir-remote-schematic.jpg" class="attachment-full size-full wp-post-image" alt="arduino led ir remote schematic" srcset="/wp-content/uploads/2014/01/arduino-led-ir-remote-schematic.jpg 1035w, /wp-content/uploads/2014/01/arduino-led-ir-remote-schematic-79x100.jpg 79w, /wp-content/uploads/2014/01/arduino-led-ir-remote-schematic-319x400.jpg 319w, /wp-content/uploads/2014/01/arduino-led-ir-remote-schematic-439x550.jpg 439w" sizes="(max-width: 1035px) 100vw, 1035px"></a>
+																					</div>
+									</div>
+									<div class="desc col-sm-6 col-md-6">
+										<h1>Control LEDs ON/OFF with IR Remote and Arduino</h1>										<div class="author">
+											<a href="https://www.electroschematics.com/author/admin/">P. Marian</a>
+										</div>
+
+										<!-- Social Buttons -->
+										<div id="social_buttons" style="margin: 15px 0;">
+																						<span class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/" target="_blank" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/fb-dark.png" width="25px" alt="Share"></a></span>
+											<span class="twitter">
+												<a target="_blank" rel="nofollow" href="https://twitter.com/share" data-via="electrocircuits" class="image-cont">
+													<img src="./Arduino IR Remote to Control LEDs ON and OFF_files/tw-dark.png" width="25px" alt="Tweet">
+												</a>
+												<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+											</span>
+											<span class="ask_qa"><a href="https://www.electroschematics.com/qa/" target="_blank" title="ask a question" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/icn-question-orb.png" width="25px" alt=""></a></span>
+										</div>
+										<div class="col-md-12 no-padd">
+											<div class="posts-tags"><ul><li><a href="https://www.electroschematics.com/tag/infrared-receiver">infrared receivers</a></li></ul></div>										</div>
+
+									</div>
+									<div class="clear-b"></div>
+									<div class="main-wrap">
+									<p>I made this Arduino project that allows to turn ON and OFF LEDs using a cheap IR remote control as a preparation for the next big step: disassemble my girlfriend’s chinese LED lamp and replace its board with and Atmega Tiny microcontroller, probably ATTiny24A and change the stupid remote control with another one.<br>
+<span id="more-9522"></span></p>
+<p>The project is pretty simple, you don’t need a lot of components. In my case I have used only 3 x 330Ω resistors, 3 leds and a TSOP4838 IR receiver module. You must check the <a href="http://www.vishay.com/docs/82459/tsop48.pdf" target="_blank" rel="nofollow">datasheet</a> before use the IR module to see which pins connect to the power supply and which one delivers the output voltage.</p>
+<p>I used an available <a href="http://www.righto.com/2009/08/multi-protocol-infrared-remote-library.html" target="_blank" rel="nofollow">IR Arduino library</a> so it was pretty easy to decode the signals transmitted by the infrared remote.  You can download the version that I’ve used using the link below but I advice you to go to the official page and download any updated version. To install, unzip the archive, move the downloaded IRremote directory to: arduino-1.x/libraries/IRremote where arduino-1.x is your Arduino installation directory.</p>
+<div class="download-archive"><a href="https://www.electroschematics.com/wp-content/uploads/2014/01/Arduino-IRremote-master.rar" target="_blank">download Arduino IR master</a></div>
+<p style=""><strong>Video presentation of the working project</strong><iframe class="teads-resize" style="height: 0px !important; min-height: 0px !important; width: 100% !important; border: none !important; margin: 0px !important; padding: 0px !important; display: block !important;" src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(8).html"></iframe></p><div class="teads-inread" style="margin: 10px auto; max-width: 550px; transition-duration: 0s; height: 357px;"><div style="position: relative; margin-left: 0px; margin-right: 0px;"><div class="teads-ui-components-adchoices"><span>AdChoices</span></div><div class="teads-ui-components-label">ADVERTISING</div><div class="teads-player" id="teads0" style="display: block !important;"><iframe allow="autoplay" scrolling="no" frameborder="0" style="margin: 0px !important; padding: 0px !important; width: 550px !important; height: 310px !important; border: 0px !important; overflow: hidden !important; float: none !important; max-height: 310px !important; display: block;" src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(9).html"></iframe></div><div class="teads-ui-components-credits"><a href="https://www.teads.tv/viewable-outstream-formats/?utm_source=inread&amp;utm_medium=credits&amp;utm_campaign=invented%20by%20teads" rel="nofollow" target="_blank"><span class="teads-ui-components-credits-colored">inRead</span> invented by Teads</a></div></div></div>
+<p><iframe width="560" height="315" src="./Arduino IR Remote to Control LEDs ON and OFF_files/MxKUF3fOSUI.html" frameborder="0" allowfullscreen=""></iframe></p>
+<h2>Arduino IR Remote Control Schematic</h2>
+<p><a target="_blank" href="./Arduino IR Remote to Control LEDs ON and OFF_files/arduino-led-ir-remote-schematic.jpg" rel="lightbox[9522]" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/arduino-led-ir-remote-schematic-439x550.jpg" alt="arduino led ir remote schematic" width="439" height="550" class="aligncenter size-large wp-image-9524" srcset="/wp-content/uploads/2014/01/arduino-led-ir-remote-schematic-439x550.jpg 439w, /wp-content/uploads/2014/01/arduino-led-ir-remote-schematic-79x100.jpg 79w, /wp-content/uploads/2014/01/arduino-led-ir-remote-schematic-319x400.jpg 319w, /wp-content/uploads/2014/01/arduino-led-ir-remote-schematic.jpg 1035w" sizes="(max-width: 439px) 100vw, 439px"></a></p>
+<p><strong>Arduino Sketch</strong></p>
+<pre class="wp-code-highlight prettyprint prettyprinted" style=""><span class="com">/* 
+source: www.electroschematics.com
+You'll need to change the led pins and the codes 
+accordingly to your configuration and IR remote
+*/</span><span class="pln">
+
+</span><span class="com">#include</span><span class="pln"> </span><irremote.h><span class="pln">
+
+</span><span class="kwd">int</span><span class="pln"> RECV_PIN </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span><span class="pun">;</span><span class="pln"> </span><span class="com">// the pin where you connect the output pin of TSOP4838</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> led1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> led2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">4</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> led3 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">7</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> itsONled</span><span class="pun">[]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">0</span><span class="pun">};</span><span class="pln">
+</span><span class="com">/* the initial state of LEDs is OFF (zero) 
+the first zero must remain zero but you can 
+change the others to 1's if you want a certain
+led to light when the board is powered */</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> code1  </span><span class="lit">63495</span><span class="pln"> </span><span class="com">// code received from button A</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> code2  </span><span class="lit">30855</span><span class="pln"> </span><span class="com">// code received from button B</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> code3  </span><span class="lit">22695</span><span class="pln"> </span><span class="com">// code received from button C</span><span class="pln">
+
+</span><span class="typ">IRrecv</span><span class="pln"> irrecv</span><span class="pun">(</span><span class="pln">RECV_PIN</span><span class="pun">);</span><span class="pln">
+
+decode_results results</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="typ">Serial</span><span class="pun">.</span><span class="kwd">begin</span><span class="pun">(</span><span class="lit">9600</span><span class="pun">);</span><span class="pln">   </span><span class="com">// you can comment this line</span><span class="pln">
+  irrecv</span><span class="pun">.</span><span class="pln">enableIRIn</span><span class="pun">();</span><span class="pln">  </span><span class="com">// Start the receiver</span><span class="pln">
+  pinMode</span><span class="pun">(</span><span class="pln">led1</span><span class="pun">,</span><span class="pln"> OUTPUT</span><span class="pun">);</span><span class="pln">
+  pinMode</span><span class="pun">(</span><span class="pln">led2</span><span class="pun">,</span><span class="pln"> OUTPUT</span><span class="pun">);</span><span class="pln">
+  pinMode</span><span class="pun">(</span><span class="pln">led3</span><span class="pun">,</span><span class="pln"> OUTPUT</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> loop</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">irrecv</span><span class="pun">.</span><span class="pln">decode</span><span class="pun">(&amp;</span><span class="pln">results</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> value </span><span class="pun">=</span><span class="pln"> results</span><span class="pun">.</span><span class="pln">value</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+       </span><span class="kwd">case</span><span class="pln"> code1</span><span class="pun">:</span><span class="pln">
+         </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">itsONled</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">        </span><span class="com">// if first led is on then</span><span class="pln">
+            digitalWrite</span><span class="pun">(</span><span class="pln">led1</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">   </span><span class="com">// turn it off when button is pressed</span><span class="pln">
+            itsONled</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">           </span><span class="com">// and set its state as off</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">                      </span><span class="com">// else if first led is off</span><span class="pln">
+             digitalWrite</span><span class="pun">(</span><span class="pln">led1</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln"> </span><span class="com">// turn it on when the button is pressed</span><span class="pln">
+             itsONled</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">          </span><span class="com">// and set its state as on</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+          </span><span class="kwd">break</span><span class="pun">;</span><span class="pln"> 
+       </span><span class="kwd">case</span><span class="pln"> code2</span><span class="pun">:</span><span class="pln">
+         </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">itsONled</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            digitalWrite</span><span class="pun">(</span><span class="pln">led2</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">
+            itsONled</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             digitalWrite</span><span class="pun">(</span><span class="pln">led2</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+             itsONled</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+          </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+       </span><span class="kwd">case</span><span class="pln"> code3</span><span class="pun">:</span><span class="pln">
+         </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">itsONled</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            digitalWrite</span><span class="pun">(</span><span class="pln">led3</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">
+            itsONled</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             digitalWrite</span><span class="pun">(</span><span class="pln">led3</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+             itsONled</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+          </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">          
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">value</span><span class="pun">);</span><span class="pln"> </span><span class="com">// you can comment this line</span><span class="pln">
+    irrecv</span><span class="pun">.</span><span class="pln">resume</span><span class="pun">();</span><span class="pln"> </span><span class="com">// Receive the next value</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></irremote.h></pre>
+<p><a target="_blank" href="https://www.electroschematics.com/wp-content/uploads/2014/01/arduino-ir-remote-control-leds-photo.jpg" rel="lightbox[9522]" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/arduino-ir-remote-control-leds-photo-550x412.jpg" alt="arduino ir remote control leds photo" width="550" height="412" class="aligncenter size-large wp-image-9526" srcset="/wp-content/uploads/2014/01/arduino-ir-remote-control-leds-photo-550x412.jpg 550w, /wp-content/uploads/2014/01/arduino-ir-remote-control-leds-photo-100x75.jpg 100w, /wp-content/uploads/2014/01/arduino-ir-remote-control-leds-photo-400x300.jpg 400w, /wp-content/uploads/2014/01/arduino-ir-remote-control-leds-photo.jpg 800w" sizes="(max-width: 550px) 100vw, 550px"></a></p>
+<p>You will have to open the serial monitor window and press the remote buttons to find out what code does each button transmitts and then update the sketch to use those codes. You can add more leds but you’ll have to change the code inside the switch() function and add more cases. For example if you want to add one more led add this code after the last break; inside the switch();</p>
+<pre class="wp-code-highlight prettyprint prettyprinted" style=""><span class="pln">       </span><span class="kwd">case</span><span class="pln"> code4</span><span class="pun">:</span><span class="pln">
+         </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">itsONled</span><span class="pun">[</span><span class="lit">4</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            digitalWrite</span><span class="pun">(</span><span class="pln">led4</span><span class="pun">,</span><span class="pln"> LOW</span><span class="pun">);</span><span class="pln">
+            itsONled</span><span class="pun">[</span><span class="lit">4</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+             digitalWrite</span><span class="pun">(</span><span class="pln">led4</span><span class="pun">,</span><span class="pln"> HIGH</span><span class="pun">);</span><span class="pln">
+             itsONled</span><span class="pun">[</span><span class="lit">4</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+         </span><span class="pun">}</span><span class="pln">
+          </span><span class="kwd">break</span><span class="pun">;</span><span class="pln"> </span></pre>
+<p>The array itsONled[] = {0,0,0,0} is used to set the initial state of LEDs (in our case OFF) and has number of leds + 1 more zeros, so if you add 2 more leds, then add 2 more zeros (5 leds for a total of 6 zeros).</p>
+<div class="yarpp-related yarpp-related-none">
+<p>No related posts.</p>
+</div>
+																			<div id="div-gpt-ad-fluid" data-google-query-id="CPSwpfWhruECFYuFaAodqsgPgg">
+											<script type="text/javascript">
+											googletag.cmd.push(function() { googletag.display('div-gpt-ad-fluid'); });
+											</script><div id="google_ads_iframe_/74317539/ElectroSchematics_6__container__" style="display: inline-block; width: 100%; height: auto;"><iframe frameborder="0" src="./Arduino IR Remote to Control LEDs ON and OFF_files/container.html" id="google_ads_iframe_/74317539/ElectroSchematics_6" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="0" height="345" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="7" style="border: 0px; vertical-align: bottom; min-width: 100%;" data-load-complete="true"></iframe></div>
+										</div>
+																		</div>
+									
+
+																		<div class="clearfix content-nav">
+										<div class="prev_next">
+																							<div class="pn-holder col-md-6 col-sm-6"><div class="prev" style="height: 115px;"><a href="https://www.electroschematics.com/9516/1-5v-555-led-driver-experiment/" rel="prev" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/arrow_alt_left_inv.png" alt="previous"><div><span>Previous</span><br>1.5V 555 LED Driver Experiment</div></a></div></div>
+																																		<div class="pn-holder col-md-6 col-sm-6"><div class="next" style="height: 115px;"><a href="https://www.electroschematics.com/9529/atmega8-basic-input-output-interfacing-1/" rel="next" class="image-cont"><div><span>Next</span><br>ATmega8 – Basic Input/Output Interfacing – Tutorial #6</div><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/arrow_alt_right_inv.png" alt="next"></a></div></div>
+																					</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="single-page-content">
+							
+<div id="widgets_for_shortcodes" class="amr-widget-area"><div id="yarpp_widget-2" class="widgets widget_yarpp_widget clearfix"><h2>Related Tutorials</h2><div class="yarpp-related-widget yarpp-related-none">
+<p><em>No related posts.</em></p>
+</div>
+</div><div id="q2a_recent_questions-6" class="widgets widget_q2a_recent_questions clearfix"><h2> </h2><ul class="qa-question-widget"><li><a href="https://www.electroschematics.com/qa/10920/">How can I know more about HW-687 Dc motor?</a><span> </span></li><li><a href="https://www.electroschematics.com/qa/10916/">Can NE/SA575 chan 1 be used as ALC?</a><span> </span></li><li><a href="https://www.electroschematics.com/qa/10904/">Multiple RTL 2832U dongles in one radio</a><span> </span></li><li><a href="https://www.electroschematics.com/qa/10888/">ripple voltage</a><span> </span></li><li><a href="https://www.electroschematics.com/qa/10887/">i need to interface r c circuit with the internal ADC pin of pic controller</a><span> </span></li></ul></div>		<div id="recent-posts-38" class="widgets widget_recent_entries clearfix">		<h2>Recent Posts</h2>		<ul>
+											<li>
+					<a href="https://www.electroschematics.com/14383/rf-radio-frequency/">A Review of the Mini SX1278 LoRa Transceiver Module</a>
+									</li>
+											<li>
+					<a href="https://www.electroschematics.com/14372/build-your-own-smart-led-street-lamp/">Build Your Own Smart LED Street Lamp</a>
+									</li>
+											<li>
+					<a href="https://www.electroschematics.com/14354/handheld-digital-thermometer-using-arduino/">Handheld Digital Thermometer using Arduino</a>
+									</li>
+											<li>
+					<a href="https://www.electroschematics.com/14336/review-of-the-hw-687-dc-motor-control-module/">Review of the HW-687 DC Motor Control Module</a>
+									</li>
+											<li>
+					<a href="https://www.electroschematics.com/14331/mains-power-failure-alert-circuit/">Mains Power Failure Alert Circuit</a>
+									</li>
+					</ul>
+		</div></div>
+						</div>
+						
+<div id="comments" class="comments-wrap clearfix">
+
+	<input type="hidden" name="has_view_more" id="has_view_more" value="1">
+	<input type="hidden" name="first_comment_page" id="first_comment_page" value="3">
+	<input type="hidden" name="recent_comment_page" id="recent_comment_page" value="">
+	<h2 class="comments-count">31 Comments		<div class="toggle-close"></div>
+		<div class="toggle-open"></div>
+	</h2>
+	<div class="comment-content">
+		<div class="comment-form-cont">
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"></h3><h2>Join the conversation!</h2> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#respond" style="display:none;">Cancel reply</a></small><div class="notice_error">Error! Please fill all fields.</div><p class="must-log-in">You must be <a href="https://www.electroschematics.com/log-in/">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+			</div>
+
+		<div class="comment-list-cont">
+			
+				<ul class="comment-list">
+										
+<li class="comment byuser comment-author-your1click even thread-even depth-1" id="li-comment-1901282">
+    <div id="comment-1901282" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/e4c4b560119b4b9c70fb878ec518bfa7" srcset="https://secure.gravatar.com/avatar/e4c4b560119b4b9c70fb878ec518bfa7?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">your1click</cite>            </div>
+            
+            <div class="comment-text">
+                <p>C:\Users\pradip\Downloads\arduino-nightly-windows\arduino-nightly\libraries\RobotIRremote\src\IRremoteTools.cpp:5:16: error: ‘TKD2’ was not declared in this scope</p>
+<p> int RECV_PIN = TKD2; // the pin the IR receiver is connected to</p>
+<p>                ^</p>
+<p>exit status 1<br>
+Error compiling for board Arduino/Genuino Uno.</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1901282">October 05th 2016 | 12:36 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+<ul class="children">
+
+<li class="comment byuser comment-author-your1click odd alt depth-2" id="li-comment-1901306">
+    <div id="comment-1901306" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/e4c4b560119b4b9c70fb878ec518bfa7" srcset="https://secure.gravatar.com/avatar/e4c4b560119b4b9c70fb878ec518bfa7?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">your1click</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Its done already thanks for useful code. and i did one mistake before i forgot to update my library</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1901306">October 12th 2016 | 7:38 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span>                 </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment byuser comment-author-volthauslab even depth-2" id="li-comment-1901283">
+    <div id="comment-1901283" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/34359197917d3d2366d95ff474561d0f.jpeg" srcset="https://secure.gravatar.com/avatar/34359197917d3d2366d95ff474561d0f?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">volthauslab</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Not sure what you’re doing there with the TKD2. The IR is connected to your Arduino so the sketch is expecting the pin number on the Arduino to which you’re connecting the IR receiver.</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1901283">October 06th 2016 | 8:09 am</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span>                 </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="comment byuser comment-author-carlosfiguerero1gmail-com odd alt thread-odd thread-alt depth-1" id="li-comment-1896976">
+    <div id="comment-1896976" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/6702f8aeec304759063fc9ead8ee68f9" srcset="https://secure.gravatar.com/avatar/6702f8aeec304759063fc9ead8ee68f9?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">carlosfiguerero1gmail-com</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Good morning, thanks a lot!!!! I was searching this proyect all over the net and I find your post and all the comments that help whit the troubleshooting, from Argentina thank you all!!</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1896976">February 14th 2016 | 9:12 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-1895003">
+    <div id="comment-1895003" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/3bd7475e5c98a6b6117cab39cedf5a8f" srcset="https://secure.gravatar.com/avatar/3bd7475e5c98a6b6117cab39cedf5a8f?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Darcey</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Hello Rohit, is this the code that code that comes with the IRremote. If you use the IRrecvDemo code from the IRremote library the code should work fine. I hope this helps.</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1895003">January 23rd 2016 | 12:28 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1893523">
+    <div id="comment-1893523" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/1323803fef4063da22a3d1c30108c331" srcset="https://secure.gravatar.com/avatar/1323803fef4063da22a3d1c30108c331?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Rohit Paudel</cite>            </div>
+            
+            <div class="comment-text">
+                <p>I want to see the signals code in serial monitor so i apply this code.</p>
+<p>#include<br>
+int RECV_PIN = 11;<br>
+IRrecv irrecv(RECV_PIN);<br>
+decode_results results;</p>
+<p>void setup()<br>
+{<br>
+  Serial.begin(9600);<br>
+  irrecv.enableIRIn(); // Start the receiver<br>
+}</p>
+<p>void loop()<br>
+{<br>
+  if (irrecv.decode(&amp;results))<br>
+    {<br>
+     Serial.println(results.value, HEX);<br>
+     irrecv.resume(); // Receive the next value<br>
+    }<br>
+}</p>
+<p>BUT,<br>
+it was unable to compile and show some unusual errors. I don’t know as i am not quit familier with this kinds of project.Following error was occour.</p>
+<p>checking_ir_receiver:3: error: ‘IRrecv’ does not name a type<br>
+checking_ir_receiver:4: error: ‘decode_results’ does not name a type<br>
+checking_ir_receiver.ino: In function ‘void setup()’:<br>
+checking_ir_receiver:9: error: ‘irrecv’ was not declared in this scope<br>
+checking_ir_receiver.ino: In function ‘void loop()’:<br>
+checking_ir_receiver:14: error: ‘irrecv’ was not declared in this scope<br>
+checking_ir_receiver:14: error: ‘results’ was not declared in this scope</p>
+<p>What can i do to solve this. I have no idea at all. Please anyone help me !!</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1893523">January 18th 2016 | 8:26 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-1882707">
+    <div id="comment-1882707" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/274e1cc86771960d8774d60655b2c72f" srcset="https://secure.gravatar.com/avatar/274e1cc86771960d8774d60655b2c72f?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Perre</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Your code is very very helpful, thank you very much</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1882707">December 21st 2015 | 6:15 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1860919">
+    <div id="comment-1860919" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/5726fc50d674448b339ef11a9eb5ceec" srcset="https://secure.gravatar.com/avatar/5726fc50d674448b339ef11a9eb5ceec?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">UAG</cite>            </div>
+            
+            <div class="comment-text">
+                <p>I tried it and all works well. Thanx.<br>
+But when i press remote button it does not work very smoothly. Sometimes when i press a button it on and off very nicely but sometimes i have to press a button twice.<br>
+Sometimes when i press button once it on and then off again. Can u suggest what to do.<br>
+Is it the code or tsop ?  Problem?</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1860919">November 07th 2015 | 11:22 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-1741064">
+    <div id="comment-1741064" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/52932f0d98ce71f588e37079d2b27ba8" srcset="https://secure.gravatar.com/avatar/52932f0d98ce71f588e37079d2b27ba8?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Michelle</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Hi! I only have an IR receiver that has 2 pins. How can I connect this to my arduino?</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1741064">July 17th 2015 | 1:37 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1738882">
+    <div id="comment-1738882" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/c10a1e46dc3b8be1e65b38f016e1a685" srcset="https://secure.gravatar.com/avatar/c10a1e46dc3b8be1e65b38f016e1a685?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Dogan</cite>            </div>
+            
+            <div class="comment-text">
+                <p>What is the maximum distance</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1738882">July 14th 2015 | 10:19 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+
+<li class="comment even thread-even depth-1" id="li-comment-1723942">
+    <div id="comment-1723942" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/34359197917d3d2366d95ff474561d0f.jpeg" srcset="https://secure.gravatar.com/avatar/34359197917d3d2366d95ff474561d0f?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">David Connolly</cite>            </div>
+            
+            <div class="comment-text">
+                <p>For some reason I am finding that many of these IR LED control sketches are not HEX friendly. They compile perfectly when the codes transmitted from the remotes contain only digits but when a alphabetical character is used the ‘not declared in scope’ error arise. Look at it this way, just another opportunity to learn. Thank you for ta,king the time to put this informative article together. David</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1723942">June 27th 2015 | 6:21 am</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+<ul class="children">
+
+<li class="comment odd alt depth-2 hidden-depth" id="li-comment-1796183" style="display: none;">
+    <div id="comment-1796183" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/da4ff0a62501bfd9da35e94751d56c70" srcset="https://secure.gravatar.com/avatar/da4ff0a62501bfd9da35e94751d56c70?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Greg</cite>            </div>
+            
+            <div class="comment-text">
+                <p>Convert the Hex code to Decimal and place the value after the #define code(1,2,3,…..)The serial monitor will display in hex but the microprocessor only understands decimal.<br>
+This project works out great and instructions were easy to follow.</p>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1796183">September 13th 2015 | 8:19 am</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span>                 </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+<li><div class="li-view-more" id="view-more_li-comment-1796183">More</div></li></ul><!-- .children -->
+</li><!-- #comment-## -->
+
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-1721894">
+    <div id="comment-1721894" class="clearfix">
+        <div class="col-a">
+            <img alt="" src="./Arduino IR Remote to Control LEDs ON and OFF_files/903493bfb011e25108ead6f860d3fbd0" srcset="https://secure.gravatar.com/avatar/903493bfb011e25108ead6f860d3fbd0?s=100&amp;d=identicon&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        </div>
+        <div class="col-b">
+            <div class="comment-author vcard">
+                                <cite class="fn">Frank</cite>            </div>
+            
+            <div class="comment-text">
+                <div class="comment-plus-image"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/1721894-400x300.jpg"></div>
+<p>i took care of the deleting of that suggested by Azem “TKD2 should delete the file IRremoteTools.cpp from Library ( C:\Program Files ” and now im getting a new error</p>
+<p>i even when back and deleted that one depicted on my new screenshot and is not even budging that compile error any suggestions?</p>
+<div style="clear: both"></div>
+            </div>
+
+            <div class="comment-meta commentmetadata clearfix">
+                <div class="date-time col-sm-6 col-md-6 no-padd">
+                    Posted on <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#comment-1721894">June 24th 2015 | 10:49 pm</a>
+                </div>
+                <div class="reply col-sm-6 col-md-6 no-padd">
+                    <span class="glyphicon glyphicon-share-alt"></span> <a rel="nofollow" class="comment-reply-login" href="https://www.electroschematics.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.electroschematics.com%2F9522%2Farduino-control-leds-ir-remote%2F">Log in to Reply</a>                </div>
+            </div>
+        </div>
+            </div>
+
+</li><!-- #comment-## -->
+				</ul>
+
+									<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+						<div id="view_more"><a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/comment-page-2/#comments">View More</a></div>
+						<div class="comment-loading"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/loading.gif" alt="Loading"></div>
+					</nav>
+				
+									</div>
+	</div>
+</div>
+											</div>
+
+										<div class="sidebar col-md-4">
+						<div id="trigger-point"></div>
+						<div id="wppb-login-widget-2" class="widgets login clearfix"><h2>Login</h2><div id="wppb-login-wrap" class="wppb-user-forms">
+		<form name="loginform" id="loginform" action="https://www.electroschematics.com/wp-login.php" method="post">
+			
+			<p class="login-username">
+				<label for="user_login">Email</label>
+				<input type="text" name="log" id="user_login" class="input" value="" size="20">
+			</p>
+			<p class="login-password">
+				<label for="user_pass">Password</label>
+				<input type="password" name="pwd" id="user_pass" class="input" value="" size="20">
+			</p>
+			
+			<p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label></p>
+			<p class="login-submit">
+				<input type="submit" name="wp-submit" id="wppb-submit" class="button button-primary" value="Log In">
+				<input type="hidden" name="redirect_to" value="https://www.electroschematics.com/">
+			</p>
+			<input type="hidden" name="wppb_login" value="true"><input type="hidden" name="wppb_form_location" value="widget"><input type="hidden" name="wppb_request_url" value="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/"><input type="hidden" name="wppb_lostpassword_url" value="https://www.electroschematics.com/lostpassword"><input type="hidden" name="wppb_redirect_priority" value="top"><input type="hidden" name="wppb_referer_url" value="https://www.google.com/">
+		</form><p class="login-register-lost-password"><a href="https://www.electroschematics.com/register">Register</a> | <a href="https://www.electroschematics.com/lostpassword">Lost your password?</a></p></div></div>
+        <div class="latest-comments wrapper clearfix">
+
+            <div class="widgets">
+
+                <div class="l-comments box">
+
+                    <h2>Latest Article Comments</h2>
+                    <div class="clearfix">
+
+                        
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content show-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/12247/ac-light-dimmer-module-with-zc-detector/#li-comment-1903287">AC Light Dimmer Module with ZC...</a>
+
+                                    <div>"@distiking: What you read here? As clearly stated in the article, zero-crossing signal (output to a"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content show-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/12247/ac-light-dimmer-module-with-zc-detector/#li-comment-1903286">AC Light Dimmer Module with ZC...</a>
+
+                                    <div>"are u sure moc3021 has zero crossing detection ? as far as i know it is impossible to make a dimmer"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content show-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/14372/build-your-own-smart-led-street-lamp/#li-comment-1903285">Build Your Own Smart LED Street...</a>
+
+                                    <div>"When you mention LED driver - is it the LED Transformer ?
+
+"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content show-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/6888/solar-battery-charger-circuit/#li-comment-1903284">Solar Battery Charger...</a>
+
+                                    <div>"Can anyone help me to join a auto cut off circuit to this circuit for 12v 7ah battery with solar"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content show-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/6888/solar-battery-charger-circuit/#li-comment-1903283">Solar Battery Charger...</a>
+
+                                    <div>"Have you made it brother I want to join a relay circuit to it can u help me a bit my number is"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content hide-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/14077/diy-water-quality-meter-using-a-turbidity-sensor/#li-comment-1903282">DIY Water Quality Meter Using a Turbidity...</a>
+
+                                    <div>"If you like reading too much, you can see another related article authored by me
+"DFR Turbidity"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content hide-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/5963/adjustable-timer-1-10-minute/#li-comment-1903281">Adjustable Timer Circuit with 555...</a>
+
+                                    <div>"are you sure karl?? this schematics is"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content hide-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/5963/adjustable-timer-1-10-minute/#li-comment-1903280">Adjustable Timer Circuit with 555...</a>
+
+                                    <div>"its been a long time about your post, but i have faced the similar problem, kept me thinking hours."</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content hide-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/9351/arduino-digital-voltmeter/#li-comment-1903279">Arduino Digital Voltmeter 0V to...</a>
+
+                                    <div>"@hemanth7787: Not everything you’ll see on here will be polished final designs.Some of them are"</div>
+
+                                </div>
+
+                            
+                        
+                            
+
+
+                            
+                                
+                                
+                                <div class="comment-content hide-comment">
+
+                                
+                                    <a href="https://www.electroschematics.com/9351/arduino-digital-voltmeter/#li-comment-1903278">Arduino Digital Voltmeter 0V to...</a>
+
+                                    <div>"@Coltoncub3d: 
+
+Please refer these lines in the loop
+" value = analogRead(analogInput);
+   vout"</div>
+
+                                </div>
+
+                            
+                        
+                    </div>
+
+                        <div class="vm-com">
+
+                            <a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/" class="view-more-comments">View More</a>
+
+                        </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div id="text-2" class="widgets widget_text clearfix">			<div class="textwidget"><div class="responsive-tabs-wrapper"><div class="responsive-tabs responsive-tabs--enabled"><ul class="responsive-tabs__list" role="tablist"><li class="responsive-tabs__list__item responsive-tabs__list__item--active" id="tablist1-tab1" aria-controls="tablist1-panel1" role="tab" tabindex="0">New Projects</li><li class="responsive-tabs__list__item" id="tablist1-tab2" aria-controls="tablist1-panel2" role="tab" tabindex="0">Recent Q&amp;A</li></ul>
+<h2 class="tabtitle responsive-tabs__heading responsive-tabs__heading--active" tabindex="0">New Projects</h2>
+<div class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" aria-hidden="false" role="tabpanel" aria-labelledby="tablist1-tab1" id="tablist1-panel1">
+<div id="recent-posts-38" class="widgets widget_recent_entries amr_widget clearfix">
+<h2>Recent Posts</h2>
+<ul>
+<li>
+					<a href="https://www.electroschematics.com/14383/rf-radio-frequency/">A Review of the Mini SX1278 LoRa Transceiver Module</a>
+									</li>
+<li>
+					<a href="https://www.electroschematics.com/14372/build-your-own-smart-led-street-lamp/">Build Your Own Smart LED Street Lamp</a>
+									</li>
+<li>
+					<a href="https://www.electroschematics.com/14354/handheld-digital-thermometer-using-arduino/">Handheld Digital Thermometer using Arduino</a>
+									</li>
+<li>
+					<a href="https://www.electroschematics.com/14336/review-of-the-hw-687-dc-motor-control-module/">Review of the HW-687 DC Motor Control Module</a>
+									</li>
+<li>
+					<a href="https://www.electroschematics.com/14331/mains-power-failure-alert-circuit/">Mains Power Failure Alert Circuit</a>
+									</li>
+</ul></div>
+</div>
+<h2 class="tabtitle responsive-tabs__heading" tabindex="0">Recent Q&amp;A</h2>
+<div class="tabcontent responsive-tabs__panel" aria-hidden="true" role="tabpanel" aria-labelledby="tablist1-tab2" id="tablist1-panel2" style="display: none;">
+<div id="q2a_recent_questions-6" class="widgets widget_q2a_recent_questions amr_widget clearfix">
+<h2> </h2>
+<ul class="qa-question-widget">
+<li><a href="https://www.electroschematics.com/qa/10920/">How can I know more about HW-687 Dc motor?</a><span> </span></li>
+<li><a href="https://www.electroschematics.com/qa/10916/">Can NE/SA575 chan 1 be used as ALC?</a><span> </span></li>
+<li><a href="https://www.electroschematics.com/qa/10904/">Multiple RTL 2832U dongles in one radio</a><span> </span></li>
+<li><a href="https://www.electroschematics.com/qa/10888/">ripple voltage</a><span> </span></li>
+<li><a href="https://www.electroschematics.com/qa/10887/">i need to interface r c circuit with the internal ADC pin of pic controller</a><span> </span></li>
+</ul>
+</div>
+</div>
+</div></div>
+</div>
+		</div><div id="custom_html-2" class="widget_text widgets widget_custom_html clearfix"><div class="textwidget custom-html-widget"><!-- SE Widget Hook -->
+<div id="se_widget_hook"><div class="sew_search sew_state_search widgets clearfix" style="display: none; width: 360px;"><div class="sew_form_search"><div class="sew_title">Download Datasheets</div><div class="sew_pb">Powered by Datasheets.com</div><div class="sew_error"><b>ERROR</b>: Search using 3 or more characters.</div><div class="sew_pn_label">Part Number</div><input class="sew_input" type="text" placeholder="e.g. LM317"><div class="sew_btn sew_search_btn">Search</div></div><div class="sew_form_result"></div></div></div></div></div><div id="text-3" class="widgets widget_text clearfix">			<div class="textwidget"><p><!-- /74317539/ElectroSchematics --></p>
+<div class="rec-ads">
+<div id="div-gpt-ad-medium-rectangle" style="width:300px; height:250px;" data-google-query-id="CO-wpfWhruECFYuFaAodqsgPgg">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-medium-rectangle'); });
+</script><div id="div-gpt-ad-medium-rectangle_ad_container">
+<ins style="width: 300px; height: 250px; display: inline-table; position: relative; border: 0px; vertical-align: bottom;"><ins style="width: 300px; height: 250px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_/74317539/ElectroSchematics_1" title="3rd party ad content" name="google_ads_iframe_/74317539/ElectroSchematics_1" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;" data-google-container-id="2" data-load-complete="true" src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(10).html"></iframe></ins></ins></div>
+<script>googletag.impl.pubads.createDomIframe("div-gpt-ad-medium-rectangle_ad_container" ,"/74317539/ElectroSchematics_1",false,false);</script>
+</div>
+</div>
+</div>
+		</div><div id="text-4" class="widgets widget_text clearfix">			<div class="textwidget"><div class="featured-design">
+<div id="div-gpt-ad-ti-featured-design" data-google-query-id="CPKwpfWhruECFYuFaAodqsgPgg">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-ti-featured-design'); });
+</script><div id="google_ads_iframe_/74317539/ElectroSchematics_4__container__" style="display: inline-block; width: 300px; height: 450px;"><iframe frameborder="0" src="./Arduino IR Remote to Control LEDs ON and OFF_files/container(1).html" id="google_ads_iframe_/74317539/ElectroSchematics_4" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="450" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="5" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div>
+</div>
+</div>
+</div>
+		</div><div id="text-5" class="widgets widget_text clearfix">			<div class="textwidget"><div class="filmstrip">
+<div id="div-gpt-ad-filmstrip" data-google-query-id="CPCwpfWhruECFYuFaAodqsgPgg">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-filmstrip'); });
+</script><div id="div-gpt-ad-filmstrip_ad_container" data-google-container-id="3"><script>window.dicnf = {};(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://googleads4.g.doubleclick.net/pcs/view?xai\x3dAKAOjssKmnyi0EOU5XsC64Bhxs0Um2M1Ig_rB5oLWFk0rFsOrTvvj2JHv_mxTgY_Xe9wECut77IQbWWSqZxM7RwcFrFTdrVuWdNetFagQmJTXXlEZjUnmsOcKDIyYeMriIfJXLGIvhuoUc4Ssib8s83KjIiwEuLj17dpb5dgzxAOxTD5LIb0rSdAMoSCFJxsgUdtBhEWJ6Hu-A6RI8qaHcxxt7xx9R4vJ_mqkdpiAFDW3b7dEo59YkO0IxGkO6ww6Ggss4VW5G4OI6zgt0_pa23RU2flAdweRzXehDzF-5HdBdbg7YHsbQMPlwHiz9EraOZLuFaA7ZEm0bBTzER8Z3zFMGWkvsB7NIEj2E4\x26sai\x3dAMfl-YSYSbisr_Dffubz1T0J5ocAf6vfy9jCsLkMQRe6DXkT_prf2-MQN7EiDeHoIVjook0mR9cJ8xD7cmtZXP7On4SN_ZyspzW2J3E8FkPWQwSRjygC1LHLFCUk7Kk\x26sig\x3dCg0ArKJSzFYEzZDtgDA9EAE\x26urlfix\x3d1\x26adurl\x3d")</script><script>vu("https://ad.doubleclick.net/ddm/jump/N46002.2244903ASPENCORE/B22481467.243239511;sz\x3d300x600")</script><a target="_blank" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuj29Z_MK64m--xJZNkgLaIRMmORATDsVJ5wd7zz4bYF1KlY9BqPwR2aUEhHyP8c0xFlowU5EE39oQKtu2njq24yRrDsIO2EXIGYl4Lz60lF2jMQzyEcFKgnu9ryyq99MSQ1vetxXCHx3EitBmba6ltcX85h-MU85toe6XmV_xZ80jv_tcl8dLztWbwU9D1xsZHmcA1qcNtZoPS_qJd9IQL1SuE0gud5EUx80vIlxUfAIbwgT4-FK628qNsRwhncikC48XGEvMXgwVTarnFfGBo9Yp4wSOasMxzNk2Yx3JX_TUGx0LvKaCsVJmLqmnQZpkjrGeu8axJxZMQusXB5e5eXWkvNXg&amp;sai=AMfl-YSMM1UbwPsR0UVpsy7a3_x9jzHMh3-QGXeOX5rSliDi2mo5qqcTY5Q3c_YD173gJ6zysMREkWTc4hzCCtUwzs1bI3pvWg2iTpkYrVMbcx9CXz0cFB5NfxaYqKs&amp;sig=Cg0ArKJSzHsy5RhWPg28&amp;urlfix=1&amp;adurl=https://www.eetimes.com/document.asp%3Fdoc_id%3D1334495%26utm_source%3Daspencore%26utm_medium%3Ddisplay%26utm_term%3Darrow_solar_suitcase_v1%26utm_content%3Dron-aspencore-allsizes%26utm_campaign%3Darrow_core_solar_suitcase_q119_global%26dclid%3D%25edclid!" onmousedown="var a=/^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i;var b=/(.*?(?:[/]aclk|pcs[/]click).*?)(?:(?:&amp;|%[256]+)nx.+?ny.+?dim.+?)?((?:&amp;|%[256]+)adurl[=%].*)/,c=event.currentTarget,d=c.querySelector(&quot;img[alt]&quot;);if(d){var e;var f=c.href,g=&quot;&amp;nx=&quot;+Math.round(event.clientX-d.offsetLeft)+&quot;&amp;ny=&quot;+Math.round(event.clientY-d.offsetTop)+&quot;&amp;dim=&quot;+(d.width+&quot;x&quot;+d.height);if(99&lt;g.length)e=f;else{for(var h=b.exec(f),k=&quot;&quot;,l=f;h;){l=h[2];var m=g;&quot;%&quot;==l[0]&amp;&amp;(&quot;5&quot;==l[2]&amp;&amp;(m=encodeURIComponent(m)),m=encodeURIComponent(m));k+=h[1]+m;h=b.exec(l)}e=k+l}a.test(e)&amp;&amp;(c.href=e)};" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/Arrow-Edison_v1-300x600.jpg" alt="Advertisement" border="0" width="300" height="600"></a><script type="text/javascript">(function() {if (!window.GoogleTyFxhY || typeof window.GoogleTyFxhY.push !== 'function') {window.GoogleTyFxhY = [];}window.GoogleTyFxhY.push({'_scs_': 'BZa_6Zq-hXPDlLIuLogOqkb-QCAAAAAA4AeAEAg','_bgu_': 'https://pagead2.googlesyndication.com/bg/NVc4dXluj9km1VU7RLxP8ZnrGlZEbkq3RZJcQC4LK0c.js','_bgp_': 'XLer+IAVjkTOsjy+C3U3PkMKyicDIY/ZKUQElptCmz95NAVVkAaXGrncVlYUa+WH6OLBvpS2Mo8ylIpG0sPNUgWHQJNUGY/iAK0//Nln2dI7+BCvpaLXs1MK7/tlmL9dUs3knAksl0+6ArK0DCcuePFdbtt/lIb1nqDw1CgH5yFS+a6jhkOpJy6GggTzNvCvW3LUGcSbxjV1iz4H64knSWqp/C63kjFtQuZmlV07sGsILPhM0ndb0WWR7bbDCf81ltBfxHrFiWQDTbtPN7IHuCdZ/k5syXJSXKXZR2NdAgX9NqOm+gcHKPfKLaUcGsDUPp2z2wtBw0KTw40Z6w+r7W5n7II932otn1ttAVHQQb1a4+BIvLEGrhKupu1D6AUqgsuETSjOBGFBBaBIsFvvf+F0/m8TTiTk64rjqL4nEqGPFdrHoM2nBF5c60SCWkfYgNY+HH/e7TBLwuay1guw1Lgd3Q9h7M+SNGZdgYlqmTb3RR0V+xq40qrjQVxEnRHjAPp4MOsGpq3ceg9y844YiEIaLXNUCzPzeq/YyJZZ69Igen7jOWXI0h3whafx6bug4WoSxzKRK5z+zDujkb9S2PqQ9wXe74gICxWT4gYvI/xaN9/TCwsu7YyjMPQIBmsXMR7+ve5A8G4pC+f2IR6HD6MD/PHL/RT/V/YtP832d7VN047tzZgw1jV9ubFRu17HeOV1fixuSUTqdfkH4BNXZWgQlEM24oF+zJwyrHeDgvODUIy6sb10Rpw7k/0itpuvt1NUQMsn9cz5OHQQZlQdq68xlSQMVHdUQvIekMhuNioAF5DG9zcemU2Djra9ukcO7yvDwJnbuTQZRNfXCHyw9Z+iMpgQeqMfc9yjIvGB7m+uE857jhdpro1p6ULXvnYLDTqaXg/fHwIa6k1HBl6NEbFwYRgRXWC2lqT5aXZdj5sUROHB5b5h1qZHMi/47cgOdbXh6V0bo+x8uMKs7ou3gbB7R2CY+7kDpMpQD9P6N4dDvOfzZZj+TUt+0wtyKhjHPir69hFagzx7NV+OwJwN4EQ7YMIorr3jtGv8JSu/SZgAOBycr3abA66mWdG/h7pWDKOrL4Mzmad5ewJdtyFC/5QNip09CpGQouTBByMLFjgvp+jLzJOU8ViJePzAqEKgkHDrVY7uEq3fuwzYPjjnr7wNJjRu3WerpPzw2Q9ERMcMMY/8m6BZ4049TGYLUnNN5AFAZ9x/aNS21lXaz/pk8SWj+7PFhv7u45p2HbTkdOHSSf55zCYDLpYp6/bYm1y8eyt0IFkUX5+/LQkdlasCxLXdRHuuwj7FXlDQjJPzJmyOQtrKnI2/pdxpXWqJLitQL5b+M7Rhx50Pvgtxk15trO0x9Bf89H1FnYNY4C4S8l57HH///K3wjkkhjEigTaJmyN21f2b8UJQNBZmnjELr9hCxl3VAdPJeU4hrVFbii7zI6GtclKO6kBdU51qOS8N38U3snWLaOSWDv/8LhfkLP+lAPrRCECrrqe+pdtmnHb/n9peQp9Dq8DjllojWNyKolsbOJKm7Ev5h9cVccAA/tYYrGNXcKX2rdgmT8jQZFd8SEbGDuvnRxMraVpgu8dhTRcj3b/K+qZl04l0/BrGR7Sola0v5hmPaVj1hE+z9h4n1LvJPKg7EJ1InRhjfborpHfdOSGvO7oATI/ZhDSHxb08aT5YUHmiaei2QzdbO+65G7vyLgad7YLEX+Ur7YIM2Hr0ul+jAHcrBmL2oAEAiJQi598ncOadEa8DBR8IOoMJASiTNgpZ5jcG2yE/oQGb8gUqjRvK99GqNlg/JYUwQ7tLZMgrGuxS2R0PCryke4Uq0O3/2Qp5Ul3r/xwyU39JNV+Ge/W2u1dlT4BawCRVH25nJ2aspT6UlsBb/kTEQ699FjYkV0bFObbeahbK62PVQPSXb2FQzDjZzz7AGJ0nmMKmFa+7gVkRg53SMJosFRlv5Up889YFqRpj1qntLz3zru0D2L/ONm6H09KQPdxcFatkpchzDybHjCnLZtm5rtA5U7kVKqGzLCrT0sT5qRk5J47SeMGVG7s3eJH6WB5hfLLaLGFWvS7o0u0njOjpDDeuxN1sDCQxuGxZ2Ot0YbqIy5tEzYwLcw+RdwcDnNsCVVWjp3/YXZCn6lyIOErGAE18a/pOzYc9YDNDmGi2TXujbzsoDxYlc/GApfjCSpz2Vqfi48Mz2KMhA1tWoqxxENnqpVLfQOcJsz8GyxtE2GN/aUdb9zKOMUDjtJhRijRZAlY1+ItX3k4mLDX1sBE0c1bjV19X89aA5sFqxFJX5WD6TxmnQtjyvN4zSl0h+xuJavWUSwkudiv9Nwyh4ee28HjmJk0KBIBBZr0s+rRSLXCd39MlqsIcPdmBJRBogosbL1CepruQSd6blTiTaz8+4PzIQ1NlHBG5ztV2cEFFGcZm+34JxvxQEEuBPGY3IKDvZeQFlicxaNrl3vmu9j+eNrItgOQjMpo/unIU0ClVLV9lBoiHdlbl7cuO3Bsc77F3PUoin8Uw7QsmJOIS1SnH10u57YHg9beJPQfavKUovJ9Qi8FxgF19Ub+X8qWbKatFIaI+Qe+hkpl09iUOw6HtWhPLkjNJXhZ+gaCNrlbraE1ev43C6LwJorR2wb0JIS2Z6HgYMc37IWVJDsf81YZDpdhGpRtsoNBWjCFsWUKnakXOWj/IulZoSf8xv2uKcoAgPrKSo6FU75b8mezo6HvIP1ZZAp2rtiDN6F1kybygGnFJQ870XjJDbJY6WUbjVlHlMf0yOY88KXuYjPVUE+Y6B1oX3FGKnvH9z/4xbftl0zUMe5vF+gic2xO2Yj3banUQViwZIqYJaAJnz4Y+VyNDjgiHJD61+YQvY7bCncYZfkOsPFGSZoHB0KLwXe3c+7eEWRuRNlIit99DjBZ+FYeYLEPoTMrgXYrK5B5NGbvv/WZ1+6LpzD3XUWHu1V06xyPhl/9dSpm5WSGGujB5ATVGUtNCX7offg6R4Oj1o/aK6sZ9YOYzCgm8TyKCelCHze2ib2+mxG49vejlT6z1YFRXRXrDm6mSZDU53SoQfLZxE4uE9SHEAdWmfIq/yUY0OZmrhFjIzId7C1imCiUEoXXMNi0/eEUvijuOaQFHt5MYVT535a2Vt5+F34VduyQqkMjUrfsaqk1ZOdpSjMxbUPhYI+R8KC+4F+Nu0ToYi7YNtFozJY8trXCu2PIN04Yn1Fut4Hb4JvfTNy8TMD47ENNYoiiGaii1N9k3RbpPEEzQ9Ocyp5bE/rsb0iHiOP2DEyat13r7OcVT8LwuEqy6HKlhhvTQSX4zeeHT1Bcsmf71q1A09GcGwtFXsdcaqUOGDHJtYl5eg6qvXt7FPT2XuxY4dOPmNx8wwfennlWGiJRXYIcYGJn5N3elmaJ5TML7IIV8/gOsdjTXgol9454YvOMe2Ri1ZEAf/c7FpjdpuPOy4503j3YPmCxduN9EPfQjGxYtJXdmvIAyfbFzupLQR5m7SzAh/DgNufFB5ogCthHw9R5r9Cnx2I/o7TWmH+fhkwrPl4PzR3TrsDa3CvTWHsg7Mj+Sxt5pNF0/d84RS8NITFXzCvkpw1yceDPTbxJKE0pgQzTciR5YMIZAZl4F+gSrrILh/GBWXx2tYN89KjWaTibBsuPBqCOzFM2lTLTyREaUwwBAh86FyvvMk4Zz/8opDsg1kCdbejWbWQnMMYwd3PH8iJgbAki7byHKeLQhFzvxBtvbRIQWe0LRHiCXROWHqxLk3elXk1Do+JeUM7frtzz4wV0JguyytREW934uEV8x2xfVoBnyi7ndHiVPaxRsqeyvsJRvCS9zND0YCOU49+AMH6f6g0jcRJ5p/U60zcv6MpLWTV4Ox+nR0uRiXIvyFHrnbafecDB6CnsKI8jmRGvP9YpnjyJapFchwdRlpPgH7+mtL+/npq/aL2lS3KUbo7vq5YxEemYX0lkrRvUCNonG282a0AB0ewc48Djak+GdHTquwcs/JzodNX2HRWsUtdmIQ6XfgLOQIP9nGxzx5HhwcUTh7LdynUWalqe4zPn4aql90HzGlnqIz5CcMgCqXs0YXfkdMp2KEZqGG8oCv+l5BdzbkJgShMWKqp1NHpEp1aSRBTNDoGOvYX93vDWl7xvuY8bJLku7jkIhiuowVKYu1pKEsgkOc62Dk9nIzhhoccKAoBmmSJbJ4msziuQioSlaqCb8IUY9/rBtBadmYDzM7O6+wCuUosRD/mJStf5KsBnqPeGlnRu0B+5xemf4vP2E1K8/q+DUDXdG++bnvPZ/apn0HSR08Ef/TtPwWwgzqC0CoiCoaBWl4+ZTRsvIPWcwSNa7BIVV+GumXZkh/3IyMX0wof3K3cNstBDRoGx+N7Gs43qvHGhzAEYaM1NbCZzdEMvIx6+39td9No3SzzCcJX2RM1dVIaMySYv5Qe39yRSCL6+r4dJ6xC3E1dIaQdttn2dXngDXPKgnejdsaMu5X2U+k0+cNKs8kcfofQ7IK784CODULY8Co8d4wH1tWoYpT9wFdwNdh5ThLNzsFyUCxZQJwGsVvxWsZqT3gQiAb0LWJmcgznCjE+YDBAv+AqS1mcH31Tv7Ph3w5aoCqiiB7/FcySLxYg/8qMg8Y5WGXa8C8jhjwr2au7OZr3wonUdKOqHdlsT1p80jSxhuxlG26knKKMw9hE/CHJlj6YT0oV43xovhIJNrg/dWV/v6GlCcj6SbHfNhRDjXjHIhjyr9yEJxrO7Ei71v9EvNEs6GgBN467pSXsUhgtZ1EJMu13+xSmr5g68XeRbOvSwHwDRCDSaUXv6n9LCuIqZUvAHssm8i4ctY71EMbAhPFNAj8wQ2SI0sRD9E0skupOUjA7NYc/G2oxGZNRkH4smISV1PSc0ngON78gBnIGf/iGqcxK5W6+BuNiGqYa1vBpBqh81ZZALTSYFDs6AOSZXM80cStUENuWkSEYa24BjUd1hx7WP5GZVJGKnAKGF8qpSuDHap8Z1sN31UTBSJU2bbkuBbcVnfkV80uTnSADfuPf19NNpFzxctRu+9lgDOtx+1DyiBACPp9bN4HQdBzSJ1Wj9ebB9f7+Zmp00r6um0kTG2sbFU0iYYlvbM2OM/awVAZuiBXOkhgc90M019jzynR4tnyLcKVyOY0TSw9/UQNhMw01qkBnTwEwor7gcYFqkuh4mWOu+ec0KU8UQZSJqMalQDqwC1ZqXCuDmCPwzLl50+rwrAtdiL2XztLKv4DboYZwGPQ69nbDmm4/5ENODG6AypSfUKWoZ2aK8kbOEEXPmXe7b/vHdPrz4cZfACCK275Y3ribxohK0+1CNrG3tzRR8hg263IlAz63MARhpK/DSxitAzwtIaWRvXIp/Ta5pzP8ZrJtEsHT/PK4g+O2WugJopFGOkVkbLOXucEc7oNLjgT6jH+Ylaybd8+9p0IJRYoIg8JSkGManAtqbNuDVNElubNNDhtSD/afWFp5QvT25SAD5Tz1pl9wclIx+V1mFb/juEC+xFVs6+fJ5KrGoJ//GTDN180LQLFjGihfv19fj3bRsDbpMfp2tlOxDIf300rn9WSKbklaQtO4ETMuR5+LphrGWZeGpznPpeFSDUbqJIpXtlddD37j2TvJoygUluMocjjSHMP88aYknt9Kp3ebwQfpMbDZe1dE6e0fCzTtSjeTLmYbN5TiASzZynPa7ILTtitwh6/7vMTFco24qszYGcTo6aIAC1U6HaFyQBc5bWcJQFlld3SJT0qtNsztBfVcNJHiTKpwcecVKBdUfVkgALIWmPgwksR3HVUpBHrjw6jdUsRJ9XvNqcdtpsKjAu610JbC04WJUjWoDknF7DGn0JSWPjI9sk7ycB9R/3piHDSWRpWQMXZ2vtbhdEoe2R6iz6cyDl+LUD3eWe0R4uzK8Wd6+zgJgAioueYLCCPwxMRoVauBEEzbOPd0UUe+qtHx5D1LEvPSdKkVWc2K8IAuiU2MiDAABsnEmfjHc73ySTt/7YA0UWf9BTgEN8YbgAaGiQLjptxhqxIs2FkN7srDeCosYnRGlLSIOkFJ+iKOqx9lRb6Be3hN558SlqhbxJbj9VBSaFXeO1KCDy8h7jqagEJS8ADMMvdL7AFsL0d9ZDpy4ODIbKm3f7SidMmFDL0sC3nV+xFYHtTStWV4+BY2lcvHpameZdhfuKN55HF7zvrERkMVzZmTKc9ZMF7XJHPzX6vURJrquyCpP/FnG7TXUYxO6sLTGOTg\x3d\x3d','_ifr_': 'false'});var gsodar = document.createElement('script');gsodar.type = 'text/javascript';gsodar.async = true;gsodar.src = '//tpc.googlesyndication.com/sodar/UFYwWwmt.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(gsodar, s);})();</script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/osd_listener.js.download"></script><script type="text/javascript">osdlfm(-1,'','Bjv1yZq-hXPDlLIuLogOqkb-QCAAAAAAQATgByAEJwAIC4AIA4AQBoAYe0ggFCIBhEAE,BlxE2Zq-hXPDlLIuLogOqkb-QCAAAAAAQATgB4AQCiAW7lNwKoAY-','',1955661398,true,'ud\x3d1\x26la\x3d0\x26alp\x3dxai\x26alh\x3d3849999088\x26xdi\x3d0\x26',3,'CAASEuRofrLT68M2fQvQZeTE4S1I9g','//pagead2.googlesyndication.com/activeview?avi\x3dBjv1yZq-hXPDlLIuLogOqkb-QCAAAAAAQATgByAEJwAIC4AIA4AQBoAYe0ggFCIBhEAE,BlxE2Zq-hXPDlLIuLogOqkb-QCAAAAAAQATgB4AQCiAW7lNwKoAY-\x26cid\x3dCAASEuRofrLT68M2fQvQZeTE4S1I9g','');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script>
+</div>
+
+</div>
+</div>
+</div>
+		</div><div id="text-6" class="widgets widget_text clearfix">			<div class="textwidget"><div class="subscribe-now">
+<a href="https://www.electroschematics.com/subscribe" rel="nofollow" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/subscribe-btn.jpg" alt="subscribe now"></a>
+</div>
+</div>
+		</div><div id="mostpopulartags-2" class="widgets widget_most_popular_tags clearfix"><h2>Popular Tags</h2><ul class="wp-tag-cloud" role="list">
+	<li><a href="https://www.electroschematics.com/tag/ic-datasheet-circuits/" class="tag-cloud-link tag-link-50 tag-link-position-1" style="font-size: 14px;">IC datasheet</a></li>
+	<li><a href="https://www.electroschematics.com/tag/led-circuits/" class="tag-cloud-link tag-link-194 tag-link-position-2" style="font-size: 14px;">LED</a></li>
+	<li><a href="https://www.electroschematics.com/tag/audio-amplifier-circuits/" class="tag-cloud-link tag-link-86 tag-link-position-3" style="font-size: 14px;">audio amplifier</a></li>
+	<li><a href="https://www.electroschematics.com/tag/battery-charger-circuits/" class="tag-cloud-link tag-link-94 tag-link-position-4" style="font-size: 14px;">battery chargers</a></li>
+	<li><a href="https://www.electroschematics.com/tag/741-circuits/" class="tag-cloud-link tag-link-337 tag-link-position-5" style="font-size: 14px;">741</a></li>
+	<li><a href="https://www.electroschematics.com/tag/fm-transmitter-circuits/" class="tag-cloud-link tag-link-185 tag-link-position-6" style="font-size: 14px;">fm transmitters</a></li>
+	<li><a href="https://www.electroschematics.com/tag/solar-charger-circuits/" class="tag-cloud-link tag-link-736 tag-link-position-7" style="font-size: 14px;">solar chargers</a></li>
+	<li><a href="https://www.electroschematics.com/tag/avr-tutorial/" class="tag-cloud-link tag-link-1290 tag-link-position-8" style="font-size: 14px;">AVR tutorial</a></li>
+	<li><a href="https://www.electroschematics.com/tag/arduino/" class="tag-cloud-link tag-link-1342 tag-link-position-9" style="font-size: 14px;">Arduino</a></li>
+	<li><a href="https://www.electroschematics.com/tag/arduino-tutorial/" class="tag-cloud-link tag-link-1273 tag-link-position-10" style="font-size: 14px;">arduino tutorial</a></li>
+</ul>
+</div><div id="text-7" class="widgets widget_text clearfix">			<div class="textwidget"><div class="join-fb"><a href="https://www.facebook.com/groups/electroschematics/" target="_blank" rel="nofollow noopener" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/fb-side-bnn.png" alt="electroschematics group on facebook"></a></div>
+</div>
+		</div>					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!--WP Code Highlight_start-->
+	<script type="text/javascript">
+		window.onload = function(){prettyPrint();};
+	</script>
+	<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/wp-code-highlight.js.download"></script>
+	<!--WP Code Highlight_end-->
+</div>
+	<div class="ads-footer-container">
+		<div class="ads-full">
+			<div id="text-10" class="widgets widget_text">			<div class="textwidget"><div id="div-gpt-ad-leader-smartphonebanner" data-google-query-id="CPGwpfWhruECFYuFaAodqsgPgg">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-leader-smartphonebanner'); });
+</script><div id="div-gpt-ad-leader-smartphonebanner_ad_container" data-google-container-id="4"><script>window.dicnf = {};(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://googleads4.g.doubleclick.net/pcs/view?xai\x3dAKAOjsuJ52lJsbEA8gjGtqdVh4kW_wWm6evXb12FZxeRyQYw2dbQwXmNtWaI82C9ABy7z0e9Aj57Jdoq6mmSaNiOEn_PuCnQ4W-NteInMfLiEH6iOZa3Ojq943gP1bclihlZuSbYaNcVQ2Tjl4fNJvdZQn8mgW8GXWHoL2evNF7Fm-_6x5sAYaT-7SBujxZcaw5_Vl2uNWiFBUukPxmtEe1pvtyxxlKiaMWmFee-Q6_y7aEEA5rRpde_qd_p0k0Z32yQNZ4bRfiAnodRH01ndlwobam5pNm1KEtumq1SKxxNsfE7lKcAemT7BrBqycDIX_KtuH8-oLSWmcyQSL4DRTGTuxMn7O-YX2uRWQU\x26sai\x3dAMfl-YRj49E_0RYEVDeO1l0p9UZ_r4NUkyk8sjkjI_UbRJjf_AFI6VwEtxV5PgtETAtZyp3b9qenqrLa-wMt8g3PmGa9ukbuWRt5m2DtsiMhuJsZqlTWaeu60Ikjil4\x26sig\x3dCg0ArKJSzBVVm-IgqAFNEAE\x26urlfix\x3d1\x26adurl\x3d")</script><script>vu("https://ad.doubleclick.net/ddm/jump/N46002.2244903ASPENCORE/B22456256.242583548;sz\x3d728x90")</script><a target="_blank" href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjssD3R_XJ_FVji2PXhvGbFeqcWf2UHaXEQeq6X4wmihI51HLyJeKMUXhGy5GWWPTMZapqYs20YZ_RgbLXgyUpQJIks1ChQNnEerUiFAjC1rC756on2voIoQPRvRtNvD66JGNnnYw0EHkfLSd-SPqddY1Q8S66catAVVCkRqmkVPlx-OViITLTYfIMwMzE-PKqVrq5NA8sAXHW8IqJzeRbysmP-_xBDLyLnz51Pnr1Y-eaw1fJiRU-WY6cq5DNy6spgK9R2MIKQUY0vVwiH8RLKn98aVQjGEWExAjwjY1982PfEivbN-3FDNQrJKI4KREOMAOiUKKSmLNbzShMJWXv6isRsnDpxo&amp;sai=AMfl-YRPaQz6Sap0qsQJECJhGmwyEafzyKMmxixnd4fc1MbO4fyRqzTQEND-p3eddv4vL4KM4XuN5us955MN6cBFsvmhwtUjqSx6sYF_Pv87WLozmkV1Idk29aayZW8&amp;sig=Cg0ArKJSzAohO_QYP6-m&amp;urlfix=1&amp;adurl=https://www.arrow.com/en/campaigns/analog-devices-power-by-linear%3Futm_source%3Daspencore%26utm_medium%3Ddisplay%26utm_term%3Dsupplier_adi_power_campaign%26utm_content%3Dron-aspencore-allsizes%26utm_campaign%3Dsupplier_adi_power_q119_global%26dclid%3D%25edclid!" onmousedown="var a=/^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i;var b=/(.*?(?:[/]aclk|pcs[/]click).*?)(?:(?:&amp;|%[256]+)nx.+?ny.+?dim.+?)?((?:&amp;|%[256]+)adurl[=%].*)/,c=event.currentTarget,d=c.querySelector(&quot;img[alt]&quot;);if(d){var e;var f=c.href,g=&quot;&amp;nx=&quot;+Math.round(event.clientX-d.offsetLeft)+&quot;&amp;ny=&quot;+Math.round(event.clientY-d.offsetTop)+&quot;&amp;dim=&quot;+(d.width+&quot;x&quot;+d.height);if(99&lt;g.length)e=f;else{for(var h=b.exec(f),k=&quot;&quot;,l=f;h;){l=h[2];var m=g;&quot;%&quot;==l[0]&amp;&amp;(&quot;5&quot;==l[2]&amp;&amp;(m=encodeURIComponent(m)),m=encodeURIComponent(m));k+=h[1]+m;h=b.exec(l)}e=k+l}a.test(e)&amp;&amp;(c.href=e)};" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/Arrow.com-ADI-Power-728x90.jpg" alt="Advertisement" border="0" width="728" height="90"></a><script type="text/javascript">(function() {if (!window.GoogleTyFxhY || typeof window.GoogleTyFxhY.push !== 'function') {window.GoogleTyFxhY = [];}window.GoogleTyFxhY.push({'_scs_': 'Bxi24Zq-hXPHlLIuLogOqkb-QCAAAAAA4AeAEAg','_bgu_': 'https://pagead2.googlesyndication.com/bg/NVc4dXluj9km1VU7RLxP8ZnrGlZEbkq3RZJcQC4LK0c.js','_bgp_': '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','_ifr_': 'false'});var gsodar = document.createElement('script');gsodar.type = 'text/javascript';gsodar.async = true;gsodar.src = '//tpc.googlesyndication.com/sodar/UFYwWwmt.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(gsodar, s);})();</script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/osd_listener.js.download"></script><script type="text/javascript">osdlfm(-1,'','BJqC9Zq-hXPHlLIuLogOqkb-QCAAAAAAQATgByAEJwAIC4AIA4AQBoAYe0ggFCIBhEAE,Bvz4SZq-hXPHlLIuLogOqkb-QCAAAAAAQATgB4AQCiAXAz9oKoAY-','',3735295170,true,'ud\x3d1\x26la\x3d0\x26alp\x3dxai\x26alh\x3d3502243872\x26xdi\x3d0\x26',3,'CAASEuRoUgvFIROfi88n6y2QiIYPoQ','//pagead2.googlesyndication.com/activeview?avi\x3dBJqC9Zq-hXPHlLIuLogOqkb-QCAAAAAAQATgByAEJwAIC4AIA4AQBoAYe0ggFCIBhEAE,Bvz4SZq-hXPHlLIuLogOqkb-QCAAAAAAQATgB4AQCiAXAz9oKoAY-\x26cid\x3dCAASEuRoUgvFIROfi88n6y2QiIYPoQ','');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script>
+</div>
+
+</div>
+</div>
+		</div>		</div>
+	</div>
+
+
+	<div class="footer-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-13068" class="basics col-md-2 col-sm-6 col-xs-12 menu-item-has-children"><a>The Basics</a>
+<ul class="sub-menu">
+	<li id="menu-item-13069"><a>About Us</a></li>
+	<li id="menu-item-13070"><a href="https://www.electroschematics.com/contact-us/">Contact Us</a></li>
+	<li id="menu-item-13071"><a href="https://www.electroschematics.com/participate/">Participate</a></li>
+	<li id="menu-item-13072"><a href="https://www.electroschematics.com/privacy-policy/">Privacy Policy</a></li>
+	<li id="menu-item-13073"><a href="https://www.electroschematics.com/terms/">Terms of Use</a></li>
+	<li id="menu-item-13074"><a target="_blank" href="https://www.surveymonkey.com/r/2SMMN52">Feedback</a></li>
+</ul>
+</li>
+<li id="menu-item-13075" class="advertisers col-md-2 col-sm-6 col-xs-12 menu-item-has-children"><a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#">For Advertisers</a>
+<ul class="sub-menu">
+	<li id="menu-item-13076"><a target="_blank" href="http://mac.aspencore.com/AspenCore_Contact-Us.html">Contact Sales</a></li>
+	<li id="menu-item-13077"><a target="_blank" href="http://mac.aspencore.com/AspenCore_Media-Guide.html">Media Guide Request</a></li>
+</ul>
+</li>
+<li id="menu-item-13078" class="aspencore-network col-md-3 col-sm-12 col-xs-12 menu-item-has-children"><a>Aspencore Network</a>
+<ul class="sub-menu">
+	<li id="menu-item-13079"><a target="_blank" href="https://www.ebnonline.com/">EBN</a></li>
+	<li id="menu-item-13080"><a target="_blank" href="https://www.edn.com/">EDN</a></li>
+	<li id="menu-item-13081"><a target="_blank" href="https://www.eetimes.com/">EE Times</a></li>
+	<li id="menu-item-13082"><a target="_blank" href="https://www.eeweb.com/">EEWeb</a></li>
+	<li id="menu-item-13083"><a target="_blank" href="https://www.electronicproducts.com/">Electronic Products</a></li>
+	<li id="menu-item-13084"><a target="_blank" href="https://www.electronics-tutorials.ws/">Electronics-Tutorials</a></li>
+	<li id="menu-item-13085"><a target="_blank" href="https://www.embedded.com/">Embedded</a></li>
+	<li id="menu-item-13086"><a target="_blank" href="https://www.planetanalog.com/">Planet Analog</a></li>
+	<li id="menu-item-13087"><a target="_blank" href="https://www.powerelectronicsnews.com/">Power Electronics News</a></li>
+	<li id="menu-item-13088"><a target="_blank" href="https://www.techonline.com/">TechOnline</a></li>
+	<li id="menu-item-13089"><a target="_blank" href="https://www.datasheets.com/">Datasheets.com</a></li>
+	<li id="menu-item-13090"><a target="_blank" href="http://www.embedded-control-europe.com/">Embedded Know How</a></li>
+	<li id="menu-item-13091"><a target="_blank" href="http://www.embedded-know-how.com/">Embedded Know How</a></li>
+	<li id="menu-item-13092"><a target="_blank" href="http://embedded-news.tv/">Embedded News</a></li>
+	<li id="menu-item-13093"><a target="_blank" href="http://iot-design-zone.com/">IOT Design Zone</a></li>
+	<li id="menu-item-13094"><a target="_blank" href="http://motor-control-design.com/">Motor Control Design</a></li>
+	<li id="menu-item-13095"><a target="_blank" href="http://electronics-know-how.com/">Electronics Know How</a></li>
+	<li id="menu-item-13664"><a target="_blank" href="https://iot.eetimes.com/">IoT Times</a></li>
+</ul>
+</li>
+<li id="menu-item-13096" class="global-network col-md-3 col-sm-12 col-xs-12 menu-item-has-children"><a>Global Network</a>
+<ul class="sub-menu">
+	<li id="menu-item-13097"><a target="_blank" href="https://www.eetasia.com/">EE Times Asia</a></li>
+	<li id="menu-item-13098"><a target="_blank" href="http://www.eet-china.com/">EE Times China</a></li>
+	<li id="menu-item-13100"><a target="_blank" href="https://www.eetindia.co.in/">EE Times India</a></li>
+	<li id="menu-item-13101"><a target="_blank" href="http://eetimes.jp/">EE Times Japan</a></li>
+	<li id="menu-item-13102"><a target="_blank" href="https://www.eettaiwan.com/">EE Times Taiwan</a></li>
+	<li id="menu-item-13103"><a target="_blank" href="https://www.ednasia.com/">EDN Asia</a></li>
+	<li id="menu-item-13104"><a target="_blank" href="http://www.ednchina.com/">EDN China</a></li>
+	<li id="menu-item-13105"><a target="_blank" href="https://www.edntaiwan.com/">EDN Taiwan</a></li>
+	<li id="menu-item-13106"><a target="_blank" href="http://ednjapan.com/">EDN Japan</a></li>
+	<li id="menu-item-13107"><a target="_blank" href="http://www.esmchina.com/">ESM China</a></li>
+</ul>
+</li>
+<li id="menu-item-13108" class="connect col-md-2 col-sm-12 col-xs-12 menu-item-has-children"><a>Connect with Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-13109"><a href="https://www.facebook.com/groups/electroschematics/"><span class="symbol"></span>Facebook</a></li>
+	<li id="menu-item-13110"><a href="https://www.youtube.com/user/ElectroSchematics"><span class="symbol"></span>Youtube</a></li>
+</ul>
+</li>
+</ul></div>				<div class="footer-logo">
+					<img src="./Arduino IR Remote to Control LEDs ON and OFF_files/AspenCore_logo_general-@2x.png">
+				</div>
+			</div>
+		</div>
+		<div class="bttm-most">
+			<div class="container">
+				<div class="row">
+					<div class="col-a col-sm-12 col-md-12">
+						All contents are Copyright © 2019 by AspenCore, Inc. All Rights Reserved.
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+<!-- Mouser Panel -->
+<div class="flyover-btm-overlay">
+	<div class="mouser-menu">
+		<div class="visible-sec">
+			<img src="./Arduino IR Remote to Control LEDs ON and OFF_files/ic-logo.png" alt="" height="34">
+			<span>Looking for the latest from TI?</span>
+		</div>
+	<div class="browse-list-wrap">
+		<ul class="products-list">
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/amplifiersandlinears/amplifiersandlinears.page?HQS=hpa-null-null-elschemflyaway-bs-lp-amplifiers-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Amplifiers</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/non-isolated-dc-dc-switching-regulator-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-nonisolatedDCDC-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Non-Isolated DC/DC</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/audio/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-audio-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Audio</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/powermanagement/power_portal.page?HQS=hpa-null-null-elschemflyaway-bs-lp-pwrmgmt-wwe&amp;DCM=yes" target="_blank" class="image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Power Management</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/battery-management-products-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-battery-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Battery Management</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/power-management-multi-channel-ic-pmic-solutions-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-pmic-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Power Management IC (PMIC)</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/clockandtiming/clock_and_timing.page?HQS=hpa-null-null-elschemflyaway-bs-lp-clocks-wwe&amp;DCM=yes" class="mouser-product-click image-cont" target="_blank"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Clock and Timing</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/power-modules-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-powermodules-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Power Modules</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/dataconverters/data_converter.page?HQS=hpa-null-null-elschemflyaway-bs-lp-dataconverters-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Data Converters</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/sensors/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-sensors-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Sensors</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/interface/interface.page?HQS=hpa-null-null-elschemflyaway-bs-lp-interface-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Interface</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/voltage-reference-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-voltageref-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Voltage References</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/linear-regulators-ldo-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-linearregulator-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Linear Regulator (LDO)</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/webench/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-WEBENCH-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Webench</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/logic/home_overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-logic-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Logic</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/general/docs/refdesignsearchresults.tsp?HQS=hpa-null-null-elschemflyaway-bs-lp-TIDesigns-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">TI Designs</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/power-management/mosfet-and-igbt-gate-drivers-overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-MOSFET-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">MOSFET and IGBT Gate Drivers</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?https://store.ti.com?HQS=hpa-null-null-elschemflyaway-bs-store-store-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">TI Store</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com/lsds/ti/analog/motordrivers/overview.page?HQS=hpa-null-null-elschemflyaway-bs-lp-motordrivers-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">Motor Drivers</a></li>
+			<li><a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://my.ti.com?HQS=hpa-null-null-elschemflyaway-bs-myti-myti-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont"><img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow.png">MyTI Registration</a></li>
+
+		</ul>
+	</div>
+		<div class="visit-ti-footer">
+			<a href="https://ad.doubleclick.net/ddm/clk/309962084;137629245;p?http://www.ti.com?HQS=hpa-null-null-elschemflyaway-bs-lp-homepage-wwe&amp;DCM=yes" target="_blank" class="mouser-product-click image-cont">visit ti.com <img src="./Arduino IR Remote to Control LEDs ON and OFF_files/right-arrow-white.png"></a>
+		</div>
+	</div>
+</div>
+<!-- End Mouser Panel -->
+<style>
+	iframe[src*="siliconexpert.com"] {
+		position: absolute;
+		z-index : 2;
+		bottom: 0;
+	}
+</style>
+
+<script type="text/javascript">
+	(function() {
+		var cid="electroschematics", arp = document.createElement('script');
+		arp.type = 'text/javascript'; arp.async = true;
+		arp.src = "//widgets.datasheets.com/tag/"+cid+".js";
+		var s0 = document.getElementsByTagName('script')[0];
+		s0.parentNode.insertBefore(arp, s0);
+	})();
+</script>
+<div id="cookie-law-info-bar" class="cli-bar-popup cli-modal-content" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: inherit; position: fixed; width: 500px; height: auto; max-height: 568px; top: 50%; left: 50%; margin-left: -250px; margin-top: -78px; padding: 25px 15px; overflow: auto; display: none;"><span style="float: left; display: block; width: 100%; height: auto; max-height: 468px; overflow: auto; text-align: left;">This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish. </span><div style="width:100%; padding-top:15px; float:left; display:block" class="cli_pop_btn_container"><a href="https://www.electroschematics.com/9522/arduino-control-leds-ir-remote/#" data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button" style="margin-top: 10px; margin-left: 5px; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);">Accept</a><a href="https://www.electroschematics.com/policy/" id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="margin-top: 10px; margin-left: 5px; color: rgb(68, 68, 68);">Read More</a></div></div><div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<script type="text/javascript">
+  //<![CDATA[
+  cli_cookiebar_settings='{"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_1_new_win":false,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":true,"button_3_new_win":false,"button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":"fffffff","font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"accept_close_reload":false,"reject_close_reload":"fffffff","showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":false,"show_once":"10000","logging_on":false,"as_popup":"fffffff","popup_overlay":"fffffff","bar_heading_text":""}';
+  //]]>
+</script><script type="text/javascript">
+<!--
+piCId = '66478';
+piAId = '115242';
+
+piHostname = 'pi.pardot.com';
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+-->
+</script><script type="text/javascript">
+
+(function($){
+     $('a > img').closest('a').addClass('image-cont');
+})(jQuery);
+
+</script>
+<link rel="stylesheet" id="yarppRelatedCss-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/related.css" type="text/css" media="all">
+<link rel="stylesheet" id="tabby-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/tabby.css" type="text/css" media="all">
+<link rel="stylesheet" id="tabby-print-css" href="./Arduino IR Remote to Control LEDs ON and OFF_files/tabby-print.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.electroschematics.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/scripts.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/script-q2a.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JQLBSettings = {"fitToScreen":"1","resizeSpeed":"400","displayDownloadLink":"1","navbarOnTop":"0","loopImages":"","resizeCenter":"","marginSize":"0","linkTarget":"","help":"","prevLinkTitle":"previous image","nextLinkTitle":"next image","prevLinkText":"\u00ab Previous","nextLinkText":"Next \u00bb","closeTitle":"close image gallery","image":"Image ","of":" of ","download":"Download","jqlb_overlay_opacity":"80","jqlb_overlay_color":"#000000","jqlb_overlay_close":"1","jqlb_border_width":"10","jqlb_border_color":"#ffffff","jqlb_border_radius":"0","jqlb_image_info_background_transparency":"100","jqlb_image_info_bg_color":"#ffffff","jqlb_image_info_text_color":"#000000","jqlb_image_info_text_fontsize":"10","jqlb_show_text_for_image":"1","jqlb_next_image_title":"next image","jqlb_previous_image_title":"previous image","jqlb_next_button_image":"\/wp-content\/plugins\/wp-lightbox-2\/styles\/images\/next.gif","jqlb_previous_button_image":"\/wp-content\/plugins\/wp-lightbox-2\/styles\/images\/prev.gif","jqlb_maximum_width":"","jqlb_maximum_height":"","jqlb_show_close_button":"1","jqlb_close_image_title":"close image gallery","jqlb_close_image_max_heght":"22","jqlb_image_for_close_lightbox":"\/wp-content\/plugins\/wp-lightbox-2\/styles\/images\/closelabel.gif","jqlb_keyboard_navigation":"1","jqlb_popup_size_fix":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/wp-lightbox-2.min.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/tabby.js.download"></script>
+
+<script>jQuery(document).ready(function($) { RESPONSIVEUI.responsiveTabs(); })</script>
+    <div id="div-gpt-ad-inread" data-google-query-id="CPOwpfWhruECFYuFaAodqsgPgg">
+        <script type="text/javascript">
+            googletag.cmd.push(function () {
+                googletag.display('div-gpt-ad-inread');
+            });
+        </script><div id="div-gpt-ad-inread_ad_container" data-google-container-id="6"><script>window.dicnf = {};(function(){window.viewReq=[];window.vu=function(b){var a=new Image;a.src=b.replace("&amp;","&");viewReq.push(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjsvWbpUfcI2Rhfb4pLTiMowoFRfrDviGlFROzgBTvRrJc_YXBCtUmPhHsVGB6AmWBDriksrC_Q_av8l6WXQNi--1PpTsmze-YEiuxGYp1gWWFqgroWYc4q4U66o1u5-wsm7uGnhcRxIOH4LE4eW4VR2sRDch2dO_zAQNuR666MeByAnIcxZKFzwSfR5w9g4KIJAmy0dv4p_KSHvKxT7rw5OmE6oEShmLO-SLFJlYPNQsqbaC6dnYA5EWM5Wk-2TBOH-PXEI1uWxi9Hx0vtw\x26sai\x3dAMfl-YT_R6Yn-VCEqjx0Wt9aqVpc3exu3W1raIO1nor92foAMjhRlK69BRNpEXjw9T8Aaa_4mZxBIDZmoy9dMOI8F3vh0AI9oXAX_UbMSx7CpBSK2u9ub4cGrWj_VTs\x26sig\x3dCg0ArKJSzA68Y-T_2prWEAE\x26urlfix\x3d1\x26adurl\x3d")</script><script type="text/javascript" class="teads" async="true" src="./Arduino IR Remote to Control LEDs ON and OFF_files/tag"></script><script src="./Arduino IR Remote to Control LEDs ON and OFF_files/osd_listener.js.download"></script><script type="text/javascript">osdlfm(-1,'','BeFbpZq-hXPPlLIuLogOqkb-QCAAAAAAQATgByAEJwAIC4AIA4AQBoAYW0ggFCIBhEAE','',4215436465,true,'ud\x3d1\x26la\x3d0\x26alp\x3dxai\x26alh\x3d2279243259\x26xdi\x3d0\x26',3,'CAASEuRo3AvEIvRo09TUig6hDX5KqA','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjst2yDab4Mt8qwFheLoaptXxJOsc5f_gZ12b9Df1Ncia707LvKMx-eKvkoZPg6xhvlMDrCEs22EHdJa0JrETBOSJKcnSalaynEn9INAkEG4\x26sig\x3dCg0ArKJSzOo4CO86h3UCEAE','');</script><script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script>
+</div>
+
+    </div>
+<noscript><img src="https://www.electroschematics.com/akam/10/pixel_13d1f191?a=dD1kOGE1YmUxNTM3MDdmOGNkZmZlNjY2OGQ1OTEyN2M2OGZhMTVkMWIzJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript>
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Arduino IR Remote to Control LEDs ON and OFF_files/widget_iframe.2e9f365dae390394eb8d923cba8c5b11.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe id="google_osd_static_frame_4692108756678" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Arduino IR Remote to Control LEDs ON and OFF_files/saved_resource(11).html"></iframe><iframe src="./Arduino IR Remote to Control LEDs ON and OFF_files/Enqz_20U.html" width="0" height="0" style="display: none;"></iframe><iframe src="./Arduino IR Remote to Control LEDs ON and OFF_files/Enqz_20U(1).html" width="0" height="0" style="display: none;"></iframe><script type="text/javascript" src="./Arduino IR Remote to Control LEDs ON and OFF_files/tag.php"></script><iframe allow="autoplay" scrolling="no" frameborder="0" id="teadsConsensu" src="./Arduino IR Remote to Control LEDs ON and OFF_files/index.html" style="margin: 0px !important; padding: 0px !important; width: 0px !important; height: 0px !important; border: 0px !important; overflow: hidden !important; float: none !important; display: none !important;"></iframe><iframe allow="autoplay" scrolling="no" frameborder="0" id="teadsusersync" src="./Arduino IR Remote to Control LEDs ON and OFF_files/iframe.html" style="margin: 0px !important; padding: 0px !important; width: 0px !important; height: 0px !important; border: 0px !important; overflow: hidden !important; float: none !important; display: none;"></iframe><div class="kxhead" data-id="sbnf4txm4" style="display:none !important;"><span class="kxtag kxinvisible" data-id="32773"><script>
+(function() {
+    /* Selective Attribute DataLayer Library Tag */
+    var _, allAttr, allowedList, attr, attributes, dataLayerIngester, dataObj,
+        isAllowed, keepCase, normalizeName, omitKeys, optimizeNames, pageAttr, prefix,
+        toSet, trim, userAttr, value,
+        hasProp = {}.hasOwnProperty;
+    _ = Krux('require:underscore');
+    dataLayerIngester = Krux('require:scrape').ingestDataLayer;
+
+    /* Safe copy of dataLayer object */
+    dataObj = Krux('scrape.javascript', 'dmpDataLayer[0]');
+
+    /* String trimming helper function */
+    trim = function(attr) {
+        return ("" + attr).replace(/^\s+|\s+$/g, '');
+    };
+
+    /* Attribute configs */
+    pageAttr = _.map('title,section,pageType,keywords'.split(','), trim);
+    userAttr = _.map('undefined'.split(','), trim);
+
+    /* Create a array of attributes striping any empty strings */
+    allAttr = _.without(pageAttr.concat(userAttr), '');
+
+    /* Configuration settings */
+    prefix = 'aspen_';
+    keepCase = 'false' === 'true';
+    omitKeys = 'undefined'.split(',');
+
+    /* Function to varify if attribute should be used */
+    isAllowed = function(value, whitelist) {
+        var i, len, str, x;
+        str = "" + value;
+        if (!((value != null) && str.length > 0)) {
+            return false;
+        }
+        for (i = 0, len = whitelist.length; i < len; i++) {
+            x = whitelist[i];
+            if (value.match(x) != null) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    /* Function to standardise the attribute names */
+    normalizeName = function(name, optimize) {
+        if (optimize == null) {
+            optimize = false;
+        }
+        if (keepCase) {
+            return name;
+        }
+        return ("" + name).replace(/([A-Z])([A-Z]+)/g, function(full, first, rest) {
+            if (optimize === true) {
+                return "" + first + (rest.toLowerCase());
+            }
+            return "" + full;
+        }).replace(/_*([A-Z])/g, '_$1').replace(/^_/, '').toLowerCase();
+    };
+
+    /* Creates a pattern/replacement config for dataLayer tool to clean up names */
+    optimizeNames = function(names) {
+        var config, i, len, name;
+        config = [{
+            pattern: /(\.)_/,
+            replacement: '$1'
+        }];
+        for (i = 0, len = names.length; i < len; i++) {
+            name = names[i];
+            config.push({
+                pattern: normalizeName(name),
+                replacement: normalizeName(name, true)
+            });
+        }
+        if (!prefix.match(/^_$|null|undefined|false/)) {
+            config.push({
+                pattern: /((?:page|user)_attr_)/,
+                replacement: "$1" + prefix
+            });
+        }
+        return config;
+    };
+
+    /* Get a full list of attributes usting the dataLayer tool */
+    attributes = dataLayerIngester(dataObj, {
+        omitKeys: _.without(omitKeys.concat([/gtm\./, /sessionid/i,
+            /\.phpsessid$/i, /\.sid$/i, /\.zenid$/i,
+            /\.requestid$/i
+        ]), ''),
+        omitValues: [/.*@.*(?:\..*)+/, /gtm\./, /^(https?:)?\/\/[^\/]+/,
+            /^\/[^\/]+/, /.{255}/
+        ],
+        caseSensitive: keepCase,
+        useFullPath: 'false' === 'true',
+        useLastValue: 'false' === 'true',
+        customDelimited: [/./],
+        altDelimiter: ',',
+        userKeys: _.map(userAttr, function(exp) {
+            return new RegExp("(^|\\.)" + exp + "$");
+        }),
+        convertAttrNames: optimizeNames(allAttr)
+    });
+
+    /* Only set Attributes in the allowed list */
+    allowedList = _.map(allAttr, function(name) {
+        return new RegExp("(_attr_|_attr_" + prefix + "|\\.)" + (
+            normalizeName(name, true)) + "$");
+    });
+    toSet = {};
+    for (attr in attributes) {
+        if (!hasProp.call(attributes, attr)) continue;
+        value = attributes[attr];
+        if (isAllowed(attr, allowedList)) {
+            toSet[attr] = value;
+        }
+    }
+    Krux('set', toSet);
+}).call();
+</script></span><span class="kxtag kxinvisible" data-id="32844"><script>
+(function(){
+	Krux('scrape',{'page_attr_url_path_1':{'url_path':'1'}});
+	Krux('scrape',{'page_attr_url_path_2':{'url_path':'2'}});
+	//Krux('scrape',{'page_attr_url_path_3':{'url_path':'3'}});
+	//Krux('scrape',{'page_attr_meta_keywords':{meta_name:'keywords'}});
+
+	Krux('scrape',{'page_attr_domain':{url_domain: '2'}});
+
+})();
+</script></span></div></body><iframe id="kx-proxy-sbnf4txm4" src="./Arduino IR Remote to Control LEDs ON and OFF_files/proxy.3d2100fd7107262ecb55ce6847f01fa5.html" style="display: none; visibility: hidden; height: 0; width: 0;"></iframe></html>

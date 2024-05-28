@@ -1,0 +1,5 @@
+Using the diagram above as a reference the leftmost pin is pin 8 on the keypad and the rightmost is pin 1.
+
+Pins 8, 7, 6, 5 on the keypad should be connected to digital pins 5, 4, 3, 2 on the Arduino respectively.
+
+Pins 4, 3, 2, 1 on the keypad should be connected to digital pins 9, 8, 7, 6 on the Arduino respectively.

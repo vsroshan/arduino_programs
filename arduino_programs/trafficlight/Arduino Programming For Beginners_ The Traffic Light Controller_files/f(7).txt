@@ -1,0 +1,1 @@
+googletag.impl.pubads.setPassbackAdContents({"/1065821/sidebar_4/sidebar_4_RUB_pb":{"_type_":"html","_expandable_":false,"_afc_expandable_":false,"_html_":"","_snippet_":false,"_height_":250,"_width_":300,"_empty_":true,"_is_afc_":false,"_is_3pas_":false,"_pvtoken_":"","_qqid_":"COTxhpW7leECFVNgKwodr3AB8A","_pvtoken_lifetime_":-1}});

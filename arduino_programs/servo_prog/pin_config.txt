@@ -1,0 +1,5 @@
+Yellow:signal
+
+Red: for the 5 volts
+
+Black/Brown:ground

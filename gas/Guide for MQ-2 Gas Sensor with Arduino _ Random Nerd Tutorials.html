@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>Guide for MQ-2 Gas Sensor with Arduino | Random Nerd Tutorials</title>
+
+<!-- All in One SEO Pack 2.12 by Michael Torbert of Semper Fi Web Designob_start_detected [-1,-1] -->
+<link rel="author" href="https://plus.google.com/+RuiSantosdotme/posts">
+<meta name="description" content="This guide shows how to build a smoke detector that beeps when it detects flammable gases or smoke.">
+
+<meta name="keywords" content="guide for mq-2 gas sensor with arduino,mq-2 smoke sensor arduino,mq-2 smoke gas sensor arduino project tutorial,mq-2 arduino example tutorial code schematics">
+
+<link rel="canonical" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/">
+<meta property="og:title" content="Guide for MQ-2 Gas Sensor with Arduino | Random Nerd Tutorials">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/">
+<meta property="og:image" content="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?fit=766%2C469&amp;ssl=1">
+<meta property="og:site_name" content="Random Nerd Tutorials">
+<meta property="og:description" content="This guide shows how to build a smoke detector that beeps when it detects flammable gases or smoke.">
+<meta property="article:published_time" content="2016-05-05T09:44:36Z">
+<meta property="article:modified_time" content="2018-09-24T14:11:36Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guide for MQ-2 Gas Sensor with Arduino | Random Nerd Tutorials">
+<meta name="twitter:description" content="This guide shows how to build a smoke detector that beeps when it detects flammable gases or smoke.">
+<meta name="twitter:image" content="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?fit=766%2C469&amp;ssl=1">
+<meta itemprop="image" content="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?fit=766%2C469&amp;ssl=1">
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Random Nerd Tutorials » Feed" href="https://randomnerdtutorials.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Random Nerd Tutorials » Comments Feed" href="https://randomnerdtutorials.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Random Nerd Tutorials » Guide for MQ-2 Gas/Smoke Sensor with Arduino Comments Feed" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/feed/">
+		<script type="text/javascript" async="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/analytics.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/randomnerdtutorials.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="generate-fonts-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-style-grid-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/unsemantic-grid.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-style-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/style.min(1).css" type="text/css" media="all">
+<style id="generate-style-inline-css" type="text/css">
+.entry-header .entry-meta {display:none;}.post-navigation {display:none;}.single footer.entry-meta {display:none;}
+body{background-color:#fafafa;color:#3a3a3a;}a, a:visited{color:#1b78e2;}a:hover, a:focus, a:active{color:#000000;}body .grid-container{max-width:1160px;}body, button, input, select, textarea{font-family:"Open Sans", sans-serif;font-size:18px;}.entry-content > [class*="wp-block-"]:not(:last-child){margin-bottom:1.5em;}.main-navigation .main-nav ul ul li a{font-size:14px;}.widget-title{font-weight:600;}button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.wp-block-button .wp-block-button__link{font-size:20px;}h1{font-weight:600;}h2{font-weight:600;font-size:36px;line-height:1.4em;}h3{font-weight:600;font-size:24px;line-height:1.6em;margin-bottom:8px;}h4{font-weight:600;font-size:20px;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:30px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a,.top-bar a:visited{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#ffffff;color:#3a3a3a;}.site-header a,.site-header a:visited{color:#3a3a3a;}.main-title a,.main-title a:hover,.main-title a:visited{color:#222222;}.site-description{color:#757575;}.main-navigation,.main-navigation ul ul{background-color:#2f4468;}.main-navigation .main-nav ul li a,.menu-toggle{color:#ffffff;}.main-navigation .main-nav ul li:hover > a,.main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a{color:#dee5ed;background-color:#2f4468;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#ffffff;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#ffffff;background-color:rgba(10,10,10,0.31);}.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:rgba(10,10,10,0.31);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active{color:#2f4468;background-color:#2f4468;}.navigation-search input[type="search"]:focus{color:#dee5ed;background-color:#2f4468;}.main-navigation ul ul{background-color:#3f3f3f;}.main-navigation .main-nav ul ul li a{color:#ffffff;}.main-navigation .main-nav ul ul li:hover > a,.main-navigation .main-nav ul ul li:focus > a,.main-navigation .main-nav ul ul li.sfHover > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#4f4f4f;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#ffffff;}.entry-title a,.entry-title a:visited{color:#2f4468;}.entry-title a:hover{color:#0a0000;}.entry-meta{color:#878787;}.entry-meta a,.entry-meta a:visited{color:#727272;}.entry-meta a:hover{color:#0a0101;}.sidebar .widget{background-color:#ffffff;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{color:#ffffff;background-color:#2f4468;}.footer-widgets a,.footer-widgets a:visited{color:#ffffff;}.footer-widgets .widget-title{color:#ffffff;}.site-info{color:#2f4468;}.site-info a,.site-info a:visited{color:#2f4468;}.site-info a:hover{color:#0a0a0a;}.footer-bar .widget_nav_menu .current-menu-item a{color:#0a0a0a;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.button:visited,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#2f4468;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#0c2c68;}.generate-back-to-top,.generate-back-to-top:visited{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}.generate-back-to-top:hover,.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}.inside-header{padding:0px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}}.separate-containers .widget, .separate-containers .site-main > *, .separate-containers .page-header, .widget-area .main-navigation{margin-bottom:10px;}.right-sidebar.separate-containers .site-main{margin:10px 10px 10px 0px;}.left-sidebar.separate-containers .site-main{margin:10px 0px 10px 10px;}.both-sidebars.separate-containers .site-main{margin:10px;}.both-right.separate-containers .site-main{margin:10px 10px 10px 0px;}.both-right.separate-containers .inside-left-sidebar{margin-right:5px;}.both-right.separate-containers .inside-right-sidebar{margin-left:5px;}.both-left.separate-containers .site-main{margin:10px 0px 10px 10px;}.both-left.separate-containers .inside-left-sidebar{margin-right:5px;}.both-left.separate-containers .inside-right-sidebar{margin-left:5px;}.separate-containers .site-main{margin-top:10px;margin-bottom:10px;}.separate-containers .page-header-image, .separate-containers .page-header-contained, .separate-containers .page-header-image-single, .separate-containers .page-header-content-single{margin-top:10px;}.separate-containers .inside-right-sidebar, .separate-containers .inside-left-sidebar{margin-top:10px;margin-bottom:10px;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}.widget-area .widget{padding:25px 15px 25px 15px;}/* End cached CSS */
+.main-navigation .navigation-logo img {height:60px;}@media (max-width: 1170px) {.main-navigation .navigation-logo.site-logo {margin-left:0;}body.sticky-menu-logo.nav-float-left .main-navigation .site-logo.navigation-logo {margin-right:0;}}.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .mobile-bar-items a{transition: line-height 300ms ease}.main-navigation.toggled .main-nav > ul{background-color: #2f4468}
+.slideout-navigation.main-navigation .main-nav ul li a{font-weight:normal;text-transform:none;}
+</style>
+<link rel="stylesheet" id="generate-mobile-style-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/mobile.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-child-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-blog-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/style-min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-sticky-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/sticky.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="generate-menu-logo-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/menu-logo.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/jetpack.css" type="text/css" media="all">
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/jquery-migrate.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://randomnerdtutorials.com/wp-json/">
+<link rel="prev" title="19 Awesome Robots You Can Build With an Arduino" href="https://randomnerdtutorials.com/19-awesome-robots-you-can-build-with-an-arduino/">
+<link rel="next" title="Giveaway on Instagram – Arduino Kit" href="https://randomnerdtutorials.com/giveaway-on-instagram-arduino-kit/">
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="shortlink" href="https://randomnerdtutorials.com/?p=20126">
+<link rel="alternate" type="application/json+oembed" href="https://randomnerdtutorials.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frandomnerdtutorials.com%2Fguide-for-mq-2-gas-smoke-sensor-with-arduino%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://randomnerdtutorials.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frandomnerdtutorials.com%2Fguide-for-mq-2-gas-smoke-sensor-with-arduino%2F&amp;format=xml">
+
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<link rel="pingback" href="https://randomnerdtutorials.com/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/prism.min.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-41273278-2');
+</script>
+<link rel="icon" href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/03/n-favicon-2018.png?fit=16%2C16&amp;ssl=1">
+			<link rel="stylesheet" type="text/css" id="wp-custom-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/saved_resource">
+		</head>
+
+<body data-rsssl="1" class="post-template-default single single-post postid-20126 single-format-standard wp-embed-responsive post-image-above-header post-image-aligned-center sticky-menu-no-transition sticky-enabled menu-logo menu-logo-enabled both-sticky-menu right-sidebar nav-above-header fluid-header separate-containers active-footer-widgets-0 nav-aligned-center header-aligned-center dropdown-hover featured-image-active elementor-default elementor-page-82536 using-mouse" itemtype="https://schema.org/Blog" itemscope="" data-elementor-device-mode="desktop">
+	<a class="screen-reader-text skip-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#content" title="Skip to content">Skip to content</a>		<nav id="sticky-navigation" class="auto-hide-sticky main-navigation stuckElement is_stuck navigation-stick navigation-clone sticky-navigation-transition" itemtype="https://schema.org/SiteNavigationElement" itemscope="" style="z-index: 100; margin-top: 0px; position: fixed; top: -60px;">
+			<div class="inside-navigation grid-container grid-parent">
+				<div class="site-logo sticky-logo navigation-logo">
+				<a href="https://randomnerdtutorials.com/" title="Random Nerd Tutorials" rel="home">
+					<img src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/logornt.png" alt="Random Nerd Tutorials">
+				</a>
+			</div>				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+										<span class="mobile-menu">Menu</span>
+				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-newtop" class=" menu sf-menu"><li id="menu-item-20482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20482"><a href="https://randomnerdtutorials.com/">HOME</a></li>
+<li id="menu-item-20483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20483"><a href="https://randomnerdtutorials.com/courses/">Products<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-40154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40154"><a href="https://randomnerdtutorials.com/courses/">All eBooks &amp; Courses</a></li>
+	<li id="menu-item-69105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69105"><a href="https://randomnerdtutorials.com/learn-esp32-with-arduino-ide/"><strong>Learn ESP32 with Arduino IDE</strong></a></li>
+	<li id="menu-item-40149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40149"><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation Using ESP8266</a></li>
+	<li id="menu-item-40150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40150"><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System for $100</a></li>
+	<li id="menu-item-40151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40151"><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-step Projects</a></li>
+	<li id="menu-item-40153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40153"><a href="https://randomnerdtutorials.com/android-apps-for-arduino-with-mit-app-inventor-2/">Android Apps For Arduino</a></li>
+	<li id="menu-item-40152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40152"><a href="https://randomnerdtutorials.com/electronics-for-beginners/">Electronics For Beginners</a></li>
+</ul>
+</li>
+<li id="menu-item-20487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20487"><a href="https://randomnerdtutorials.com/download">Free eBooks</a></li>
+<li id="menu-item-20484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20484"><a href="https://randomnerdtutorials.com/about">About</a></li>
+<li id="menu-item-20485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20485"><a href="https://randomnerdtutorials.com/contact">Contact</a></li>
+<li id="menu-item-20498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20498"><a href="https://randomnerdtutorials.com/projects/">Projects</a></li>
+<li id="menu-item-20486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20486"><a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#More">More<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-43624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43624"><a target="_blank" href="https://makeradvisor.com/">MakerAdvisor.com</a></li>
+	<li id="menu-item-68854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68854"><a target="_blank" href="https://rntlab.com/login">Member Login</a></li>
+	<li id="menu-item-68853" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68853"><a target="_blank" href="https://rntlab.com/">Join the RNT Lab</a></li>
+</ul>
+</li>
+<li id="menu-item-20491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20491"><a href="https://randomnerdtutorials.com/courses/">Get Courses</a></li>
+</ul></div>			</div><!-- .inside-navigation -->
+		</nav><nav id="sticky-placeholder" class="auto-hide-sticky main-navigation is_stuck navigation-stick navigation-clone sticky-navigation-transition" style="visibility: hidden;">
+			<div class="inside-navigation grid-container grid-parent">
+				<div class="site-logo sticky-logo navigation-logo">
+				<a href="https://randomnerdtutorials.com/" title="Random Nerd Tutorials" rel="home">
+					<img src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/logornt.png" alt="Random Nerd Tutorials">
+				</a>
+			</div>				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+										<span class="mobile-menu">Menu</span>
+				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-newtop" class=" menu sf-menu"><li id="menu-item-20482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20482"><a href="https://randomnerdtutorials.com/">HOME</a></li>
+<li id="menu-item-20483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20483"><a href="https://randomnerdtutorials.com/courses/">Products<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-40154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40154"><a href="https://randomnerdtutorials.com/courses/">All eBooks &amp; Courses</a></li>
+	<li id="menu-item-69105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69105"><a href="https://randomnerdtutorials.com/learn-esp32-with-arduino-ide/"><strong>Learn ESP32 with Arduino IDE</strong></a></li>
+	<li id="menu-item-40149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40149"><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation Using ESP8266</a></li>
+	<li id="menu-item-40150" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40150"><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System for $100</a></li>
+	<li id="menu-item-40151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40151"><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-step Projects</a></li>
+	<li id="menu-item-40153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40153"><a href="https://randomnerdtutorials.com/android-apps-for-arduino-with-mit-app-inventor-2/">Android Apps For Arduino</a></li>
+	<li id="menu-item-40152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40152"><a href="https://randomnerdtutorials.com/electronics-for-beginners/">Electronics For Beginners</a></li>
+</ul>
+</li>
+<li id="menu-item-20487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20487"><a href="https://randomnerdtutorials.com/download">Free eBooks</a></li>
+<li id="menu-item-20484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20484"><a href="https://randomnerdtutorials.com/about">About</a></li>
+<li id="menu-item-20485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20485"><a href="https://randomnerdtutorials.com/contact">Contact</a></li>
+<li id="menu-item-20498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20498"><a href="https://randomnerdtutorials.com/projects/">Projects</a></li>
+<li id="menu-item-20486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20486"><a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#More">More<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-43624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43624"><a target="_blank" href="https://makeradvisor.com/">MakerAdvisor.com</a></li>
+	<li id="menu-item-68854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68854"><a target="_blank" href="https://rntlab.com/login">Member Login</a></li>
+	<li id="menu-item-68853" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68853"><a target="_blank" href="https://rntlab.com/">Join the RNT Lab</a></li>
+</ul>
+</li>
+<li id="menu-item-20491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20491"><a href="https://randomnerdtutorials.com/courses/">Get Courses</a></li>
+</ul></div>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+				<header id="masthead" class="site-header" itemtype="https://schema.org/WPHeader" itemscope="">
+			<div class="inside-header">
+							</div><!-- .inside-header -->
+		</header><!-- #masthead -->
+		
+	<div id="page" class="hfeed site grid-container container grid-parent">
+		<div id="content" class="site-content">
+			
+	<div id="primary" class="content-area grid-parent mobile-grid-100 grid-70 tablet-grid-70">
+		<main id="main" class="site-main">
+			
+<article id="post-20126" class="post-20126 post type-post status-publish format-standard has-post-thumbnail hentry category-0-guide category-arduino category-arduino-ide category-guide-project category-modules category-project category-a-theory-and-blog category-a-tutorials" itemtype="https://schema.org/CreativeWork" itemscope="">
+	<div class="inside-article">
+		
+		<header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">Guide for MQ-2 Gas/Smoke Sensor with Arduino</h1>			<div class="entry-meta">
+							</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+
+		
+		<div class="entry-content" itemprop="text">
+			<p>This guide&nbsp;shows how to build a smoke detector that beeps when it detects flammable gas or smoke.<span id="more-20126"></span></p>
+<h2>The MQ-2 Gas Sensor</h2>
+<p>The MQ-2 smoke sensor is the one in the following figure:</p>
+<p><img class="aligncenter size-full wp-image-20796" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/smoke-sensor-r.jpg" alt="smoke sensor r" width="400" height="308" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?w=400&amp;ssl=1 400w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=150%2C116&amp;ssl=1 150w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=300%2C231&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=80%2C62&amp;ssl=1 80w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=220%2C169&amp;ssl=1 220w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=130%2C100&amp;ssl=1 130w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=195%2C150&amp;ssl=1 195w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-r.jpg?resize=309%2C238&amp;ssl=1 309w" sizes="(max-width: 400px) 100vw, 400px"></p>
+<p>The MQ-2 smoke sensor is sensitive to smoke and to the following flammable gases:</p>
+<ul>
+<li>LPG</li>
+<li>Butane</li>
+<li>Propane</li>
+<li>Methane</li>
+<li>Alcohol</li>
+<li>Hydrogen</li>
+</ul>
+<p>The resistance of the sensor is different depending on the type of the gas.</p>
+<p>The smoke sensor has a built-in potentiometer that allows you to adjust the sensor digital output (D0) threshold. This threshold sets the value above which the digital pin will output a HIGH signal.</p>
+<p><img class="aligncenter wp-image-20536" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/smoke-sensor-label.png" alt="smoke sensor label" width="648" height="397" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?w=766&amp;ssl=1 766w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=150%2C92&amp;ssl=1 150w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=300%2C184&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=80%2C49&amp;ssl=1 80w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=220%2C135&amp;ssl=1 220w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=163%2C100&amp;ssl=1 163w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=245%2C150&amp;ssl=1 245w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=389%2C238&amp;ssl=1 389w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smoke-sensor-label.png?resize=678%2C415&amp;ssl=1 678w" sizes="(max-width: 648px) 100vw, 648px"></p>
+<h2>How does it work?</h2>
+<p>The voltage that the sensor outputs changes accordingly to the smoke/gas level that exists in the atmosphere. The sensor outputs a voltage that is proportional to the concentration of smoke/gas.</p>
+<p>In other words, the relationship between voltage and gas concentration is the following:</p>
+<ul>
+<li><strong>The greater</strong> the gas concentration, <strong>the greater</strong> the output voltage</li>
+<li><strong>The lower</strong> the gas concentration, <strong>the lower</strong> the output voltage<img class="aligncenter size-full wp-image-20127" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/smokepicture.png" alt="smokepicture" width="666" height="375" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smokepicture.png?w=1280&amp;ssl=1 1280w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smokepicture.png?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smokepicture.png?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/smokepicture.png?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 812px) 100vw, 812px"></li>
+</ul>
+<p>The output can be an analog signal (A0) that can be read with an analog input of the Arduino or a digital output (D0) that can be read with a digital input of the Arduino.</p>
+<h2>Pin Wiring</h2>
+<p>The MQ-2 sensor has 4 pins.</p>
+<table>
+<tbody>
+<tr>
+<td width="283"><strong>Pin</strong></td>
+<td width="283"><strong>Wiring to Arduino Uno</strong></td>
+</tr>
+<tr>
+<td width="283">A0</td>
+<td width="283">Analog pins</td>
+</tr>
+<tr>
+<td width="283">D0</td>
+<td width="283">Digital pins</td>
+</tr>
+<tr>
+<td width="283">GND</td>
+<td width="283">GND</td>
+</tr>
+<tr>
+<td width="283">VCC</td>
+<td width="283">5V</td>
+</tr>
+</tbody>
+</table>
+<h2>Example: Gas Sensor with&nbsp;Arduino</h2>
+<p>In this example, you will read the sensor analog output voltage and when the smoke reaches a certain level, it will make sound a buzzer and a red LED will turn on.</p>
+<p>When the output voltage is below &nbsp;that level, a green LED will be on.</p>
+<h3>Parts needed:</h3>
+<p>So, for this example, you’ll need:</p>
+<p><img class="aligncenter wp-image-20261" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/DSC08397.jpg" alt="DSC08397" width="720" height="472" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/DSC08397.jpg?w=700&amp;ssl=1 700w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/DSC08397.jpg?resize=300%2C197&amp;ssl=1 300w" sizes="(max-width: 731px) 100vw, 731px"></p>
+<ul>
+<li><a href="https://makeradvisor.com/tools/mq-2-smoke-gas-sensor/" target="_blank" rel="noopener">1 x MQ-2 gas&nbsp;sensor&nbsp;</a></li>
+<li><a href="https://makeradvisor.com/tools/compatible-arduino-uno-r3-board/" target="_blank" rel="noopener">Arduino UNO</a>&nbsp;– read&nbsp;<a href="https://makeradvisor.com/best-arduino-starter-kits/" target="_blank" rel="noopener">Best Arduino Starter Kits</a></li>
+<li><a href="https://makeradvisor.com/tools/mb-102-solderless-breadboard-830-points/" target="_blank" rel="noopener">1x Breadboard&nbsp;</a></li>
+<li><a href="https://makeradvisor.com/tools/3mm-5mm-leds-kit-storage-box/" target="_blank" rel="noopener">1 x red LED</a></li>
+<li><a href="https://makeradvisor.com/tools/3mm-5mm-leds-kit-storage-box/" target="_blank" rel="noopener">1 x green LED</a></li>
+<li><a href="https://makeradvisor.com/tools/3-24v-piezo-buzzer/" target="_blank" rel="noopener">1 x buzzer</a></li>
+<li><a href="https://makeradvisor.com/tools/resistors-kits/" target="_blank" rel="noopener">3 x 220Ω resistor</a></li>
+<li><a href="https://makeradvisor.com/tools/jumper-wires-kit-120-pieces/" target="_blank" rel="noopener">Jumper wires</a></li>
+</ul>
+<p>You can use the preceding links or go directly to <a href="https://makeradvisor.com/tools/?utm_source=rnt&amp;utm_medium=post&amp;utm_campaign=post" target="_blank">MakerAdvisor.com/tools</a> to find all the parts for your projects at the best price!</p><p style="text-align:center;"><a href="https://makeradvisor.com/tools/?utm_source=rnt&amp;utm_medium=post&amp;utm_campaign=post" target="_blank"><img src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/header-200.png" width="200" height="56"></a></p>
+<h2>Schematics</h2>
+<p>Follow these schematics to complete the project:</p>
+<p><a href="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?ssl=1"><img class="aligncenter size-full wp-image-20654" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/circuit-1.png" alt="circuit" width="447" height="503" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?w=447&amp;ssl=1 447w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=133%2C150&amp;ssl=1 133w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=267%2C300&amp;ssl=1 267w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=71%2C80&amp;ssl=1 71w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=196%2C220&amp;ssl=1 196w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=89%2C100&amp;ssl=1 89w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=212%2C238&amp;ssl=1 212w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=369%2C415&amp;ssl=1 369w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2016/04/circuit-1.png?resize=433%2C487&amp;ssl=1 433w" sizes="(max-width: 447px) 100vw, 447px"></a></p>
+<h2>Code</h2>
+<p>Upload the following sketch to your Arduino board (feel free to adjust the variable <em>sensorThres</em>&nbsp;with a different threshold value):</p>
+<pre style="max-height: 40em;" class=" language-c"><code class=" language-c"><span class="token comment">/*******
+ 
+ All the resources for this project:
+ https://randomnerdtutorials.com/
+
+*******/</span>
+
+<span class="token keyword">int</span> redLed <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> greenLed <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> buzzer <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> smokeA0 <span class="token operator">=</span> A5<span class="token punctuation">;</span>
+<span class="token comment">// Your threshold value</span>
+<span class="token keyword">int</span> sensorThres <span class="token operator">=</span> <span class="token number">400</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">pinMode</span><span class="token punctuation">(</span>redLed<span class="token punctuation">,</span> OUTPUT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">pinMode</span><span class="token punctuation">(</span>greenLed<span class="token punctuation">,</span> OUTPUT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">pinMode</span><span class="token punctuation">(</span>buzzer<span class="token punctuation">,</span> OUTPUT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">pinMode</span><span class="token punctuation">(</span>smokeA0<span class="token punctuation">,</span> INPUT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Serial<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> analogSensor <span class="token operator">=</span> <span class="token function">analogRead</span><span class="token punctuation">(</span>smokeA0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  Serial<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Pin A0: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Serial<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>analogSensor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Checks if it has reached the threshold value</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>analogSensor <span class="token operator">&gt;</span> sensorThres<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>redLed<span class="token punctuation">,</span> HIGH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>greenLed<span class="token punctuation">,</span> LOW<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">tone</span><span class="token punctuation">(</span>buzzer<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span>
+  <span class="token punctuation">{</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>redLed<span class="token punctuation">,</span> LOW<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>greenLed<span class="token punctuation">,</span> HIGH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">noTone</span><span class="token punctuation">(</span>buzzer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+	<p style="text-align:center"><a class="button rntwhite" href="https://github.com/RuiSantosdotme/Random-Nerd-Tutorials/raw/master/Projects/smoke_detector.ino" target="_blank">View raw code</a></p>
+<h2>Video demonstration</h2>
+<p>Watch this quick video demonstration to see this project in action:</p>
+<p style="text-align:center"><iframe width="670" height="376" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/_mEUszHqWDg.html" frameborder="0" allowfullscreen=""></iframe></p>
+<p>I hope you found this guide&nbsp;useful.</p>
+<p>Share this post with a friend that also likes electronics!</p>
+<p>You can contact me by leaving a comment. If you like this post probably you might like my next ones (<a href="https://randomnerdtutorials.com/download" target="_blank" rel="noopener">click here to subscribe my blog</a>).</p>
+<p>Thanks for reading,</p>
+<p>-Rui Santos</p>
+		</div><!-- .entry-content -->
+
+					<footer class="entry-meta">
+						<nav id="nav-below" class="post-navigation">
+			<span class="screen-reader-text">Post navigation</span>
+
+					</nav><!-- #nav-below -->
+					</footer><!-- .entry-meta -->
+				<div data-elementor-type="section" data-elementor-id="82533" class="elementor elementor-82533" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-31c9920 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="31c9920" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-e6bec81 elementor-column elementor-col-100 elementor-top-column" data-id="e6bec81" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ae5f36f elementor-widget elementor-widget-text-editor" data-id="ae5f36f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>Recommended Resources</h2></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-df31b19 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="df31b19" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-f988f78 elementor-column elementor-col-33 elementor-top-column" data-id="f988f78" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-ea4ffd5 elementor-widget elementor-widget-image" data-id="ea4ffd5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/" data-elementor-open-lightbox="">
+							<img width="400" height="225" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/home-automation-sb-img.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/home-automation-sb-img.jpg?w=400&amp;ssl=1 400w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/home-automation-sb-img.jpg?resize=300%2C169&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px">								</a>
+											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1d03956 elementor-widget elementor-widget-text-editor" data-id="1d03956" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System from Scratch »</a>&nbsp;</strong>With Raspberry Pi, ESP8266, Arduino, and Node-RED.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-c804b9b elementor-column elementor-col-33 elementor-top-column" data-id="c804b9b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-caff517 elementor-widget elementor-widget-image" data-id="caff517" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/home-automation-using-esp8266/" data-elementor-open-lightbox="">
+							<img width="400" height="225" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/esp8266-sb-img.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/esp8266-sb-img.jpg?w=400&amp;ssl=1 400w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/esp8266-sb-img.jpg?resize=300%2C169&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px">								</a>
+											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7bc712f elementor-widget elementor-widget-text-editor" data-id="7bc712f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation using ESP8266 eBook and video course »</a>&nbsp;</strong>Build IoT and home automation projects.</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-9487535 elementor-column elementor-col-33 elementor-top-column" data-id="9487535" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-330785f elementor-widget elementor-widget-image" data-id="330785f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+											<a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/" data-elementor-open-lightbox="">
+							<img width="400" height="225" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/arduino-sb-img.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/arduino-sb-img.jpg?w=400&amp;ssl=1 400w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/arduino-sb-img.jpg?resize=300%2C169&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px">								</a>
+											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-e9540a9 elementor-widget elementor-widget-text-editor" data-id="e9540a9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><strong><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-Step Projects »</a> </strong>Build 25 Arduino projects with our course, even with no prior experience!</p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-a9e9c13 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a9e9c13" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-25cf7ca elementor-column elementor-col-100 elementor-top-column" data-id="25cf7ca" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-88fc6c0 elementor-widget elementor-widget-text-editor" data-id="88fc6c0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><h2>What to Read Next…</h2></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d68ef93 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="d68ef93" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-4ab337a elementor-column elementor-col-100 elementor-top-column" data-id="4ab337a" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-efac60e elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-card-shadow-yes elementor-posts__hover-gradient elementor-widget elementor-widget-posts" data-id="efac60e" data-element_type="widget" data-settings="{&quot;cards_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:16,&quot;sizes&quot;:[]},&quot;cards_columns&quot;:&quot;3&quot;,&quot;cards_columns_tablet&quot;:&quot;2&quot;,&quot;cards_columns_mobile&quot;:&quot;1&quot;}" data-widget_type="posts.cards">
+				<div class="elementor-widget-container">
+					<div class="elementor-posts-container elementor-posts elementor-grid elementor-posts--skin-cards elementor-has-item-ratio">
+				<article class="elementor-post elementor-grid-item post-82418 post type-post status-publish format-standard has-post-thumbnail hentry category-0-esp32 category-esp32 category-esp32-project category-esp32-arduino-ide category-project category-web-server-2">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/ESP32-CAM-getting-started.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/ESP32-CAM-getting-started.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/ESP32-CAM-getting-started.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/ESP32-CAM-getting-started.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/ESP32-CAM-getting-started.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/">
+				ESP32-CAM Video Streaming and Face Recognition with Arduino IDE			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-81978 post type-post status-publish format-standard has-post-thumbnail hentry category-0-esp32-micropython category-esp32 category-esp32-project category-esp8266-project category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/micropython-interrupts-esp32-esp8266/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/interrupts-micropython-esp32-esp8266.jpg" class="attachment-full size-full" alt="" srcset="https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/interrupts-micropython-esp32-esp8266.jpg?w=1280&amp;ssl=1 1280w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/interrupts-micropython-esp32-esp8266.jpg?resize=300%2C169&amp;ssl=1 300w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/interrupts-micropython-esp32-esp8266.jpg?resize=768%2C432&amp;ssl=1 768w, https://i2.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/03/interrupts-micropython-esp32-esp8266.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/micropython-interrupts-esp32-esp8266/">
+				MicroPython: Interrupts with ESP32 and ESP8266			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-81663 post type-post status-publish format-standard has-post-thumbnail hentry category-0-esp32 category-esp32 category-esp32-project category-esp32-arduino-ide category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/esp32-deep-sleep-arduino-ide.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-deep-sleep-arduino-ide.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-deep-sleep-arduino-ide.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-deep-sleep-arduino-ide.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-deep-sleep-arduino-ide.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp32-deep-sleep-arduino-ide-wake-up-sources/">
+				ESP32 Deep Sleep with Arduino IDE and Wake Up Sources			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-81128 post type-post status-publish format-standard has-post-thumbnail hentry category-0-esp32-micropython category-esp32-project category-esp8266-project category-micropython category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/micropython-ws2812b-addressable-rgb-leds-neopixel-esp32-esp8266/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/ws2812b-micropython-esp8266-esp32.jpg" class="attachment-full size-full" alt="" srcset="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/ws2812b-micropython-esp8266-esp32.jpg?w=1280&amp;ssl=1 1280w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/ws2812b-micropython-esp8266-esp32.jpg?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/ws2812b-micropython-esp8266-esp32.jpg?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/ws2812b-micropython-esp8266-esp32.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/micropython-ws2812b-addressable-rgb-leds-neopixel-esp32-esp8266/">
+				MicroPython: WS2812B Addressable RGB LEDs with ESP32 and ESP8266			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-81076 post type-post status-publish format-standard has-post-thumbnail hentry category-0-esp32 category-esp32 category-esp32-arduino-ide category-guide-project category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/solved-failed-to-connect-to-esp32-timed-out-waiting-for-packet-header/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/esp32-waiting-for-packet-header-featured.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-waiting-for-packet-header-featured.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-waiting-for-packet-header-featured.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-waiting-for-packet-header-featured.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/02/esp32-waiting-for-packet-header-featured.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/solved-failed-to-connect-to-esp32-timed-out-waiting-for-packet-header/">
+				[SOLVED] Failed to connect to ESP32: Timed out waiting for packet header			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				<article class="elementor-post elementor-grid-item post-67776 post type-post status-publish format-standard has-post-thumbnail hentry category-0-esp32 category-esp32 category-esp32-project category-esp32-arduino-ide category-guide-project category-project">
+			<div class="elementor-post__card">
+				<a class="elementor-post__thumbnail__link" href="https://randomnerdtutorials.com/esp32-troubleshooting-guide/">
+			<div class="elementor-post__thumbnail elementor-fit-height"><img width="1280" height="720" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/ESP32-troubleshooting.jpg" class="attachment-full size-full" alt="" srcset="https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/07/ESP32-troubleshooting.jpg?w=1280&amp;ssl=1 1280w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/07/ESP32-troubleshooting.jpg?resize=300%2C169&amp;ssl=1 300w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/07/ESP32-troubleshooting.jpg?resize=768%2C432&amp;ssl=1 768w, https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/07/ESP32-troubleshooting.jpg?resize=1024%2C576&amp;ssl=1 1024w" sizes="(max-width: 1280px) 100vw, 1280px"></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://randomnerdtutorials.com/esp32-troubleshooting-guide/">
+				ESP32 Troubleshooting Guide			</a>
+		</h3>
+				</div>
+					</div>
+		</article>
+				</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+			</div><!-- .inside-article -->
+</article><!-- #post-## -->
+
+					<div class="comments-area">
+						<div id="comments">
+
+			<h3 class="comments-title">
+			45 thoughts on “Guide for MQ-2 Gas/Smoke Sensor with Arduino”		</h3>
+
+		
+		<ol class="comment-list">
+			
+		<li id="comment-282968" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-282968" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/24a0b9b31c70db40687c51c44c3ed33c.jpeg" srcset="https://secure.gravatar.com/avatar/24a0b9b31c70db40687c51c44c3ed33c?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="http://embeddedsystemsweb.com/" rel="external nofollow" class="url">Sam</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-282968">
+								<time datetime="2016-05-05T15:58:05+00:00" itemprop="datePublished">
+									May 5, 2016 at 3:58 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=282968#respond" data-commentid="282968" data-postid="20126" data-belowelement="div-comment-282968" data-respondelement="respond" aria-label="Reply to Sam">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Nice tutorial!<br>
+I found that if sensor sensitivity is not well set, it could respond to unexpected gas, even dust…</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-283001" class="comment byuser comment-author-rui-santos bypostauthor odd alt depth-2 parent">
+			<article id="div-comment-283001" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283001">
+								<time datetime="2016-05-05T23:22:41+00:00" itemprop="datePublished">
+									May 5, 2016 at 11:22 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283001#respond" data-commentid="283001" data-postid="20126" data-belowelement="div-comment-283001" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>You really have to adjust the sensitivity. Thanks for your feedback Sam!</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-319040" class="comment even depth-3">
+			<article id="div-comment-319040" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9c0c47374c5bfab3d6b2d50bc30baf13.png" srcset="https://secure.gravatar.com/avatar/9c0c47374c5bfab3d6b2d50bc30baf13?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">emilo</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-319040">
+								<time datetime="2018-03-29T22:51:00+00:00" itemprop="datePublished">
+									March 29, 2018 at 10:51 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=319040#respond" data-commentid="319040" data-postid="20126" data-belowelement="div-comment-319040" data-respondelement="respond" aria-label="Reply to emilo">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>can someone send me the same programme which can detect a logic state instead of a densor using proteus ???? thanks</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-282976" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-282976" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/72a5bda0277be4f428536427f9f7dd16.png" srcset="https://secure.gravatar.com/avatar/72a5bda0277be4f428536427f9f7dd16?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Abderrahman</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-282976">
+								<time datetime="2016-05-05T18:27:54+00:00" itemprop="datePublished">
+									May 5, 2016 at 6:27 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=282976#respond" data-commentid="282976" data-postid="20126" data-belowelement="div-comment-282976" data-respondelement="respond" aria-label="Reply to Abderrahman">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Good job,<br>
+i like the project <img draggable="false" class="emoji" alt="🙂" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-283000" class="comment byuser comment-author-rui-santos bypostauthor even depth-2">
+			<article id="div-comment-283000" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283000">
+								<time datetime="2016-05-05T23:22:18+00:00" itemprop="datePublished">
+									May 5, 2016 at 11:22 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283000#respond" data-commentid="283000" data-postid="20126" data-belowelement="div-comment-283000" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Thank you for reading,<br>
+Rui</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-283020" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-283020" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/a451100f8272a411f66ac96575a2ebc4.png" srcset="https://secure.gravatar.com/avatar/a451100f8272a411f66ac96575a2ebc4?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Nigon</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283020">
+								<time datetime="2016-05-06T02:44:48+00:00" itemprop="datePublished">
+									May 6, 2016 at 2:44 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283020#respond" data-commentid="283020" data-postid="20126" data-belowelement="div-comment-283020" data-respondelement="respond" aria-label="Reply to Nigon">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Nice and clear tutorial, thanks, really appreciate it.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-283248" class="comment byuser comment-author-rui-santos bypostauthor even depth-2">
+			<article id="div-comment-283248" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283248">
+								<time datetime="2016-05-09T09:54:18+00:00" itemprop="datePublished">
+									May 9, 2016 at 9:54 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283248#respond" data-commentid="283248" data-postid="20126" data-belowelement="div-comment-283248" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Thank you Nigon!</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-283395" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-283395" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/14cf8798be6b96fbb5224d6ba298a1fc.png" srcset="https://secure.gravatar.com/avatar/14cf8798be6b96fbb5224d6ba298a1fc?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Marc</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283395">
+								<time datetime="2016-05-11T15:40:54+00:00" itemprop="datePublished">
+									May 11, 2016 at 3:40 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283395#respond" data-commentid="283395" data-postid="20126" data-belowelement="div-comment-283395" data-respondelement="respond" aria-label="Reply to Marc">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Nice explanation, Rui.<br>
+I have bought a lot of those, a while ago + a quite expensive CO2 sensor. The instruction says it would be better if you “burn them in” for about 24 hours. So put the right tension to the heating element for about a day, before using them in a project (only once…)Some heaters use quite some current, so it would be advised to use an external power supply, not the arduino itself.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-283465" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-283465" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/2ba8c23a43a31e577d485e31ecd4ffb5.png" srcset="https://secure.gravatar.com/avatar/2ba8c23a43a31e577d485e31ecd4ffb5?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">rara</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283465">
+								<time datetime="2016-05-12T14:27:49+00:00" itemprop="datePublished">
+									May 12, 2016 at 2:27 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283465#respond" data-commentid="283465" data-postid="20126" data-belowelement="div-comment-283465" data-respondelement="respond" aria-label="Reply to rara">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>may I know where is the jumper A0 can connect ? the schematics is not have jumper A0…</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-283590" class="comment byuser comment-author-rui-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-283590" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283590">
+								<time datetime="2016-05-14T13:55:25+00:00" itemprop="datePublished">
+									May 14, 2016 at 1:55 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283590#respond" data-commentid="283590" data-postid="20126" data-belowelement="div-comment-283590" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>The MQ-2 sensor has a pin called A0 that connects to analog pin A5 in the Arduino board</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-283489" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-283489" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/68aaca6ce7c32ea6c39f09bf8f301cb7.png" srcset="https://secure.gravatar.com/avatar/68aaca6ce7c32ea6c39f09bf8f301cb7?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Eduardo castellani</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283489">
+								<time datetime="2016-05-13T00:43:18+00:00" itemprop="datePublished">
+									May 13, 2016 at 12:43 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283489#respond" data-commentid="283489" data-postid="20126" data-belowelement="div-comment-283489" data-respondelement="respond" aria-label="Reply to Eduardo castellani">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Cadê o código? não achei o link para baixa-lo</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-283588" class="comment byuser comment-author-rui-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-283588" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-283588">
+								<time datetime="2016-05-14T13:54:41+00:00" itemprop="datePublished">
+									May 14, 2016 at 1:54 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=283588#respond" data-commentid="283588" data-postid="20126" data-belowelement="div-comment-283588" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Está no post na secção “Code” e podia copiar a partir de lá</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-286979" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-286979" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/f29b503ae9878916ac8ab0cfb4b7dc6f.png" srcset="https://secure.gravatar.com/avatar/f29b503ae9878916ac8ab0cfb4b7dc6f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Joachim Z.</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-286979">
+								<time datetime="2016-07-01T07:14:19+00:00" itemprop="datePublished">
+									July 1, 2016 at 7:14 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=286979#respond" data-commentid="286979" data-postid="20126" data-belowelement="div-comment-286979" data-respondelement="respond" aria-label="Reply to Joachim Z.">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>The description of the MQ-2 sensor above includes the sentence “The smoke sensor has a built-in potentiometer that allows you to adjust the sensor sensitivity according to how accurate you want to detect gas.”</p>
+<p>Please note, that this poti has only an influence on the threshhold of the digital pin.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-287086" class="comment byuser comment-author-rui-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-287086" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-287086">
+								<time datetime="2016-07-03T20:36:12+00:00" itemprop="datePublished">
+									July 3, 2016 at 8:36 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=287086#respond" data-commentid="287086" data-postid="20126" data-belowelement="div-comment-287086" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>I know Joachim! Thanks for pointing that out and I’ve updated the blog post to explain that better.</p>
+<p>Thank you for your feedback!</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-294200" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-294200" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/e05f23deaf2d748d3913fe7bec154a1b.png" srcset="https://secure.gravatar.com/avatar/e05f23deaf2d748d3913fe7bec154a1b?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Ray</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-294200">
+								<time datetime="2016-11-23T09:03:17+00:00" itemprop="datePublished">
+									November 23, 2016 at 9:03 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=294200#respond" data-commentid="294200" data-postid="20126" data-belowelement="div-comment-294200" data-respondelement="respond" aria-label="Reply to Ray">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>It’s really Work, thank’s</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-294202" class="comment byuser comment-author-rui-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-294202" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-294202">
+								<time datetime="2016-11-23T09:38:40+00:00" itemprop="datePublished">
+									November 23, 2016 at 9:38 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=294202#respond" data-commentid="294202" data-postid="20126" data-belowelement="div-comment-294202" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Thanks!</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-294264" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-294264" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/8f0b482c10d175ff10df085f8086ff4f.png" srcset="https://secure.gravatar.com/avatar/8f0b482c10d175ff10df085f8086ff4f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">HAKAN KARAKAS</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-294264">
+								<time datetime="2016-11-23T20:56:21+00:00" itemprop="datePublished">
+									November 23, 2016 at 8:56 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=294264#respond" data-commentid="294264" data-postid="20126" data-belowelement="div-comment-294264" data-respondelement="respond" aria-label="Reply to HAKAN KARAKAS">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi. This is a good app. But after the alarm, green led doesn’t work.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-295422" class="comment byuser comment-author-rui-santos bypostauthor odd alt depth-2">
+			<article id="div-comment-295422" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9461558a0e334e14711e74f60647f31f.jpeg" srcset="https://secure.gravatar.com/avatar/9461558a0e334e14711e74f60647f31f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">Rui Santos</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-295422">
+								<time datetime="2016-12-11T13:29:12+00:00" itemprop="datePublished">
+									December 11, 2016 at 1:29 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=295422#respond" data-commentid="295422" data-postid="20126" data-belowelement="div-comment-295422" data-respondelement="respond" aria-label="Reply to Rui Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>It should, are you sure?<br>
+Did you place the green LED properly?</p>
+<p>Thanks<br>
+Rui</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-302746" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-302746" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/10225e799885967d92737509b37eb788.png" srcset="https://secure.gravatar.com/avatar/10225e799885967d92737509b37eb788?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Nel</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-302746">
+								<time datetime="2017-04-23T02:38:55+00:00" itemprop="datePublished">
+									April 23, 2017 at 2:38 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=302746#respond" data-commentid="302746" data-postid="20126" data-belowelement="div-comment-302746" data-respondelement="respond" aria-label="Reply to Nel">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>How did you get the threshold value?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-309504" class="comment byuser comment-author-sara-santos odd alt depth-2 parent">
+			<article id="div-comment-309504" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-309504">
+								<time datetime="2017-10-02T13:32:36+00:00" itemprop="datePublished">
+									October 2, 2017 at 1:32 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=309504#respond" data-commentid="309504" data-postid="20126" data-belowelement="div-comment-309504" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Nel.<br>
+To get the threshold value you need to know the sensor reading when there is no gas on the atmosphere, and set a value sightly above that for the threshold value.<br>
+You can also use a lighter to release some gas next to the sensor and see how the values change.<br>
+Your threshold value should be between those two values.<br>
+Hope this helps.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-314027" class="comment even depth-3">
+			<article id="div-comment-314027" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/5323c4050e1d3df4ffd11c33fd335f47.png" srcset="https://secure.gravatar.com/avatar/5323c4050e1d3df4ffd11c33fd335f47?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Fabricio</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-314027">
+								<time datetime="2017-12-29T17:08:38+00:00" itemprop="datePublished">
+									December 29, 2017 at 5:08 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=314027#respond" data-commentid="314027" data-postid="20126" data-belowelement="div-comment-314027" data-respondelement="respond" aria-label="Reply to Fabricio">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hey, thanks a lot, I’ve been wondering how the heck that threshold value was set, great hint.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-306812" class="comment odd alt thread-even depth-1">
+			<article id="div-comment-306812" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/3ebe32de9d7045b8128b79e8f3e60f8e.png" srcset="https://secure.gravatar.com/avatar/3ebe32de9d7045b8128b79e8f3e60f8e?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">soard raspi</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-306812">
+								<time datetime="2017-07-20T14:08:13+00:00" itemprop="datePublished">
+									July 20, 2017 at 2:08 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=306812#respond" data-commentid="306812" data-postid="20126" data-belowelement="div-comment-306812" data-respondelement="respond" aria-label="Reply to soard raspi">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>I don,t have the module. I have the separate mq-2 sensor.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-306872" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-306872" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/dbbe92444c088e5edbb4978870a028bc.png" srcset="https://secure.gravatar.com/avatar/dbbe92444c088e5edbb4978870a028bc?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Avinash</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-306872">
+								<time datetime="2017-07-22T18:04:18+00:00" itemprop="datePublished">
+									July 22, 2017 at 6:04 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=306872#respond" data-commentid="306872" data-postid="20126" data-belowelement="div-comment-306872" data-respondelement="respond" aria-label="Reply to Avinash">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>What should be the ideal value of threshold when you are deploying the kit?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-309503" class="comment byuser comment-author-sara-santos odd alt depth-2">
+			<article id="div-comment-309503" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-309503">
+								<time datetime="2017-10-02T13:28:51+00:00" itemprop="datePublished">
+									October 2, 2017 at 1:28 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=309503#respond" data-commentid="309503" data-postid="20126" data-belowelement="div-comment-309503" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+The threshold value may vary depending on your sensor.<br>
+You need to measure the gas levels when there isn’t gas on the atmosphere and then, you can use a lighter to simulate gas on the atmosphere and see how the values change. Your threshold value should be between those two readings (reading without gas and reading with gas)<br>
+We can’t point a threshold value that works for everyone.<br>
+Regards.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-309491" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-309491" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/55715453badbc1f1d0d8277cc9690fd9.png" srcset="https://secure.gravatar.com/avatar/55715453badbc1f1d0d8277cc9690fd9?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">sammy</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-309491">
+								<time datetime="2017-10-02T08:29:20+00:00" itemprop="datePublished">
+									October 2, 2017 at 8:29 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=309491#respond" data-commentid="309491" data-postid="20126" data-belowelement="div-comment-309491" data-respondelement="respond" aria-label="Reply to sammy">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>my mq2 is not havinhg an analog output so how should i alter the codes</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-309505" class="comment byuser comment-author-sara-santos odd alt depth-2">
+			<article id="div-comment-309505" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-309505">
+								<time datetime="2017-10-02T13:34:20+00:00" itemprop="datePublished">
+									October 2, 2017 at 1:34 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=309505#respond" data-commentid="309505" data-postid="20126" data-belowelement="div-comment-309505" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi sammy.<br>
+If your sensor doesn’t have an analog output, you need to read the digital output value.<br>
+It will be either HIGH or LOW, depending if the gas levels are above or below the threshold, respectively.<br>
+You should set the threshold value by using the potentiometer at the back of the sensor.<br>
+I hope this helps.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-318151" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-318151" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9c0c47374c5bfab3d6b2d50bc30baf13.png" srcset="https://secure.gravatar.com/avatar/9c0c47374c5bfab3d6b2d50bc30baf13?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">emilo</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-318151">
+								<time datetime="2018-03-26T20:24:17+00:00" itemprop="datePublished">
+									March 26, 2018 at 8:24 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=318151#respond" data-commentid="318151" data-postid="20126" data-belowelement="div-comment-318151" data-respondelement="respond" aria-label="Reply to emilo">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>nice tuto.<br>
+If i connect a mq2 , buzzer , GSM module , to arduino .  can you help with the source code .</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-318209" class="comment byuser comment-author-sara-santos odd alt depth-2">
+			<article id="div-comment-318209" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-318209">
+								<time datetime="2018-03-28T15:12:55+00:00" itemprop="datePublished">
+									March 28, 2018 at 3:12 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=318209#respond" data-commentid="318209" data-postid="20126" data-belowelement="div-comment-318209" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi. Unfortunately, we can’t help you write custom code.<br>
+But we have a tutorial on how to use the GSM module that can help you with your projects.<br>
+Take a look here: <a href="https://randomnerdtutorials.com/sim900-gsm-gprs-shield-arduino/" rel="nofollow">https://randomnerdtutorials.com/sim900-gsm-gprs-shield-arduino/</a><br>
+I hope this helps.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-318178" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-318178" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/30ec833da1b4e58ee3eb2532a9aaaa5c.png" srcset="https://secure.gravatar.com/avatar/30ec833da1b4e58ee3eb2532a9aaaa5c?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Mac Albert Culaban</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-318178">
+								<time datetime="2018-03-27T16:13:23+00:00" itemprop="datePublished">
+									March 27, 2018 at 4:13 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=318178#respond" data-commentid="318178" data-postid="20126" data-belowelement="div-comment-318178" data-respondelement="respond" aria-label="Reply to Mac Albert Culaban">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>It seems my MQ2 sensor doesn’t sense anything. Does it sense even the gas leak of a lighter ? Thanks !</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-318208" class="comment byuser comment-author-sara-santos odd alt depth-2">
+			<article id="div-comment-318208" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-318208">
+								<time datetime="2018-03-28T15:09:46+00:00" itemprop="datePublished">
+									March 28, 2018 at 3:09 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=318208#respond" data-commentid="318208" data-postid="20126" data-belowelement="div-comment-318208" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+Yes, it should sense the gas leaking of a lighter if it is almost touching the sensor.<br>
+Regards, Sara <img draggable="false" class="emoji" alt="🙂" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-322201" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-322201" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/9c0c47374c5bfab3d6b2d50bc30baf13.png" srcset="https://secure.gravatar.com/avatar/9c0c47374c5bfab3d6b2d50bc30baf13?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">emilo</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-322201">
+								<time datetime="2018-04-09T21:29:08+00:00" itemprop="datePublished">
+									April 9, 2018 at 9:29 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=322201#respond" data-commentid="322201" data-postid="20126" data-belowelement="div-comment-322201" data-respondelement="respond" aria-label="Reply to emilo">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>can someone send me the modified programme which detect a logic state from the sensor and can work in proteus ???? thanks</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+
+		<li id="comment-341737" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-341737" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/f70c26a6bcf8e5906faf1d991d9eb166.png" srcset="https://secure.gravatar.com/avatar/f70c26a6bcf8e5906faf1d991d9eb166?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Mohammad hussain</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-341737">
+								<time datetime="2018-10-31T20:39:39+00:00" itemprop="datePublished">
+									October 31, 2018 at 8:39 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=341737#respond" data-commentid="341737" data-postid="20126" data-belowelement="div-comment-341737" data-respondelement="respond" aria-label="Reply to Mohammad hussain">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>What does the data on the serial monitor represent? Is it supposed to be measured in ppm? If so then  isn’t 300 ppm too high for any of those gases?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-341825" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-341825" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-341825">
+								<time datetime="2018-11-01T11:38:45+00:00" itemprop="datePublished">
+									November 1, 2018 at 11:38 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=341825#respond" data-commentid="341825" data-postid="20126" data-belowelement="div-comment-341825" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+It doesn’t mean ppm!<br>
+The MQ-2 gas smoke sensor is an analog sensor. It outputs a voltage between 0 and 5V accordingly to the gas concentration in the atmosphere.<br>
+The greater the gas concentration, the greater the output voltage.<br>
+The lower the gas concentration, the lower the output voltage.<br>
+When the Arduino reads analog values, it returns 1023 when it reads 5V, and it returns 0 with 0V. Any voltage in between will be given the corresponding value.<br>
+So, 300 is an analog reading that corresponds to a voltage of approximately 1.5V. This gives you a relative measurement of the gas concentration (not quantitative, unless you calibrate the sensor using know gas concentrations).<br>
+I hope this helps.<br>
+Regards,<br>
+Sara <img draggable="false" class="emoji" alt="🙂" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-342029" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-342029" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/b79b12768118d71dc66286d067bc4504.png" srcset="https://secure.gravatar.com/avatar/b79b12768118d71dc66286d067bc4504?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://www.facebook.com/afifa.foufana" rel="external nofollow" class="url">afifa belhadj</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-342029">
+								<time datetime="2018-11-02T18:06:03+00:00" itemprop="datePublished">
+									November 2, 2018 at 6:06 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=342029#respond" data-commentid="342029" data-postid="20126" data-belowelement="div-comment-342029" data-respondelement="respond" aria-label="Reply to afifa belhadj">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi!<br>
+so if i want to add an lcd to display the concentration of the gas i have to add this formula in the arduino code ‘analogSansor’*1023 /5 is this correct ?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-342258" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-342258" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-342258">
+								<time datetime="2018-11-04T10:57:14+00:00" itemprop="datePublished">
+									November 4, 2018 at 10:57 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=342258#respond" data-commentid="342258" data-postid="20126" data-belowelement="div-comment-342258" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+Why do you have to divide by 5?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-353377" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-353377" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/cd587160fc48b45c27ef7b11d885482e.png" srcset="https://secure.gravatar.com/avatar/cd587160fc48b45c27ef7b11d885482e?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Damien</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-353377">
+								<time datetime="2019-01-13T21:16:51+00:00" itemprop="datePublished">
+									January 13, 2019 at 9:16 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=353377#respond" data-commentid="353377" data-postid="20126" data-belowelement="div-comment-353377" data-respondelement="respond" aria-label="Reply to Damien">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Come on, the code doesn’t even compile.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-353453" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-353453" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-353453">
+								<time datetime="2019-01-14T10:32:36+00:00" itemprop="datePublished">
+									January 14, 2019 at 10:32 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=353453#respond" data-commentid="353453" data-postid="20126" data-belowelement="div-comment-353453" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Damien.<br>
+What errors are you getting on the serial monitor?<br>
+Regards,<br>
+Sara <img draggable="false" class="emoji" alt="🙂" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/1f642.svg"></p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-353951" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-353951" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/c462bf2d70bf46b1660095d8eefd718f.png" srcset="https://secure.gravatar.com/avatar/c462bf2d70bf46b1660095d8eefd718f?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Bojan Trafela</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-353951">
+								<time datetime="2019-01-18T21:17:38+00:00" itemprop="datePublished">
+									January 18, 2019 at 9:17 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=353951#respond" data-commentid="353951" data-postid="20126" data-belowelement="div-comment-353951" data-respondelement="respond" aria-label="Reply to Bojan Trafela">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>I am getting values about 660 and 680 in “clean” air in my room. I think this values are to high?</p>
+<p>Regars</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-354047" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-354047" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-354047">
+								<time datetime="2019-01-19T18:41:55+00:00" itemprop="datePublished">
+									January 19, 2019 at 6:41 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=354047#respond" data-commentid="354047" data-postid="20126" data-belowelement="div-comment-354047" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Bojan.<br>
+It depends on the specific sensor you’re using.</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-354801" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-354801" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/a2bc7402060d6661171084eeb8c69318.png" srcset="https://secure.gravatar.com/avatar/a2bc7402060d6661171084eeb8c69318?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn"><a href="https://randomnerdtutorials.com/" rel="external nofollow" class="url">sam</a></cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-354801">
+								<time datetime="2019-02-03T04:40:25+00:00" itemprop="datePublished">
+									February 3, 2019 at 4:40 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=354801#respond" data-commentid="354801" data-postid="20126" data-belowelement="div-comment-354801" data-respondelement="respond" aria-label="Reply to sam">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>can i use another resistor i dont have 220 kresistor???</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-355003" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-355003" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-355003">
+								<time datetime="2019-02-05T09:42:15+00:00" itemprop="datePublished">
+									February 5, 2019 at 9:42 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=355003#respond" data-commentid="355003" data-postid="20126" data-belowelement="div-comment-355003" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi Sam.<br>
+Yes, you can use other resistor values in the same range. For example: 330, 470 or 520, for example.<br>
+Regards,<br>
+Sara</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-355423" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-355423" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/eb513d4828e2d70a3ea2051903b2dba9.png" srcset="https://secure.gravatar.com/avatar/eb513d4828e2d70a3ea2051903b2dba9?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Nataraki</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-355423">
+								<time datetime="2019-02-09T07:25:09+00:00" itemprop="datePublished">
+									February 9, 2019 at 7:25 am								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=355423#respond" data-commentid="355423" data-postid="20126" data-belowelement="div-comment-355423" data-respondelement="respond" aria-label="Reply to Nataraki">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Do you have a tutorial on mq2 sensor that senses smoke without using arduino?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-355441" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-355441" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-355441">
+								<time datetime="2019-02-09T15:02:23+00:00" itemprop="datePublished">
+									February 9, 2019 at 3:02 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=355441#respond" data-commentid="355441" data-postid="20126" data-belowelement="div-comment-355441" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi.<br>
+We just have this tutorial for the MQ-2 gas sensor.<br>
+Regards,<br>
+Sara</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-357038" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-357038" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/1ace5c4e7eb4d27beb4a4beb726480fa.png" srcset="https://secure.gravatar.com/avatar/1ace5c4e7eb4d27beb4a4beb726480fa?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Maymona Alfaify</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-357038">
+								<time datetime="2019-03-03T18:53:14+00:00" itemprop="datePublished">
+									March 3, 2019 at 6:53 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=357038#respond" data-commentid="357038" data-postid="20126" data-belowelement="div-comment-357038" data-respondelement="respond" aria-label="Reply to Maymona Alfaify">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Hi,<br>
+can I use the same method for MQ137?</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		<ul class="children">
+
+		<li id="comment-357090" class="comment byuser comment-author-sara-santos even depth-2">
+			<article id="div-comment-357090" class="comment-body" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta">
+					<img alt="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/25e3da92f25bc3fde695d9c0d92207b0.png" srcset="https://secure.gravatar.com/avatar/25e3da92f25bc3fde695d9c0d92207b0?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">					<div class="comment-author-info">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="">
+							<cite itemprop="name" class="fn">Sara Santos</cite>						</div><!-- .comment-author -->
+
+						<div class="entry-meta comment-metadata">
+							<a href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#comment-357090">
+								<time datetime="2019-03-04T12:15:16+00:00" itemprop="datePublished">
+									March 4, 2019 at 12:15 pm								</time>
+							</a>
+														<span class="reply">| <a rel="nofollow" class="comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/?replytocom=357090#respond" data-commentid="357090" data-postid="20126" data-belowelement="div-comment-357090" data-respondelement="respond" aria-label="Reply to Sara Santos">Reply</a></span>						</div><!-- .comment-metadata -->
+					</div><!-- .comment-author-info -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content" itemprop="text">
+					<p>Yes. It should work with the same code.<br>
+Regards,<br>
+Sara</p>
+				</div><!-- .comment-content -->
+			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://randomnerdtutorials.com/guide-for-mq-2-gas-smoke-sensor-with-arduino/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://randomnerdtutorials.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-form-comment"><label for="comment" class="screen-reader-text">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><label for="author" class="screen-reader-text">Name</label><input placeholder="Name *" id="author" name="author" type="text" value="" size="30">
+<label for="email" class="screen-reader-text">Email</label><input placeholder="Email *" id="email" name="email" type="email" value="" size="30">
+<label for="url" class="screen-reader-text">Website</label><input placeholder="Website" id="url" name="url" type="url" value="" size="30">
+<p class="form-submit"></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="20126" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+<p></p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="70d28cf190"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1553090042274"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+					</div>
+
+							</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div id="right-sidebar" class="widget-area grid-30 tablet-grid-30 grid-parent sidebar" itemtype="https://schema.org/WPSideBar" itemscope="">
+	<div class="inside-right-sidebar">
+		<aside id="text-48" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/"><img src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/arduino-sb-img(1).jpg" width="316" height="178"></a><br>
+<strong><a href="https://randomnerdtutorials.com/arduino-step-by-step-projects/">Arduino Step-by-Step Projects »</a><br>
+</strong>Build 25 cool Arduino projects with our course even with no prior experience!</p>
+</div>
+		</aside><aside id="text-53" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://makeradvisor.com/jlcpcb" target="_blank" rel="noopener"><img class="aligncenter size-full wp-image-6681" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/380X316.png" alt="" width="316" height="263"></a></p>
+</div>
+		</aside><aside id="rss-2" class="widget inner-padding widget_rss"><h2 class="widget-title"><a class="rsswidget" href="https://makeradvisor.com/feed/"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="https://makeradvisor.com/">Find Awesome Deals For Makers @ MakerAdvisor.com</a></h2><ul><li><a class="rsswidget" href="https://makeradvisor.com/best-oscilloscopes-beginners/">Best Oscilloscopes for Beginners and Hobbyists 2019</a> <span class="rss-date">March 19, 2019</span></li><li><a class="rsswidget" href="https://makeradvisor.com/hantek-dso5102p-digital-storage-oscilloscope-dso-review/">Hantek DSO5102P Digital Storage Oscilloscope (DSO) Review</a> <span class="rss-date">March 18, 2019</span></li><li><a class="rsswidget" href="https://makeradvisor.com/wall-mount-touch-panel-led-controller-for-rgb-led-strip/">Wall Mount Touch Panel LED Controller for RGB LED Strip</a> <span class="rss-date">March 6, 2019</span></li></ul></aside><aside id="text-49" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://makeradvisor.com/?utm_source=rnt&amp;utm_medium=sb&amp;utm_campaign=sb" target="_blank" rel="noopener"><img src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/lab-sb-img.jpg" width="316" height="178"></a><br>
+<strong><a href="https://makeradvisor.com/?utm_source=rnt&amp;utm_medium=sb&amp;utm_campaign=sb" target="_blank" rel="noopener">Visit Maker Advisor – Tools and Gear for makers, hobbyists and DIYers »</a></strong></p>
+</div>
+		</aside><aside id="text-47" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/"><img src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/esp8266-sb-img(1).jpg" width="316" height="178"></a><br>
+<strong><a href="https://randomnerdtutorials.com/home-automation-using-esp8266/">Home Automation using ESP8266 eBook and video course »</a> </strong>Build IoT and home automation projects.</p>
+</div>
+		</aside><aside id="text-46" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/"><img class="" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/home-automation-sb-img(1).jpg" width="316" height="178"></a><br>
+<strong><a href="https://randomnerdtutorials.com/build-a-home-automation-system-for-100/">Build a Home Automation System from Scratch »</a>&nbsp;</strong>With Raspberry Pi, ESP8266, Arduino, and Node-RED.</p>
+</div>
+		</aside>	</div><!-- .inside-right-sidebar -->
+</div><!-- #secondary -->
+
+	</div><!-- #content -->
+</div><!-- #page -->
+
+
+<div class="site-footer footer-bar-active footer-bar-align-center">
+			<footer class="site-info" itemtype="https://schema.org/WPFooter" itemscope="">
+			<div class="inside-site-info grid-container grid-parent">
+						<div class="footer-bar">
+			<aside id="nav_menu-10" class="widget inner-padding widget_nav_menu"><div class="menu-footer-disclaimer-container"><ul id="menu-footer-disclaimer" class="menu"><li id="menu-item-82503" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82503"><a href="https://randomnerdtutorials.com/about/">About</a></li>
+<li id="menu-item-20492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20492"><a href="https://randomnerdtutorials.com/support">Support</a></li>
+<li id="menu-item-20493" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20493"><a href="https://randomnerdtutorials.com/terms">Terms</a></li>
+<li id="menu-item-20495" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20495"><a href="https://randomnerdtutorials.com/privacy">Privacy</a></li>
+<li id="menu-item-20494" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20494"><a href="https://randomnerdtutorials.com/returns-and-refunds/">Refunds</a></li>
+<li id="menu-item-43625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43625"><a target="_blank" href="https://makeradvisor.com/">MakerAdvisor.com</a></li>
+<li id="menu-item-20496" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20496"><a target="_blank" href="https://rntlab.com/">Join the Lab</a></li>
+</ul></div></aside>		</div>
+						<div class="copyright-bar">
+					Copyright © 2013-2019 · RandomNerdTutorials.com · All Rights Reserved				</div>
+			</div>
+		</footer><!-- .site-info -->
+		</div><!-- .site-footer -->
+
+<script src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/prism.min.js.download"></script>
+<script src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/prism-c.min.js.download"></script>
+<script src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/prism-python.min.js.download"></script><link rel="stylesheet" id="elementor-frontend-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-post-82533-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/post-82533.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-animations-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/animations.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-pro-css" href="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/frontend.min(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/sticky.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/photon.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/devicepx-jetpack.js.download"></script>
+<!--[if lte IE 11]>
+<script type='text/javascript' src='https://randomnerdtutorials.com/wp-content/themes/generatepress/js/classList.min.js?ver=2.2.2'></script>
+<![endif]-->
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/menu.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/a11y.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/imagesloaded.min.js.download"></script>
+<script async="async" type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/form.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/frontend-modules.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/jquery.sticky.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/randomnerdtutorials.com\/wp-admin\/admin-ajax.php","nonce":"61957e663b","shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/position.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/dialog.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/waypoints.min.js.download"></script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/swiper.min.js.download"></script>
+<script type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.5.9","urls":{"assets":"https:\/\/randomnerdtutorials.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_enable_lightbox_in_editor":"yes"}},"post":{"id":20126,"title":"Guide for MQ-2 Gas\/Smoke Sensor with Arduino","excerpt":""}};
+</script>
+<script type="text/javascript" src="./Guide for MQ-2 Gas Sensor with Arduino _ Random Nerd Tutorials_files/frontend.min.js(1).download"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+
+
+
+</body></html>

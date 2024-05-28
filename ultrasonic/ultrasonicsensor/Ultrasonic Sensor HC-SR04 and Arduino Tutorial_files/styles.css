@@ -1,0 +1,190 @@
+
+/* Default style, feel free to remove if not needed. */
+body, body * {
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+    font-size: 0;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
+}
+
+
+/* global */
+#container_dc {
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	top: 0px;
+	left: 0px;
+	
+	margin: auto;
+	overflow:hidden;
+}
+#content_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: #e49fba;
+	overflow:hidden;
+}
+
+#bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: #e49fba;
+	overflow:hidden;
+}
+
+#bgFade {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9994;
+	background-color: white;
+}
+#border_div {
+	width: 298px;
+	height: 248px;
+	top: 0px;
+	left: 0px;
+	border:1px solid #000;
+}
+.full_div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+}
+
+#anim_container{
+	background: #ff6c4b;	
+}
+
+#img_eyes{
+    left: 22px;
+    top: 46px;
+}
+#img_eyes_closed{
+    left: 22px;
+    top: 46px;
+}
+/*
+#img_eyelids{
+    left: 28px;
+    top: 45px;
+}
+*/
+#img_eye_mask_left{
+    left: 28px;
+    top: 46px;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+	overflow:hidden;
+	background:none;
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	
+}
+
+#img_eyelid_left{
+    left: 0px;
+    top: -1px;
+}
+#img_eye_mask_right{
+    left: 133px;
+    top: 48px;
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+	overflow:hidden;
+	background:none;
+	
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	
+}
+
+#img_eyelid_right{
+    left: -105px;
+    top: -2px;
+}
+
+
+#img_lips{
+    left: 70px;
+    top: 150px;
+	width:97px; 
+	height:50px;
+}
+#img_lashes_up{
+    left: 4px;
+    top: 39px;
+}
+#img_lashes_down{
+    left: 14px;
+    top: 102px;
+}
+#img_blush{
+    left: 40px;
+    top: 142px;
+}
+
+#img_star1{
+    left: 250px;
+    top: 129px;
+	width: 33px; 
+	height: 50px;
+}
+#img_star2{
+    left: 230px;
+    top: 2px;
+	width: 33px; 
+	height: 50px;
+}
+#img_star3{
+    left: 270px;
+    top: 52px;
+	width: 33px; 
+	height: 50px;
+}
+
+#bg2{
+	background: #163179;	
+}
+
+#scrub_bar{
+
+}
+
+
+
+/* Invisible button for background clickthrough. */
+#background_exit_dc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	cursor: pointer;
+	background-color:transparent;
+	z-index: 400;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
